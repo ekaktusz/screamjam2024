@@ -1,13 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://u7poiyy58cwy"]
+[gd_scene load_steps=7 format=3 uid="uid://u7poiyy58cwy"]
 
-[ext_resource type="Texture2D" uid="uid://w4x5vtbnf4pt" path="res://Scenes/Tilemap/Tilesets/dummy_tileset.png" id="1_5rpx4"]
+[ext_resource type="Texture2D" uid="uid://brcijjc0xw7i0" path="res://Scenes/Tilemap/Tilesets/Isometric_64_Sprite-0001.png" id="1_1s2d0"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0esjx"]
+polygon = PackedVector2Array(0.375, -17.25, 32, 0, 32, 32.875, 0.375, 49.125, -31.75, 33, -32, -1.125)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rwto0"]
 polygon = PackedVector2Array(-0.176777, -23.6881, -15.9099, -16.0867, -16, 0, 0, 8, 16, 0, 15.7331, -16.4402)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_v5m5g"]
+polygon = PackedVector2Array(0, -16, 11.6543, -13.8591, 15.3454, -8.32728, 14.8041, 33.0729, 10.7093, 38.1126, -0.31498, 39.6875, -9.44941, 38.4276, -15.434, 34.0179, -14.5895, -8.70526, -9.76439, -14.4891)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l7blw"]
-texture = ExtResource("1_5rpx4")
-texture_region_size = Vector2i(32, 32)
+texture = ExtResource("1_1s2d0")
+texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 8)
 1:0/0 = 0
@@ -16,15 +22,110 @@ texture_region_size = Vector2i(32, 32)
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -8, 16, 0, 0, 8, -16, 0)
 2:0/0 = 0
 3:0/0 = 0
-4:0/0 = 0
-4:0/0/texture_origin = Vector2i(0, 8)
-5:0/0 = 0
-6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+0:4/0 = 0
+0:4/0/texture_origin = Vector2i(0, -16)
+0:4/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_0esjx")
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(32.443, 32.9154, 0.157494, 48.9794, -32, 32.5, -32, 0, 0, -16, 32, 0)
+0:4/0/physics_layer_0/polygon_0/one_way = true
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+3:4/0/texture_origin = Vector2i(0, -16)
+3:4/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_v5m5g")
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.198425, 39.0898, 10, 38, 15.6756, 32.5417, 14.75, 12.5, 11.75, 7, 6.75, 5, -7.25, 5, -15.6, 8.2, -14.75, 19.5, -15.874, 32.5417, -9.75, 38.75)
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+3:15/0 = 0
+4:15/0 = 0
+5:15/0 = 0
+6:15/0 = 0
+7:15/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_csq0v"]
 tile_shape = 1
 tile_offset_axis = 1
-tile_size = Vector2i(32, 16)
+tile_size = Vector2i(64, 32)
 occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_l7blw")
