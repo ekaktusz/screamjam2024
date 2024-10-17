@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://yspo5jyeg5s0"]
+
+[ext_resource type="Script" path="res://Scenes/Character/character_body_2d.gd" id="1_mwy0c"]
+[ext_resource type="Texture2D" uid="uid://bl53qi0c2r5e7" path="res://icon.svg" id="2_tthio"]
+[ext_resource type="Texture2D" uid="uid://m7hhrq6a33bf" path="res://Scenes/Character/lightsource.png" id="3_pr1qh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_digjm"]
+size = Vector2(50, 55)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_mwy0c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_tthio")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.19209e-06, 7.5)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_digjm")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -20)
+zoom = Vector2(3, 3)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+y_sort_enabled = true
+position = Vector2(4.76837e-07, -20)
+energy = 0.7
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 4.0
+texture = ExtResource("3_pr1qh")
+texture_scale = 1.2

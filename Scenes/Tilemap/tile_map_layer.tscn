@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=4 uid="uid://cojbcgpbmq6ui"]
+
+[ext_resource type="Texture2D" uid="uid://w4x5vtbnf4pt" path="res://Scenes/Tilemap/Tilesets/dummy_tileset.png" id="1_ku6ba"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l7blw"]
+texture = ExtResource("1_ku6ba")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -8)
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, 8)
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+4:0/0/texture_origin = Vector2i(0, 8)
+5:0/0 = 0
+6:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_csq0v"]
+tile_shape = 1
+tile_offset_axis = 1
+tile_size = Vector2i(32, 16)
+occlusion_layer_0/light_mask = 1
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_l7blw")
+
+[node name="TileMapLayer2" type="TileMapLayer"]
+y_sort_enabled = true
+position = Vector2(97, 64)
+tile_map_data = PackedByteArray("AAD7//3/AAAAAAAAAAD8//7/AAAAAAAAAAD9//7/AAAAAAAAAAD+////AAAAAAAAAAD/////AAAAAAAAAAAIAPz/AAAAAAAAAAAHAPv/AAAAAAAAAAAGAPv/AAAAAAAAAAAFAPr/AAAAAAAAAAAEAPr/AAAAAAAAAAADAPn/AAAAAAAAAAACAPr/AAAAAAAAAAABAPr/AAAAAAAAAAAAAPv/AAAAAAAAAAD///v/AAAAAAAAAAD+//z/AAAAAAAAAAD9//z/AAAAAAAAAAD8//3/AAAAAAAAAAABAP3/AAAAAAAAAAACAP3/AAAAAAAAAAADAPz/AAAAAAAAAAAEAPz/AAAAAAAAAAAFAPv/AAAAAAAAAAAEAPv/AAAAAAAAAAADAPr/AAAAAAAAAAACAPv/AAAAAAAAAAABAPv/AAAAAAAAAAAAAPz/AAAAAAAAAAD///z/AAAAAAAAAAD+//3/AAAAAAAAAAD9//3/AAAAAAAAAAD+//7/AAAAAAAAAAD///3/AAAAAAAAAAAAAP3/AAAAAAAAAAABAPz/AAAAAAAAAAACAPz/AAAAAAAAAAADAPv/AAAAAAAAAAAAAP7/AAAAAAAAAAD///7/AAAAAAAAAAAAAP//AAAAAAAAAAABAP7/AAAAAAAAAAACAP7/AAAAAAAAAAADAP3/AAAAAAAAAAAEAP3/AAAAAAAAAAAFAPz/AAAAAAAAAAAGAPz/AAAAAAAAAAAHAPz/AAAAAAAAAAAGAP3/AAAAAAAAAAAFAP3/AAAAAAAAAAAEAP7/AAAAAAAAAAADAP7/AAAAAAAAAAACAP//AAAAAAAAAAAAAAAAAAAAAAAAAAABAP//AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_csq0v")
