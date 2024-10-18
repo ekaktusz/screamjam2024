@@ -1,7 +1,16 @@
 extends CharacterBody2D
 
+const lines:  Array[String] = [
+	"Aasdasdad asd dfghdg erte ! g dfgd +",
+	" asdasd gggdgffd d",
+	" asdas ..... "
+]
 
 const SPEED = 200
+
+func _process(delta: float) -> void:
+	if Input.is_anything_pressed():
+		DialogueManager.start_dialog(Vector2(50, 50), lines)
 
 func _physics_process(delta):
 	
