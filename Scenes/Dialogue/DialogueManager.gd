@@ -29,13 +29,12 @@ func _show_dialogue_box():
 	dialogue_scene.display_text(dialogue_lines[current_line_index])
 	can_advance_line = false
 	
-	
 func _on_dialouge_finished_displaying():
 	can_advance_line = true
 
 func _unhandled_input(event):
 	if (
-		event.is_action_pressed("advance_dialogue") && is_dialogue_active && can_advance_line
+		event.is_action_pressed("interact") && is_dialogue_active && can_advance_line
 	):
 		dialogue_scene.queue_free()
 		
@@ -45,5 +44,3 @@ func _unhandled_input(event):
 			current_line_index = 0
 			return
 		_show_dialogue_box()
-	
-	
