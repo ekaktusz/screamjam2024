@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://de5he6bamukbh"]
 
-[ext_resource type="Script" path="res://Scenes/Dialogue/dialogue_scene.gd" id="1_su8dw"]
+[ext_resource type="Script" path="res://Scenes/Dialogue/dialogue_box.gd" id="1_wna3y"]
 
-[node name="DialogueScene" type="MarginContainer"]
-script = ExtResource("1_su8dw")
+[node name="DialogueBox" type="MarginContainer"]
+script = ExtResource("1_wna3y")
 
 [node name="BackgroundPanel" type="Panel" parent="."]
 custom_minimum_size = Vector2(20, 20)
