@@ -11,7 +11,7 @@ var dialogue_box_position: Vector2
 var is_dialogue_active: bool = false
 var can_advance_line: bool = false
 
-func start_dialog(position: Vector2, lines: Array[String]) -> void:
+func start_dialogue(position: Vector2, lines: Array[String]) -> void:
 	if is_dialogue_active:
 		return
 		
@@ -23,13 +23,13 @@ func start_dialog(position: Vector2, lines: Array[String]) -> void:
 	
 func _show_dialogue_box():
 	dialogue_scene = DialogueScene.instantiate()
-	dialogue_scene.finished_displaying.connect(_on_dialouge_finished_displaying)
+	dialogue_scene.finished_displaying.connect(_on_dialogue_finished_displaying)
 	get_tree().root.add_child(dialogue_scene)
 	dialogue_scene.global_position = dialogue_box_position
 	dialogue_scene.display_text(dialogue_lines[current_line_index])
 	can_advance_line = false
 	
-func _on_dialouge_finished_displaying():
+func _on_dialogue_finished_displaying():
 	can_advance_line = true
 
 func _unhandled_input(event):

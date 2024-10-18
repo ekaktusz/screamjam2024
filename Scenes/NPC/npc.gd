@@ -13,7 +13,7 @@ func _ready() -> void:
 	interaction_area.interact = Callable(self,"_on_interact")
 	
 func _on_interact():
-	DialogueManager.start_dialog(global_position, lines)
+	DialogueManager.start_dialogue(global_position, lines)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
