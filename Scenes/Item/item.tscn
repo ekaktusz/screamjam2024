@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bb2ai4g5a33a2"]
+
+[ext_resource type="Script" path="res://Scenes/Item/item.gd" id="1_70ido"]
+[ext_resource type="Texture2D" uid="uid://dw8781gdxv45y" path="res://Scenes/Item/bodypart.png" id="2_qbe75"]
+[ext_resource type="PackedScene" uid="uid://bg36jejsehft1" path="res://Scenes/Interaction/InteractionArea.tscn" id="3_1qkrf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c6utd"]
+radius = 290.0
+
+[node name="Item" type="Node2D"]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_70ido")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-20, 0)
+texture = ExtResource("2_qbe75")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_1qkrf")]
+action_name = "pick up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(-20, 0)
+scale = Vector2(1, 1)
+shape = SubResource("CircleShape2D_c6utd")
