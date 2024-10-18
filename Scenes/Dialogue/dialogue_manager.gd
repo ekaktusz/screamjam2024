@@ -1,3 +1,4 @@
+class_name DialogueManager
 extends Node
 
 const DialogueBoxScene = preload("res://Scenes/Dialogue/dialogue_box.tscn")
@@ -13,14 +14,16 @@ var current_line_finished: bool = false
 
 signal dialogue_ended()
 
-func start_dialogue(position: Vector2, lines: Array[String]) -> void:
+static func create(position: Vector2, lines: Array[String]) -> DialogueManager:
+	var instance = DialogueManager.new()
+	instance.dialogue_box_position = position
+	instance.dialogue_lines = lines
+	return instance
+
+func start_dialogue() -> void:
 	if is_dialogue_active:
 		return
-		
-	dialogue_lines = lines
-	dialogue_box_position = position
 	_show_next_dialogue_box()
-	
 	is_dialogue_active = true
 	
 func _show_next_dialogue_box():

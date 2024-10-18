@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 InteractionManager="*res://Scenes/Interaction/InteractionManager.tscn"
-DialogueManager="*res://Scenes/Dialogue/DialogueManager.gd"
 
 [dialogic]
 
