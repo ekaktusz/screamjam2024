@@ -14,6 +14,10 @@ func _ready() -> void:
 	
 func _on_interact():
 	DialogueManager.start_dialogue(global_position, lines)
+	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
+	
+func _on_dialogue_ended():
+	print("test")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
