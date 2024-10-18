@@ -7,11 +7,7 @@ extends Node2D
 func _ready() -> void:
 	interaction_area.interact = Callable(self,"_on_interact")
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func _on_interact():
 	print('item picked up')
+	Inventory.collect_item("Torso")
 	queue_free()

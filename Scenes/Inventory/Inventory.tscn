@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://bemdgdebmeocr"]
+
+[ext_resource type="Script" path="res://Scenes/Inventory/inventory.gd" id="1_22qny"]
+[ext_resource type="Texture2D" uid="uid://dean21qahm4" path="res://Scenes/Inventory/BodyParts/bodypart_black_and_white.png" id="1_ccom8"]
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_22qny")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_right = 716.0
+offset_bottom = 755.0
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Head" type="TextureRect" parent="PanelContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("1_ccom8")
+
+[node name="TextureRect3" type="TextureRect" parent="PanelContainer/GridContainer"]
+layout_mode = 2
+
+[node name="RightArm" type="TextureRect" parent="PanelContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("1_ccom8")
+
+[node name="Body" type="TextureRect" parent="PanelContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("1_ccom8")
+
+[node name="LeftArm" type="TextureRect" parent="PanelContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("1_ccom8")
+
+[node name="RightLeg" type="TextureRect" parent="PanelContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("1_ccom8")
+
+[node name="Empty" type="TextureRect" parent="PanelContainer/GridContainer"]
+light_mask = 2
+visibility_layer = 2
+layout_mode = 2
+
+[node name="LeftLeg" type="TextureRect" parent="PanelContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("1_ccom8")

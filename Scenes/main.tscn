@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=4 uid="uid://ct5a81kc8suuw"]
+[gd_scene load_steps=7 format=4 uid="uid://ct5a81kc8suuw"]
 
+[ext_resource type="PackedScene" uid="uid://bemdgdebmeocr" path="res://Scenes/Inventory/Inventory.tscn" id="1_126r2"]
 [ext_resource type="PackedScene" uid="uid://clflyn1b5u5hp" path="res://Scenes/canvas_modulate.tscn" id="1_cwatj"]
 [ext_resource type="PackedScene" uid="uid://cojbcgpbmq6ui" path="res://Scenes/Tilemap/tile_map_layer_ground_floor.tscn" id="1_rv4jy"]
 [ext_resource type="PackedScene" uid="uid://yspo5jyeg5s0" path="res://Scenes/Character/character_body_2d.tscn" id="2_ssn54"]
@@ -8,6 +9,19 @@
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
+position = Vector2(854, 548)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("1_126r2")]
+light_mask = 2
+y_sort_enabled = true
+offset_left = 30.0
+offset_top = 42.0
+offset_right = 30.0
+offset_bottom = 42.0
+scale = Vector2(0.2, 0.2)
+size_flags_stretch_ratio = 0.1
 
 [node name="CanvasModulate" parent="." instance=ExtResource("1_cwatj")]
 color = Color(0.0403748, 0.075197, 0.0820313, 1)
@@ -15,7 +29,7 @@ color = Color(0.0403748, 0.075197, 0.0820313, 1)
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_ssn54")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(114, 24)
+position = Vector2(133, -5)
 
 [node name="TileMapLayerGroundFloor" parent="." instance=ExtResource("1_rv4jy")]
 position = Vector2(187, 22)
@@ -28,6 +42,6 @@ position = Vector2(187, 22)
 tile_map_data = PackedByteArray("AAD8/wIAAAAAAAQAAAD7/wEAAAAAAAQAAAD6/wEAAAAAAAQAAAD3////AAAAAAQAAAD2////AAAAAAQAAAD3//7/AAAAAAQAAAD4//7/AAAAAAQAAAD5//3/AAAAAAQAAAD6//3/AAAAAAQAAAD7//z/AAAAAAQAAAD8//z/AAAAAAQAAAD9//v/AAAAAAQAAAD+//v/AAAAAAQAAAD///v/AAAAAAQAAAAAAPz/AAAAAAQAAAABAPz/AAAAAAQAAAACAP3/AAAAAAQAAAADAP3/AAAAAAQAAAAEAP7/AAAAAAQAAAAFAP7/AAAAAAQAAAAEAP//AAAAAAQAAAADAP//AAAAAAQAAAACAAAAAAAAAAQAAAABAAAAAAAAAAQAAAAAAAEAAAAAAAQAAAD//wEAAAAAAAQAAAD+/wIAAAAAAAQAAAD9/wIAAAAAAAQAAAD1////AAAAAAQAAAD0/wAAAAAAAAQAAADz/wAAAAAAAAQAAADy/wEAAAAAAAQAAADx/wEAAAAAAAQAAADw/wIAAAAAAAQAAADx/wIAAAAAAAQAABDy/wMAAAAAAAQAABDz/wMAAAAAAAQAABD0/wQAAAAAAAQAABD1/wQAAAAAAAQAABD2/wUAAAAAAAQAABD3/wUAAAAAAAQAABD4/wYAAAAAAAQAABD5/wYAAAAAAAQAABD6/wcAAAAAAAQAABD7/wcAAAAAAAQAABD8/wgAAAAAAAQAABD9/wgAAAAAAAQAABD+/wkAAAAAAAQAABD//wkAAAAAAAQAABAAAAkAAAAAAAQAABABAAgAAAAAAAQAABACAAgAAAAAAAQAABADAAcAAAAAAAQAABAEAAcAAAAAAAQAABAFAAYAAAAAAAQAABAGAAYAAAAAAAQAABAHAAUAAAAAAAQAABAIAAUAAAAAAAQAABAJAAQAAAAAAAQAABAKAAQAAAAAAAQAABALAAMAAAAAAAQAABAMAAMAAAAAAAQAABANAAIAAAAAAAQAABAGAP//AAAAAAQAABAHAP//AAAAAAQAABAIAAAAAAAAAAQAABAJAAAAAAAAAAQAABAKAAEAAAAAAAQAABALAAEAAAAAAAQAABAMAAIAAAAAAAQAABAEAAIAAAAAAAQAAAAFAAIAAAAAAAQAAAD//wUAAAADAAQAAAD3/wIAAAAAAAQAAAA=")
 metadata/_edit_lock_ = true
 
-[node name="Item" parent="." instance=ExtResource("5_57x4r")]
+[node name="Torso" parent="." instance=ExtResource("5_57x4r")]
 y_sort_enabled = true
 position = Vector2(-131, 120)
