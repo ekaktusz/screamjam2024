@@ -44,7 +44,7 @@ _data = {
 "RESET": SubResource("Animation_3n281")
 }
 
-[node name="Dog" type="CharacterBody2D"]
+[node name="NonTalkingNPC" type="CharacterBody2D"]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(163, 276)
