@@ -28,7 +28,7 @@ layout/default_style="res://DialogueSystem/New_File.tres"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 

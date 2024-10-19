@@ -13,7 +13,7 @@ var is_dialogue_active: bool = false
 var current_line_finished: bool = false
 
 # how much is required to wait until a line finished (to make sure player read it)
-@export var dialogue_end_wait_time_seconds: float = 1.0
+@export var dialogue_end_wait_time_seconds: float = 0.5
 var is_dialogue_end_wait_timer_finished = false
 
 signal dialogue_ended()
@@ -37,6 +37,7 @@ func _show_next_dialogue_box() -> void:
 	dialogue_box.global_position = dialogue_box_position
 	dialogue_box.display_text(dialogue_lines[current_line_index])
 	current_line_finished = false
+	is_dialogue_end_wait_timer_finished = false
 	
 func _on_dialogue_finished_displaying() -> void:
 	current_line_finished = true
