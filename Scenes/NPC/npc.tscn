@@ -5,13 +5,15 @@
 [ext_resource type="Script" path="res://Scenes/Interaction/interaction_area.gd" id="2_403h8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_66wi0"]
-radius = 12.0
-height = 64.0
+radius = 6.0
+height = 34.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ayx1k"]
-radius = 33.0
+radius = 25.0799
 
 [node name="NPC" type="CharacterBody2D"]
+z_index = 1
+y_sort_enabled = true
 script = ExtResource("1_mxfie")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -19,6 +21,7 @@ texture = ExtResource("2_4qi2r")
 hframes = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
 shape = SubResource("CapsuleShape2D_66wi0")
 
 [node name="InteractionArea" type="Area2D" parent="."]
@@ -26,7 +29,7 @@ script = ExtResource("2_403h8")
 action_name = "talk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(0, 28)
+position = Vector2(-1, 16)
 shape = SubResource("CircleShape2D_ayx1k")
 
 [connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="_on_body_entered"]
