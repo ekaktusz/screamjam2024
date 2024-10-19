@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://yspo5jyeg5s0"]
+[gd_scene load_steps=6 format=3 uid="uid://yspo5jyeg5s0"]
 
 [ext_resource type="Script" path="res://Scenes/Character/character_body_2d.gd" id="1_mwy0c"]
+[ext_resource type="PackedScene" uid="uid://bemdgdebmeocr" path="res://Scenes/Inventory/Inventory.tscn" id="2_jtff0"]
 [ext_resource type="Texture2D" uid="uid://ewy30x2228l0" path="res://icon.svg" id="2_tthio"]
 [ext_resource type="Texture2D" uid="uid://m7hhrq6a33bf" path="res://Scenes/Character/lightsource.png" id="3_pr1qh"]
 
@@ -11,7 +12,17 @@ size = Vector2(80.0001, 90.0001)
 scale = Vector2(0.2, 0.2)
 script = ExtResource("1_mwy0c")
 
+[node name="Inventory" parent="." instance=ExtResource("2_jtff0")]
+z_index = 20
+y_sort_enabled = true
+offset_left = -1625.0
+offset_top = -905.0
+offset_right = -1625.0
+offset_bottom = -905.0
+scale = Vector2(0.5, 0.5)
+
 [node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
 y_sort_enabled = true
 energy = 0.5
 shadow_enabled = true
@@ -21,6 +32,7 @@ texture = ExtResource("3_pr1qh")
 texture_scale = 3.0
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
+visible = false
 y_sort_enabled = true
 energy = 0.7
 shadow_filter = 1
@@ -38,4 +50,4 @@ shape = SubResource("RectangleShape2D_digjm")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -20)
-zoom = Vector2(2, 2)
+zoom = Vector2(3, 3)

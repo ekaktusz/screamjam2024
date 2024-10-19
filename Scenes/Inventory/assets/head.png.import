@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dean21qahm4"
-path="res://.godot/imported/bodypart_black_and_white.png-2a7ebd28ac769ab4894a3864fb81333b.ctex"
+uid="uid://bkyrdkhwwipm7"
+path="res://.godot/imported/head.png-653f8fa60f8f50c69e94c3d4ae8a5238.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Inventory/BodyParts/bodypart_black_and_white.png"
-dest_files=["res://.godot/imported/bodypart_black_and_white.png-2a7ebd28ac769ab4894a3864fb81333b.ctex"]
+source_file="res://Scenes/Inventory/assets/head.png"
+dest_files=["res://.godot/imported/head.png-653f8fa60f8f50c69e94c3d4ae8a5238.ctex"]
 
 [params]
 

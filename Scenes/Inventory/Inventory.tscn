@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bemdgdebmeocr"]
+[gd_scene load_steps=7 format=3 uid="uid://bemdgdebmeocr"]
 
 [ext_resource type="Script" path="res://Scenes/Inventory/inventory.gd" id="1_22qny"]
-[ext_resource type="Texture2D" uid="uid://dean21qahm4" path="res://Scenes/Inventory/BodyParts/bodypart_black_and_white.png" id="1_ccom8"]
+[ext_resource type="Texture2D" uid="uid://bkyrdkhwwipm7" path="res://Scenes/Inventory/assets/head.png" id="2_kk6jv"]
+[ext_resource type="Texture2D" uid="uid://dwp1mkvo3jgq7" path="res://Scenes/Inventory/assets/torso.png" id="3_3xx41"]
+[ext_resource type="Texture2D" uid="uid://d2l0crmeu0w8e" path="res://Scenes/Inventory/assets/rightarm.png" id="3_uh1nw"]
+[ext_resource type="Texture2D" uid="uid://66fxig8jlv4i" path="res://Scenes/Inventory/assets/leftarm.png" id="5_3wq18"]
+[ext_resource type="Texture2D" uid="uid://dts1usnm51icl" path="res://Scenes/Inventory/assets/leg.png" id="6_7281f"]
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -9,44 +13,50 @@ anchors_preset = 0
 script = ExtResource("1_22qny")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-offset_right = 716.0
-offset_bottom = 755.0
+layout_mode = 0
+offset_right = 630.0
+offset_bottom = 1096.0
 
 [node name="GridContainer" type="GridContainer" parent="PanelContainer"]
 layout_mode = 2
 columns = 3
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/GridContainer"]
+[node name="Empty4" type="TextureRect" parent="PanelContainer/GridContainer"]
 layout_mode = 2
 
 [node name="Head" type="TextureRect" parent="PanelContainer/GridContainer"]
+self_modulate = Color(0, 0, 0, 0.631373)
 layout_mode = 2
-texture = ExtResource("1_ccom8")
+texture = ExtResource("2_kk6jv")
 
-[node name="TextureRect3" type="TextureRect" parent="PanelContainer/GridContainer"]
+[node name="Empty5" type="TextureRect" parent="PanelContainer/GridContainer"]
 layout_mode = 2
 
 [node name="RightArm" type="TextureRect" parent="PanelContainer/GridContainer"]
+self_modulate = Color(0, 0, 0, 0.631373)
 layout_mode = 2
-texture = ExtResource("1_ccom8")
+texture = ExtResource("3_uh1nw")
 
-[node name="Body" type="TextureRect" parent="PanelContainer/GridContainer"]
+[node name="Torso" type="TextureRect" parent="PanelContainer/GridContainer"]
+self_modulate = Color(0, 0, 0, 0.631373)
 layout_mode = 2
-texture = ExtResource("1_ccom8")
+texture = ExtResource("3_3xx41")
 
 [node name="LeftArm" type="TextureRect" parent="PanelContainer/GridContainer"]
+self_modulate = Color(0, 0, 0, 0.631373)
 layout_mode = 2
-texture = ExtResource("1_ccom8")
+texture = ExtResource("5_3wq18")
 
-[node name="RightLeg" type="TextureRect" parent="PanelContainer/GridContainer"]
+[node name="Empty2" type="TextureRect" parent="PanelContainer/GridContainer"]
 layout_mode = 2
-texture = ExtResource("1_ccom8")
 
-[node name="Empty" type="TextureRect" parent="PanelContainer/GridContainer"]
+[node name="Leg" type="TextureRect" parent="PanelContainer/GridContainer"]
+self_modulate = Color(0, 0, 0, 0.631373)
 light_mask = 2
 visibility_layer = 2
 layout_mode = 2
+texture = ExtResource("6_7281f")
+stretch_mode = 1
 
-[node name="LeftLeg" type="TextureRect" parent="PanelContainer/GridContainer"]
+[node name="Empty3" type="TextureRect" parent="PanelContainer/GridContainer"]
 layout_mode = 2
-texture = ExtResource("1_ccom8")

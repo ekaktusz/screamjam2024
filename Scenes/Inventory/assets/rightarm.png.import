@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw8781gdxv45y"
-path="res://.godot/imported/bodypart.png-12943095909253a4b17a139a3e68c6e1.ctex"
+uid="uid://d2l0crmeu0w8e"
+path="res://.godot/imported/rightarm.png-6e0b6d7c06ed54b43a1d2ae49f658824.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Item/bodypart.png"
-dest_files=["res://.godot/imported/bodypart.png-12943095909253a4b17a139a3e68c6e1.ctex"]
+source_file="res://Scenes/Inventory/assets/rightarm.png"
+dest_files=["res://.godot/imported/rightarm.png-6e0b6d7c06ed54b43a1d2ae49f658824.ctex"]
 
 [params]
 
