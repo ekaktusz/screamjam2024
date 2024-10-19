@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://ct5a81kc8suuw"]
+[gd_scene load_steps=7 format=4 uid="uid://ct5a81kc8suuw"]
 
 [ext_resource type="PackedScene" uid="uid://clflyn1b5u5hp" path="res://Scenes/canvas_modulate.tscn" id="1_cwatj"]
 [ext_resource type="PackedScene" uid="uid://cojbcgpbmq6ui" path="res://Scenes/Tilemap/tile_map_layer_ground_floor.tscn" id="1_rv4jy"]
+[ext_resource type="PackedScene" uid="uid://8g1veysh6lp3" path="res://npc.tscn" id="2_ob26p"]
 [ext_resource type="PackedScene" uid="uid://yspo5jyeg5s0" path="res://Scenes/Character/character_body_2d.tscn" id="2_ssn54"]
 [ext_resource type="PackedScene" uid="uid://u7poiyy58cwy" path="res://Scenes/Tilemap/tile_map_layer_first_floor.tscn" id="3_e2lyt"]
 [ext_resource type="PackedScene" uid="uid://bb2ai4g5a33a2" path="res://Scenes/Item/item.tscn" id="5_57x4r"]
@@ -11,6 +12,8 @@ y_sort_enabled = true
 
 [node name="CanvasModulate" parent="." instance=ExtResource("1_cwatj")]
 color = Color(0.0403748, 0.075197, 0.0820313, 1)
+
+[node name="NPC" parent="." instance=ExtResource("2_ob26p")]
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_ssn54")]
 z_index = 1
