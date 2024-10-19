@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 const SPEED = 200
 var hasBodyPart = false
 
