@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://ct5a81kc8suuw"]
+[gd_scene load_steps=6 format=3 uid="uid://ct5a81kc8suuw"]
 
 [ext_resource type="PackedScene" uid="uid://clflyn1b5u5hp" path="res://Scenes/canvas_modulate.tscn" id="1_cwatj"]
 [ext_resource type="PackedScene" uid="uid://yspo5jyeg5s0" path="res://Scenes/Character/character_body_2d.tscn" id="2_ssn54"]
 [ext_resource type="PackedScene" uid="uid://byqsaebfr2wqt" path="res://Scenes/Tilemap/tile_map_layer_first_floor.tscn" id="4_re2sx"]
 [ext_resource type="PackedScene" uid="uid://bb2ai4g5a33a2" path="res://Scenes/Item/item.tscn" id="5_57x4r"]
 [ext_resource type="PackedScene" uid="uid://6qvylrim0xte" path="res://Scenes/Tilemap/tile_map_layer_ground_floor.tscn" id="5_qjuv4"]
-[ext_resource type="PackedScene" uid="uid://eho1pcu0ra4w" path="res://Scenes/NPC/npc.tscn" id="6_pxgdt"]
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
@@ -26,9 +25,3 @@ position = Vector2(-131, 120)
 
 [node name="TileMapGroundFloor" parent="." instance=ExtResource("5_qjuv4")]
 position = Vector2(-82, 147)
-
-[node name="Npc" parent="." instance=ExtResource("6_pxgdt")]
-position = Vector2(68, -26)
-
-[node name="Npc2" parent="." instance=ExtResource("6_pxgdt")]
-position = Vector2(40, 59)
