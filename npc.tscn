@@ -1,15 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://8g1veysh6lp3"]
+[gd_scene load_steps=6 format=3 uid="uid://8g1veysh6lp3"]
 
+[ext_resource type="Script" path="res://npc.gd" id="1_mxfie"]
 [ext_resource type="Texture2D" uid="uid://cjdxrj5j1783" path="res://Scenes/priest.png" id="1_w2we6"]
+[ext_resource type="Script" path="res://Scenes/Interaction/interaction_area.gd" id="2_403h8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_66wi0"]
 radius = 12.0
 height = 64.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ayx1k"]
+radius = 33.0
+
 [node name="NPC" type="CharacterBody2D"]
+script = ExtResource("1_mxfie")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_w2we6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_66wi0")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+script = ExtResource("2_403h8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 28)
+shape = SubResource("CircleShape2D_ayx1k")
+
+[connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="_on_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="InteractionArea" method="_on_body_exited"]
