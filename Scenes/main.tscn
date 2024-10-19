@@ -14,6 +14,10 @@ y_sort_enabled = true
 color = Color(0.0403748, 0.075197, 0.0820313, 1)
 
 [node name="NPC" parent="." instance=ExtResource("2_ob26p")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(186, 247)
+scale = Vector2(0.7, 0.7)
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_ssn54")]
 z_index = 1
