@@ -205,7 +205,6 @@ _data = {
 y_sort_enabled = true
 
 [node name="CanvasModulate" parent="." instance=ExtResource("1_cwatj")]
-visible = false
 color = Color(0.0403748, 0.075197, 0.0820313, 1)
 
 [node name="GraveDigger" parent="." instance=ExtResource("2_ob26p")]
