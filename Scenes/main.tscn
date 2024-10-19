@@ -1,11 +1,88 @@
-[gd_scene load_steps=7 format=4 uid="uid://ct5a81kc8suuw"]
+[gd_scene load_steps=14 format=4 uid="uid://ct5a81kc8suuw"]
 
 [ext_resource type="PackedScene" uid="uid://clflyn1b5u5hp" path="res://Scenes/canvas_modulate.tscn" id="1_cwatj"]
 [ext_resource type="PackedScene" uid="uid://6qvylrim0xte" path="res://Scenes/Tilemap/tile_map_layer_ground_floor.tscn" id="1_rv4jy"]
 [ext_resource type="PackedScene" uid="uid://8g1veysh6lp3" path="res://Scenes/NPC/npc.tscn" id="2_ob26p"]
 [ext_resource type="PackedScene" uid="uid://yspo5jyeg5s0" path="res://Scenes/Character/character_body_2d.tscn" id="2_ssn54"]
+[ext_resource type="Texture2D" uid="uid://vi51v4nwwaqj" path="res://Scenes/NPC/siraso_sheet.png" id="3_1gldv"]
 [ext_resource type="PackedScene" uid="uid://byqsaebfr2wqt" path="res://Scenes/Tilemap/tile_map_layer_first_floor.tscn" id="3_e2lyt"]
 [ext_resource type="PackedScene" uid="uid://bb2ai4g5a33a2" path="res://Scenes/Item/item.tscn" id="5_57x4r"]
+
+[sub_resource type="Animation" id="Animation_rnp6j"]
+resource_name = "Idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 15]
+}
+
+[sub_resource type="Animation" id="Animation_prvfc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qu3ar"]
+_data = {
+"Idle": SubResource("Animation_rnp6j"),
+"RESET": SubResource("Animation_prvfc")
+}
+
+[sub_resource type="Animation" id="Animation_cfnj3"]
+resource_name = "Idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 23]
+}
+
+[sub_resource type="Animation" id="Animation_0gtvd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_imxhp"]
+_data = {
+"Idle": SubResource("Animation_cfnj3"),
+"RESET": SubResource("Animation_0gtvd")
+}
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
@@ -13,11 +90,33 @@ y_sort_enabled = true
 [node name="CanvasModulate" parent="." instance=ExtResource("1_cwatj")]
 color = Color(0.0403748, 0.075197, 0.0820313, 1)
 
-[node name="NPC" parent="." instance=ExtResource("2_ob26p")]
+[node name="Priest1" parent="." instance=ExtResource("2_ob26p")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(186, 247)
 scale = Vector2(0.7, 0.7)
+
+[node name="Priest1Animation" type="AnimationPlayer" parent="Priest1"]
+libraries = {
+"": SubResource("AnimationLibrary_qu3ar")
+}
+autoplay = "Idle"
+
+[node name="GraveDigger" parent="." instance=ExtResource("2_ob26p")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(239, 245)
+scale = Vector2(0.7, 0.7)
+
+[node name="Sprite2D" parent="GraveDigger" index="0"]
+texture = ExtResource("3_1gldv")
+hframes = 24
+
+[node name="GraveDiggerAnimation" type="AnimationPlayer" parent="GraveDigger"]
+libraries = {
+"": SubResource("AnimationLibrary_imxhp")
+}
+autoplay = "Idle"
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_ssn54")]
 z_index = 1
@@ -38,3 +137,6 @@ metadata/_edit_lock_ = true
 [node name="Item" parent="." instance=ExtResource("5_57x4r")]
 y_sort_enabled = true
 position = Vector2(-131, 120)
+
+[editable path="Priest1"]
+[editable path="GraveDigger"]

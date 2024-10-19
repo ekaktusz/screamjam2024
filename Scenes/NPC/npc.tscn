@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://8g1veysh6lp3"]
+[gd_scene load_steps=6 format=3 uid="uid://8g1veysh6lp3"]
 
 [ext_resource type="Script" path="res://Scenes/NPC/npc.gd" id="1_mxfie"]
 [ext_resource type="Texture2D" uid="uid://cq5gyivb7gphg" path="res://Scenes/NPC/pap_1_sheet.png" id="2_4qi2r"]
@@ -10,44 +10,6 @@ height = 64.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ayx1k"]
 radius = 33.0
-
-[sub_resource type="Animation" id="Animation_cfbw3"]
-resource_name = "Idle"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0, 15]
-}
-
-[sub_resource type="Animation" id="Animation_8f24m"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_63v5s"]
-_data = {
-"Idle": SubResource("Animation_cfbw3"),
-"RESET": SubResource("Animation_8f24m")
-}
 
 [node name="NPC" type="CharacterBody2D"]
 script = ExtResource("1_mxfie")
@@ -66,12 +28,6 @@ action_name = "talk"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(0, 28)
 shape = SubResource("CircleShape2D_ayx1k")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_63v5s")
-}
-autoplay = "Idle"
 
 [connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="_on_body_entered"]
 [connection signal="body_exited" from="InteractionArea" to="InteractionArea" method="_on_body_exited"]
