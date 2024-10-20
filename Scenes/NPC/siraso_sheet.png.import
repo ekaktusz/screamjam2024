@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjdxrj5j1783"
-path="res://.godot/imported/priest.png-9bf0043c91103d66b820a47bd5722642.ctex"
+uid="uid://vi51v4nwwaqj"
+path="res://.godot/imported/siraso_sheet.png-60d56914f3380561c83f0c9e7821d8d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/NPC/priest.png"
-dest_files=["res://.godot/imported/priest.png-9bf0043c91103d66b820a47bd5722642.ctex"]
+source_file="res://Scenes/NPC/siraso_sheet.png"
+dest_files=["res://.godot/imported/siraso_sheet.png-60d56914f3380561c83f0c9e7821d8d9.ctex"]
 
 [params]
 

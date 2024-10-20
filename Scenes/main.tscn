@@ -1,13 +1,208 @@
-[gd_scene load_steps=9 format=4 uid="uid://ct5a81kc8suuw"]
+[gd_scene load_steps=29 format=4 uid="uid://ct5a81kc8suuw"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_13k28"]
 [ext_resource type="PackedScene" uid="uid://clflyn1b5u5hp" path="res://Scenes/canvas_modulate.tscn" id="1_cwatj"]
-[ext_resource type="PackedScene" uid="uid://cojbcgpbmq6ui" path="res://Scenes/Tilemap/tile_map_layer_ground_floor.tscn" id="1_rv4jy"]
+[ext_resource type="PackedScene" uid="uid://6qvylrim0xte" path="res://Scenes/Tilemap/tile_map_layer_ground_floor.tscn" id="1_rv4jy"]
+[ext_resource type="PackedScene" uid="uid://8g1veysh6lp3" path="res://Scenes/NPC/npc.tscn" id="2_ob26p"]
 [ext_resource type="PackedScene" uid="uid://yspo5jyeg5s0" path="res://Scenes/Character/character_body_2d.tscn" id="2_ssn54"]
-[ext_resource type="PackedScene" uid="uid://u7poiyy58cwy" path="res://Scenes/Tilemap/tile_map_layer_first_floor.tscn" id="3_e2lyt"]
+[ext_resource type="Texture2D" uid="uid://vi51v4nwwaqj" path="res://Scenes/NPC/siraso_sheet.png" id="3_1gldv"]
+[ext_resource type="PackedScene" uid="uid://byqsaebfr2wqt" path="res://Scenes/Tilemap/tile_map_layer_first_floor.tscn" id="3_e2lyt"]
+[ext_resource type="Texture2D" uid="uid://1lb00m3bx60k" path="res://Scenes/NPC/pap_2_sheet.png" id="4_x0t26"]
+[ext_resource type="PackedScene" uid="uid://bxiwono6ohhtn" path="res://Scenes/NPC/non_talking_npc.tscn" id="5_6x7wa"]
+[ext_resource type="Texture2D" uid="uid://bestvgivwwuih" path="res://Scenes/NPC/ministrans_fiu_sheet.png" id="6_qvkuu"]
 [ext_resource type="PackedScene" uid="uid://7sm8u7xuo3a1" path="res://Scenes/Inventory/Items/Head/Head.tscn" id="7_trbra"]
 [ext_resource type="PackedScene" uid="uid://c744j3ron8kr2" path="res://Scenes/Inventory/Items/Torso/Torso.tscn" id="8_jelk7"]
 [ext_resource type="PackedScene" uid="uid://bt68qqxxcldhu" path="res://Scenes/Inventory/Items/Leg/Leg.tscn" id="8_lsot4"]
+
+[sub_resource type="Animation" id="Animation_cfnj3"]
+resource_name = "Idle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 23]
+}
+
+[sub_resource type="Animation" id="Animation_0gtvd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_imxhp"]
+_data = {
+"Idle": SubResource("Animation_cfnj3"),
+"RESET": SubResource("Animation_0gtvd")
+}
+
+[sub_resource type="Animation" id="Animation_agcvd"]
+resource_name = "Idle"
+length = 3.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 27]
+}
+
+[sub_resource type="Animation" id="Animation_gq4wv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oafdt"]
+_data = {
+"Idle": SubResource("Animation_agcvd"),
+"RESET": SubResource("Animation_gq4wv")
+}
+
+[sub_resource type="Animation" id="Animation_rnp6j"]
+resource_name = "Idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 15]
+}
+
+[sub_resource type="Animation" id="Animation_prvfc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qu3ar"]
+_data = {
+"Idle": SubResource("Animation_rnp6j"),
+"RESET": SubResource("Animation_prvfc")
+}
+
+[sub_resource type="Animation" id="Animation_elva2"]
+resource_name = "Idle"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 19]
+}
+
+[sub_resource type="Animation" id="Animation_wdlu4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xknwj"]
+_data = {
+"Idle": SubResource("Animation_elva2"),
+"RESET": SubResource("Animation_wdlu4")
+}
+
+[sub_resource type="Animation" id="Animation_x6vop"]
+resource_name = "Idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 31]
+}
+
+[sub_resource type="Animation" id="Animation_8pf8k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5ak7c"]
+_data = {
+"Idle": SubResource("Animation_x6vop"),
+"RESET": SubResource("Animation_8pf8k")
+}
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
@@ -15,8 +210,64 @@ position = Vector2(706, 450)
 script = ExtResource("1_13k28")
 
 [node name="CanvasModulate" parent="." instance=ExtResource("1_cwatj")]
-visible = false
-color = Color(0.0890808, 0.0972819, 0.164063, 1)
+color = Color(0.0403748, 0.075197, 0.0820313, 1)
+
+[node name="GraveDigger" parent="." instance=ExtResource("2_ob26p")]
+position = Vector2(320, 143)
+
+[node name="Sprite2D" parent="GraveDigger" index="0"]
+texture = ExtResource("3_1gldv")
+hframes = 24
+
+[node name="GraveDiggerAnimation" type="AnimationPlayer" parent="GraveDigger"]
+libraries = {
+"": SubResource("AnimationLibrary_imxhp")
+}
+autoplay = "Idle"
+
+[node name="Dog" parent="." instance=ExtResource("5_6x7wa")]
+position = Vector2(294, 132)
+
+[node name="DogAnimation" type="AnimationPlayer" parent="Dog"]
+libraries = {
+"": SubResource("AnimationLibrary_oafdt")
+}
+autoplay = "Idle"
+
+[node name="Priest1" parent="." instance=ExtResource("2_ob26p")]
+position = Vector2(187, 255)
+
+[node name="Priest1Animation" type="AnimationPlayer" parent="Priest1"]
+libraries = {
+"": SubResource("AnimationLibrary_qu3ar")
+}
+autoplay = "Idle"
+
+[node name="Priest2" parent="." instance=ExtResource("2_ob26p")]
+position = Vector2(168, 248)
+
+[node name="Sprite2D" parent="Priest2" index="0"]
+texture = ExtResource("4_x0t26")
+hframes = 20
+
+[node name="Priest2Animation" type="AnimationPlayer" parent="Priest2"]
+libraries = {
+"": SubResource("AnimationLibrary_xknwj")
+}
+autoplay = "Idle"
+
+[node name="MinisterBoy" parent="." instance=ExtResource("5_6x7wa")]
+position = Vector2(201, 263)
+
+[node name="Sprite2D" parent="MinisterBoy" index="0"]
+texture = ExtResource("6_qvkuu")
+hframes = 32
+
+[node name="MinisterBoyAnimation" type="AnimationPlayer" parent="MinisterBoy"]
+libraries = {
+"": SubResource("AnimationLibrary_5ak7c")
+}
+autoplay = "Idle"
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_ssn54")]
 z_index = 1
@@ -50,3 +301,9 @@ position = Vector2(4, 173)
 [connection signal="item_collected" from="Head" to="Player" method="_on_item_collected"]
 [connection signal="item_collected" from="Leg" to="Player" method="_on_item_collected"]
 [connection signal="item_collected" from="Torso" to="Player" method="_on_item_collected"]
+
+[editable path="GraveDigger"]
+[editable path="Dog"]
+[editable path="Priest1"]
+[editable path="Priest2"]
+[editable path="MinisterBoy"]
