@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bibciqajbuv6o"]
 
 [ext_resource type="Texture2D" uid="uid://bestvgivwwuih" path="res://Scenes/NPC/ministrans_fiu_sheet.png" id="1_erxss"]
-[ext_resource type="PackedScene" uid="uid://bxiwono6ohhtn" path="res://Scenes/NPC/non_talking_npc.tscn" id="1_wgsad"]
+[ext_resource type="PackedScene" path="res://Scenes/NPC/non_talking_npc.tscn" id="1_wgsad"]
 
 [sub_resource type="Animation" id="Animation_x6vop"]
 resource_name = "Idle"
