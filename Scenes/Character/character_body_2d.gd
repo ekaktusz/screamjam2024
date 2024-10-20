@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 @onready var inventory: Control = $CanvasLayer/Inventory
+@onready var point_light_2d_no_shadows: PointLight2D = $Sprite2D/PointLight2D2
+@onready var point_light_2d: PointLight2D = $Sprite2D/PointLight2D
+
 const SPEED = 150
 
 const UP_RIGHT: Vector2 = Vector2(0.707107, -0.707107)
@@ -46,3 +49,8 @@ func _input(event):
 
 func _on_item_collected(interacted_name) -> void:
 	inventory.collect_item(interacted_name)
+
+func switch_player_light():
+	point_light_2d.enabled = !point_light_2d.enabled
+	point_light_2d_no_shadows.enabled = !point_light_2d_no_shadows.enabled
+	

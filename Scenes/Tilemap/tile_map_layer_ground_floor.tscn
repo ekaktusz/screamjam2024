@@ -1,9 +1,9 @@
 [gd_scene load_steps=4 format=4 uid="uid://6qvylrim0xte"]
 
-[ext_resource type="Texture2D" uid="uid://kqeabg8o2g01" path="res://Scenes/Tilemap/Tilesets/scream_tilemap_v002.png" id="1_ph2ow"]
+[ext_resource type="Texture2D" uid="uid://b47cr6e5leg4y" path="res://Scenes/Tilemap/Tilesets/scream_tilemap_v003.png" id="1_ibntt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l7blw"]
-texture = ExtResource("1_ph2ow")
+texture = ExtResource("1_ibntt")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, -16)
@@ -23,6 +23,24 @@ texture_region_size = Vector2i(64, 64)
 0:7/0/texture_origin = Vector2i(0, -16)
 0:8/0 = 0
 0:8/0/texture_origin = Vector2i(0, -16)
+1:5/0 = 0
+1:5/0/texture_origin = Vector2i(0, -16)
+1:6/0 = 0
+1:6/0/texture_origin = Vector2i(0, -16)
+1:7/0 = 0
+1:7/0/texture_origin = Vector2i(0, -16)
+1:8/0 = 0
+1:8/0/texture_origin = Vector2i(0, -16)
+0:9/0 = 0
+0:9/0/texture_origin = Vector2i(0, -16)
+1:9/0 = 0
+1:9/0/texture_origin = Vector2i(0, -16)
+0:10/0 = 0
+0:10/0/texture_origin = Vector2i(0, -16)
+1:10/0 = 0
+1:10/0/texture_origin = Vector2i(0, -16)
+0:11/0 = 0
+0:11/0/texture_origin = Vector2i(0, -16)
 
 [sub_resource type="TileSet" id="TileSet_csq0v"]
 tile_shape = 1

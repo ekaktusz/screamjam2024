@@ -6,8 +6,8 @@ const base_text = "[E] to "
 var active_areas = []
 var can_interact = true
 
-func set_player(player) -> void:
-	self.player = player
+func set_player(playerNode) -> void:
+	self.player = playerNode
 
 func register_area(area: InteractionArea):
 	active_areas.push_back(area)
