@@ -1,71 +1,63 @@
-[gd_scene load_steps=14 format=4 uid="uid://ct5a81kc8suuw"]
+[gd_scene load_steps=12 format=3 uid="uid://ct5a81kc8suuw"]
 
-[ext_resource type="Script" path="res://Scenes/Screens/Game/game.gd" id="1_5iehk"]
-[ext_resource type="PackedScene" uid="uid://clflyn1b5u5hp" path="res://Scenes/canvas_modulate.tscn" id="2_hputl"]
-[ext_resource type="PackedScene" uid="uid://bqjxavh6ofayf" path="res://Scenes/NPC/Npcs/GraveDigger.tscn" id="3_6dkx5"]
-[ext_resource type="PackedScene" uid="uid://48ocntxl43oe" path="res://Scenes/NPC/Npcs/Dog.tscn" id="4_iocvf"]
-[ext_resource type="PackedScene" uid="uid://bpgf0ho8ohbeg" path="res://Scenes/NPC/Npcs/Priest1.tscn" id="5_p26ka"]
-[ext_resource type="PackedScene" uid="uid://t24335gumm23" path="res://Scenes/NPC/Npcs/Priest2.tscn" id="6_4t1oc"]
-[ext_resource type="PackedScene" uid="uid://bibciqajbuv6o" path="res://Scenes/NPC/Npcs/MinisterBoy.tscn" id="7_dl6q8"]
-[ext_resource type="PackedScene" uid="uid://yspo5jyeg5s0" path="res://Scenes/Character/character_body_2d.tscn" id="8_7pc8t"]
-[ext_resource type="PackedScene" uid="uid://6qvylrim0xte" path="res://Scenes/Tilemap/tile_map_layer_ground_floor.tscn" id="9_0heqf"]
-[ext_resource type="PackedScene" uid="uid://byqsaebfr2wqt" path="res://Scenes/Tilemap/tile_map_layer_first_floor.tscn" id="10_odxh3"]
-[ext_resource type="PackedScene" uid="uid://7sm8u7xuo3a1" path="res://Scenes/Inventory/Items/Head/Head.tscn" id="11_jvcmk"]
-[ext_resource type="PackedScene" uid="uid://bt68qqxxcldhu" path="res://Scenes/Inventory/Items/Leg/Leg.tscn" id="12_qtgls"]
-[ext_resource type="PackedScene" uid="uid://c744j3ron8kr2" path="res://Scenes/Inventory/Items/Torso/Torso.tscn" id="13_fj5p0"]
+[ext_resource type="Script" path="res://Scenes/main.gd" id="1_13k28"]
+[ext_resource type="PackedScene" uid="uid://6qvylrim0xte" path="res://Scenes/Tilemap/tile_map_layer_ground_floor.tscn" id="1_rv4jy"]
+[ext_resource type="PackedScene" uid="uid://yspo5jyeg5s0" path="res://Scenes/Character/character_body_2d.tscn" id="2_ssn54"]
+[ext_resource type="PackedScene" uid="uid://byqsaebfr2wqt" path="res://Scenes/Tilemap/tile_map_layer_first_floor.tscn" id="3_e2lyt"]
+[ext_resource type="PackedScene" uid="uid://bpgf0ho8ohbeg" path="res://Scenes/NPC/Npcs/Priest1.tscn" id="6_pc0e0"]
+[ext_resource type="PackedScene" uid="uid://t24335gumm23" path="res://Scenes/NPC/Npcs/Priest2.tscn" id="7_qlpmb"]
+[ext_resource type="PackedScene" uid="uid://7sm8u7xuo3a1" path="res://Scenes/Inventory/Items/Head/Head.tscn" id="7_trbra"]
+[ext_resource type="PackedScene" uid="uid://c744j3ron8kr2" path="res://Scenes/Inventory/Items/Torso/Torso.tscn" id="8_jelk7"]
+[ext_resource type="PackedScene" uid="uid://bt68qqxxcldhu" path="res://Scenes/Inventory/Items/Leg/Leg.tscn" id="8_lsot4"]
+[ext_resource type="PackedScene" uid="uid://bibciqajbuv6o" path="res://Scenes/NPC/Npcs/MinisterBoy.tscn" id="8_lwj13"]
+[ext_resource type="PackedScene" uid="uid://uf62v7rjeu3b" path="res://Scenes/Graveyard/graveyard.tscn" id="12_hxdip"]
 
-[node name="Game" type="Node2D"]
+[node name="Main" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(706, 450)
-script = ExtResource("1_5iehk")
+script = ExtResource("1_13k28")
 
-[node name="CanvasModulate" parent="." instance=ExtResource("2_hputl")]
-visible = false
-color = Color(0.0403748, 0.075197, 0.0820313, 1)
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(0.0791746, 0.0546794, 0.222656, 1)
+energy = 0.75
+blend_mode = 2
+range_z_max = -1
 
-[node name="GraveDigger" parent="." instance=ExtResource("3_6dkx5")]
-position = Vector2(312, 139)
-
-[node name="Dog" parent="." instance=ExtResource("4_iocvf")]
-position = Vector2(351, 163)
-
-[node name="Priest1" parent="." instance=ExtResource("5_p26ka")]
-position = Vector2(187, 260)
-
-[node name="Priest2" parent="." instance=ExtResource("6_4t1oc")]
-position = Vector2(166, 249)
-
-[node name="MinisterBoy" parent="." instance=ExtResource("7_dl6q8")]
-position = Vector2(206, 273)
-
-[node name="Player" parent="." groups=["player"] instance=ExtResource("8_7pc8t")]
+[node name="Player" parent="." groups=["player"] instance=ExtResource("2_ssn54")]
 z_index = 1
 y_sort_enabled = true
 
-[node name="TileMapLayerGroundFloor" parent="." instance=ExtResource("9_0heqf")]
-position = Vector2(187, 22)
-tile_map_data = PackedByteArray("AAD7//3/AAABAAIAAAD8//7/AAABAAIAAAD9//7/AAABAAIAAAD+////AAABAAIAAAD/////AAABAAIAAAD+//z/AAABAAIAAAD9//z/AAABAAIAAAD8//3/AAABAAIAAAABAP3/AAABAAIAAAD///z/AAABAAIAAAD+//3/AAABAAIAAAD9//3/AAABAAIAAAD+//7/AAABAAIAAAD///3/AAABAAIAAAAAAP3/AAABAAIAAAAAAP7/AAABAAIAAAD///7/AAABAAIAAAAAAP//AAABAAIAAAABAP7/AAABAAIAAAACAP7/AAABAAIAAAADAP7/AAABAAIAAAACAP//AAABAAIAAAAAAAAAAAABAAIAAAABAP//AAABAAIAAAD//wAAAAABAAIAAAD+/wAAAAABAAIAAAD9////AAABAAIAAAD8////AAABAAIAAAD7//7/AAABAAIAAAD6////AAABAAIAAAD7////AAABAAIAAAD5////AAABAAIAAAD6/wAAAAABAAIAAAD7/wAAAAABAAIAAAD8/wEAAAABAAIAAAD9/wAAAAABAAIAAAD8/wAAAAABAAIAAAD+/wEAAAABAAIAAAD//wEAAAABAAIAAAAAAAEAAAABAAIAAAABAAAAAAABAAIAAAACAAAAAAABAAIAAAADAP//AAABAAIAAAAEAP//AAABAAIAAAD6//7/AAABAAIAAAD5//7/AAABAAIAAAD4////AAABAAIAAAD4/wAAAAABAAIAAAD5/wAAAAABAAIAAAD6/wEAAAABAAIAAAD7/wEAAAABAAIAAAD8/wIAAAABAAIAAAD9/wEAAAABAAIAAAD+/wIAAAABAAIAAAD//wIAAAABAAIAAAD9/wIAAAABAAIAAAD+/wMAAAABAAIAAAAAAAIAAAABAAIAAAAFAP//AAABAAIAAAAEAAAAAAABAAIAAAADAAAAAAABAAIAAAACAAEAAAABAAIAAAABAAEAAAABAAIAAAD9/wMAAAABAAIAAAD8/wMAAAABAAIAAAD7/wIAAAABAAIAAAD6/wIAAAABAAIAAAD5/wEAAAABAAIAAAD4/wEAAAABAAIAAAD3/wAAAAABAAIAAAD2/wAAAAABAAIAAAD3////AAABAAIAAAD1/wAAAAABAAIAAAD0/wEAAAABAAIAAADz/wEAAAABAAIAAADy/wIAAAABAAIAAADx/wIAAAABAAIAAADw/wMAAAABAAIAAADx/wMAAAABAAIAAADy/wQAAAABAAIAAADz/wQAAAABAAIAAAD0/wUAAAABAAIAAAD1/wUAAAABAAIAAAD2/wYAAAABAAIAAAD3/wYAAAABAAIAAAD4/wcAAAABAAIAAAD5/wYAAAABAAIAAAD6/wYAAAABAAIAAAD7/wUAAAABAAIAAAD8/wUAAAABAAIAAAD9/wQAAAABAAIAAAD+/wQAAAABAAIAAAD//wMAAAABAAIAAAAAAAMAAAABAAIAAAABAAIAAAABAAIAAAACAAIAAAABAAIAAAADAAEAAAABAAIAAAAEAAEAAAABAAIAAAAFAAAAAAABAAIAAAAGAAAAAAABAAIAAAALAAIAAAABAAIAAAAMAAMAAAABAAIAAAANAAMAAAABAAIAAAAMAAQAAAABAAIAAAALAAQAAAABAAIAAAAKAAUAAAABAAIAAAAJAAUAAAABAAIAAAAIAAYAAAABAAIAAAAHAAYAAAABAAIAAAAGAAcAAAABAAIAAAAFAAcAAAABAAIAAAAEAAgAAAABAAIAAAADAAgAAAABAAIAAAABAAkAAAABAAIAAAAAAAkAAAABAAIAAAD//wgAAAABAAIAAAD+/wgAAAABAAIAAAD9/wcAAAABAAIAAAD8/wcAAAABAAIAAAD7/wYAAAABAAIAAAD5/wcAAAABAAIAAAD6/wgAAAABAAIAAAD7/wgAAAABAAIAAAD8/wkAAAABAAIAAAD9/wkAAAABAAIAAAD+/woAAAABAAIAAAD//woAAAABAAIAAAAAAAoAAAABAAIAAAACAAkAAAABAAIAAAD6/wcAAAABAAIAAAD7/wcAAAABAAIAAAD8/wgAAAABAAIAAAD9/wgAAAABAAIAAAD+/wkAAAABAAIAAAD//wkAAAABAAIAAAD3/wMAAAABAAIAAAD4/wMAAAABAAIAAAD5/wIAAAABAAIAAAD4/wIAAAABAAIAAAD3/wEAAAABAAIAAAD2/wEAAAABAAIAAAD1/wEAAAABAAIAAAD0/wIAAAABAAIAAADz/wIAAAABAAIAAADy/wMAAAABAAIAAADz/wMAAAABAAIAAAD0/wMAAAABAAIAAAD1/wIAAAABAAIAAAD2/wIAAAABAAIAAAD3/wIAAAABAAIAAAD2/wMAAAABAAIAAAD1/wMAAAABAAIAAAD0/wQAAAABAAIAAAD1/wQAAAABAAIAAAD2/wQAAAABAAIAAAD3/wQAAAABAAIAAAD4/wQAAAABAAIAAAD5/wMAAAABAAIAAAD6/wMAAAABAAIAAAD7/wMAAAABAAIAAAD6/wQAAAABAAIAAAD5/wQAAAABAAIAAAD4/wUAAAABAAIAAAD3/wUAAAABAAIAAAD2/wUAAAABAAIAAAD4/wYAAAABAAIAAAD5/wUAAAABAAIAAAD6/wUAAAABAAIAAAD7/wQAAAABAAIAAAD8/wQAAAABAAIAAAABAAQAAAABAAIAAAACAAQAAAABAAIAAAADAAMAAAABAAIAAAAEAAMAAAABAAIAAAAFAAIAAAABAAIAAAAGAAIAAAABAAIAAAAHAAEAAAABAAIAAAAIAAEAAAABAAIAAAAHAAAAAAABAAIAAAAGAAEAAAABAAIAAAAFAAEAAAABAAIAAAAEAAIAAAABAAIAAAADAAIAAAABAAIAAAACAAMAAAABAAIAAAABAAMAAAABAAIAAAAAAAQAAAABAAIAAAD//wQAAAABAAIAAAD+/wUAAAABAAIAAAD9/wUAAAABAAIAAAD8/wYAAAABAAIAAAD9/wYAAAABAAIAAAD+/wYAAAABAAIAAAD//wUAAAABAAIAAAAAAAUAAAABAAIAAAABAAUAAAABAAIAAAACAAUAAAABAAIAAAADAAQAAAABAAIAAAAEAAQAAAABAAIAAAAFAAMAAAABAAIAAAAGAAMAAAABAAIAAAAHAAIAAAABAAIAAAAIAAIAAAABAAIAAAAJAAEAAAABAAIAAAAKAAIAAAABAAIAAAAJAAIAAAABAAIAAAAIAAMAAAABAAIAAAAHAAMAAAABAAIAAAAGAAQAAAABAAIAAAAFAAQAAAABAAIAAAAEAAUAAAABAAIAAAADAAUAAAABAAIAAAACAAYAAAABAAIAAAABAAYAAAABAAIAAAAAAAYAAAABAAIAAAD//wYAAAABAAIAAAD+/wcAAAABAAIAAAD//wcAAAABAAIAAAAAAAcAAAABAAIAAAABAAcAAAABAAIAAAACAAcAAAABAAIAAAADAAYAAAABAAIAAAAEAAYAAAABAAIAAAAFAAUAAAABAAIAAAAGAAUAAAABAAIAAAAHAAQAAAABAAIAAAAIAAQAAAABAAIAAAAJAAMAAAABAAIAAAAKAAMAAAABAAIAAAALAAMAAAABAAIAAAAKAAQAAAABAAIAAAAJAAQAAAABAAIAAAAIAAUAAAABAAIAAAAHAAUAAAABAAIAAAAGAAYAAAABAAIAAAAFAAYAAAABAAIAAAAEAAcAAAABAAIAAAADAAcAAAABAAIAAAACAAgAAAABAAIAAAABAAgAAAABAAIAAAAAAAgAAAABAAIAAAA=")
-metadata/_edit_lock_ = true
+[node name="Priest1" parent="." instance=ExtResource("6_pc0e0")]
+position = Vector2(187, 260)
 
-[node name="TileMapLayerFirstFloor" parent="." instance=ExtResource("10_odxh3")]
-z_index = 1
-position = Vector2(187, 22)
-tile_map_data = PackedByteArray("AAD8/wIAAAAAAAQAAAD7/wEAAAAAAAQAAAD6/wEAAAAAAAQAAAD3////AAAAAAQAAAD2////AAAAAAQAAAD3//7/AAAAAAQAAAD4//7/AAAAAAQAAAD5//3/AAAAAAQAAAD6//3/AAAAAAQAAAD7//z/AAAAAAQAAAD8//z/AAAAAAQAAAD9//v/AAAAAAQAAAD+//v/AAAAAAQAAAD///v/AAAAAAQAAAAAAPz/AAAAAAQAAAABAPz/AAAAAAQAAAACAP3/AAAAAAQAAAADAP3/AAAAAAQAAAAEAP7/AAAAAAQAAAAFAP7/AAAAAAQAAAAEAP//AAAAAAQAAAADAP//AAAAAAQAAAACAAAAAAAAAAQAAAABAAAAAAAAAAQAAAAAAAEAAAAAAAQAAAD//wEAAAAAAAQAAAD+/wIAAAAAAAQAAAD9/wIAAAAAAAQAAAD1////AAAAAAQAAAD0/wAAAAAAAAQAAADz/wAAAAAAAAQAAADy/wEAAAAAAAQAAADx/wEAAAAAAAQAAADw/wIAAAAAAAQAAADx/wIAAAAAAAQAABDy/wMAAAAAAAQAABDz/wMAAAAAAAQAABD0/wQAAAAAAAQAABD1/wQAAAAAAAQAABD2/wUAAAAAAAQAABD3/wUAAAAAAAQAABD4/wYAAAAAAAQAABD5/wYAAAAAAAQAABD6/wcAAAAAAAQAABD7/wcAAAAAAAQAABD8/wgAAAAAAAQAABD9/wgAAAAAAAQAABD+/wkAAAAAAAQAABD//wkAAAAAAAQAABAAAAkAAAAAAAQAABABAAgAAAAAAAQAABACAAgAAAAAAAQAABADAAcAAAAAAAQAABAEAAcAAAAAAAQAABAFAAYAAAAAAAQAABAGAAYAAAAAAAQAABAHAAUAAAAAAAQAABAIAAUAAAAAAAQAABAJAAQAAAAAAAQAABAKAAQAAAAAAAQAABALAAMAAAAAAAQAABAMAAMAAAAAAAQAABANAAIAAAAAAAQAABAGAP//AAAAAAQAABAHAP//AAAAAAQAABAIAAAAAAAAAAQAABAJAAAAAAAAAAQAABAKAAEAAAAAAAQAABALAAEAAAAAAAQAABAMAAIAAAAAAAQAABAEAAIAAAAAAAQAAAAFAAIAAAAAAAQAAAD//wUAAAADAAQAAAD3/wIAAAAAAAQAAAA=")
-metadata/_edit_lock_ = true
+[node name="Priest2" parent="." instance=ExtResource("7_qlpmb")]
+position = Vector2(166, 249)
 
-[node name="Head" parent="." instance=ExtResource("11_jvcmk")]
+[node name="MinisterBoy" parent="." instance=ExtResource("8_lwj13")]
+position = Vector2(206, 273)
+
+[node name="Head" parent="." instance=ExtResource("7_trbra")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(390, 66)
 
-[node name="Leg" parent="." instance=ExtResource("12_qtgls")]
+[node name="Leg" parent="." instance=ExtResource("8_lsot4")]
 z_index = 1
 position = Vector2(259, 223)
 
-[node name="Torso" parent="." instance=ExtResource("13_fj5p0")]
+[node name="Torso" parent="." instance=ExtResource("8_jelk7")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(4, 173)
+
+[node name="Graveyard" parent="." instance=ExtResource("12_hxdip")]
+y_sort_enabled = true
+
+[node name="TileMapLayerFirstFloor" parent="." instance=ExtResource("3_e2lyt")]
+tile_map_data = PackedByteArray(0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 4, 0, 0, 0)
+
+[node name="TileMapGroundFloor" parent="." instance=ExtResource("1_rv4jy")]
+tile_map_data = PackedByteArray()
 
 [connection signal="item_collected" from="Head" to="Player" method="_on_item_collected"]
 [connection signal="item_collected" from="Leg" to="Player" method="_on_item_collected"]
