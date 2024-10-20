@@ -8,8 +8,8 @@ script = ExtResource("1_uuvqx")
 
 [node name="placeholder_background" type="Sprite2D" parent="."]
 modulate = Color(0.466181, 0.466181, 0.466181, 1)
-position = Vector2(990, 545)
-scale = Vector2(1.93164, 1.06055)
+position = Vector2(990, 539.999)
+scale = Vector2(1.93359, 1.05469)
 texture = ExtResource("2_esu7c")
 
 [node name="StartButton" type="Button" parent="."]
