@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c744j3ron8kr2"]
+
+[ext_resource type="PackedScene" uid="uid://bb2ai4g5a33a2" path="res://Scenes/Item/item.tscn" id="1_yajmc"]
+[ext_resource type="Texture2D" uid="uid://dwp1mkvo3jgq7" path="res://Scenes/Inventory/assets/torso.png" id="2_fymlq"]
+
+[node name="Torso" instance=ExtResource("1_yajmc")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_fymlq")

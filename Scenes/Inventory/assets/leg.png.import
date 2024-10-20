@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw8781gdxv45y"
-path="res://.godot/imported/bodypart.png-12943095909253a4b17a139a3e68c6e1.ctex"
+uid="uid://dts1usnm51icl"
+path="res://.godot/imported/leg.png-90ea5c132206ca93d4409e8569c7925a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Item/bodypart.png"
-dest_files=["res://.godot/imported/bodypart.png-12943095909253a4b17a139a3e68c6e1.ctex"]
+source_file="res://Scenes/Inventory/assets/leg.png"
+dest_files=["res://.godot/imported/leg.png-90ea5c132206ca93d4409e8569c7925a.ctex"]
 
 [params]
 
