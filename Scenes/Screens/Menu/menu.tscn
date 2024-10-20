@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3xmvldpcnqb3"]
+
+[ext_resource type="Script" path="res://Scenes/Screens/Menu/menu.gd" id="1_uuvqx"]
+[ext_resource type="Texture2D" uid="uid://bgffo5n86tdwu" path="res://Scenes/Screens/Menu/placeholder_background.jpg" id="2_esu7c"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_uuvqx")
+
+[node name="placeholder_background" type="Sprite2D" parent="."]
+modulate = Color(0.466181, 0.466181, 0.466181, 1)
+position = Vector2(990, 545)
+scale = Vector2(1.93164, 1.06055)
+texture = ExtResource("2_esu7c")
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 527.0
+offset_top = 686.0
+offset_right = 1455.0
+offset_bottom = 828.0
+theme_override_font_sizes/font_size = 40
+text = "START GAME"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 292.0
+offset_top = 448.0
+offset_right = 1687.0
+offset_bottom = 572.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 90
+text = "Untitled Scream Jam Game 2024"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
