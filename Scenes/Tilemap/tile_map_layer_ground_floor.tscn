@@ -1,45 +1,28 @@
 [gd_scene load_steps=4 format=4 uid="uid://6qvylrim0xte"]
 
-[ext_resource type="Texture2D" uid="uid://brcijjc0xw7i0" path="res://Scenes/Tilemap/Tilesets/Isometric_64_Sprite-0001.png" id="1_tt2uy"]
+[ext_resource type="Texture2D" uid="uid://kqeabg8o2g01" path="res://Scenes/Tilemap/Tilesets/scream_tilemap_v002.png" id="1_ph2ow"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l7blw"]
-texture = ExtResource("1_tt2uy")
+texture = ExtResource("1_ph2ow")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, -16)
-1:0/0 = 0
-1:0/0/texture_origin = Vector2i(0, 8)
-2:0/0 = 0
-3:0/0 = 0
 0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
+0:1/0/texture_origin = Vector2i(0, -16)
 0:2/0 = 0
-0:2/0/texture_origin = Vector2i(0, 16)
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
+0:2/0/texture_origin = Vector2i(0, -16)
 0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
+0:3/0/texture_origin = Vector2i(0, -16)
 0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
+0:4/0/texture_origin = Vector2i(0, -16)
 0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
+0:5/0/texture_origin = Vector2i(0, -16)
 0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
+0:6/0/texture_origin = Vector2i(0, -16)
 0:7/0 = 0
-1:7/0 = 0
-2:7/0 = 0
-3:7/0 = 0
+0:7/0/texture_origin = Vector2i(0, -16)
+0:8/0 = 0
+0:8/0/texture_origin = Vector2i(0, -16)
 
 [sub_resource type="TileSet" id="TileSet_csq0v"]
 tile_shape = 1
