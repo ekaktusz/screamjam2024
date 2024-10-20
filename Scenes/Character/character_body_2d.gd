@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
-@onready var inventory: Control = $Inventory
-const SPEED = 200
+@onready var inventory: Control = $CanvasLayer/Inventory
+const SPEED = 150
 
 const UP_RIGHT: Vector2 = Vector2(0.707107, -0.707107)
 const UP_LEFT:  Vector2 = Vector2(-0.707107, -0.707107)

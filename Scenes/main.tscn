@@ -1,7 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://ct5a81kc8suuw"]
+[gd_scene load_steps=12 format=3 uid="uid://ct5a81kc8suuw"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_13k28"]
-[ext_resource type="PackedScene" uid="uid://clflyn1b5u5hp" path="res://Scenes/canvas_modulate.tscn" id="1_cwatj"]
 [ext_resource type="PackedScene" uid="uid://6qvylrim0xte" path="res://Scenes/Tilemap/tile_map_layer_ground_floor.tscn" id="1_rv4jy"]
 [ext_resource type="PackedScene" uid="uid://yspo5jyeg5s0" path="res://Scenes/Character/character_body_2d.tscn" id="2_ssn54"]
 [ext_resource type="PackedScene" uid="uid://byqsaebfr2wqt" path="res://Scenes/Tilemap/tile_map_layer_first_floor.tscn" id="3_e2lyt"]
@@ -18,9 +17,15 @@ y_sort_enabled = true
 position = Vector2(706, 450)
 script = ExtResource("1_13k28")
 
-[node name="CanvasModulate" parent="." instance=ExtResource("1_cwatj")]
-visible = false
-color = Color(0.0403748, 0.075197, 0.0820313, 1)
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(0.0791746, 0.0546794, 0.222656, 1)
+energy = 0.75
+blend_mode = 2
+range_z_max = -1
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("2_ssn54")]
+z_index = 1
+y_sort_enabled = true
 
 [node name="Priest1" parent="." instance=ExtResource("6_pc0e0")]
 position = Vector2(187, 260)
@@ -30,12 +35,6 @@ position = Vector2(166, 249)
 
 [node name="MinisterBoy" parent="." instance=ExtResource("8_lwj13")]
 position = Vector2(206, 273)
-
-[node name="Player" parent="." groups=["player"] instance=ExtResource("2_ssn54")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(118, 18)
-scale = Vector2(1, 1)
 
 [node name="Head" parent="." instance=ExtResource("7_trbra")]
 z_index = 1
@@ -52,6 +51,7 @@ y_sort_enabled = true
 position = Vector2(4, 173)
 
 [node name="Graveyard" parent="." instance=ExtResource("12_hxdip")]
+y_sort_enabled = true
 
 [node name="TileMapLayerFirstFloor" parent="." instance=ExtResource("3_e2lyt")]
 tile_map_data = PackedByteArray(0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 4, 0, 0, 0)
