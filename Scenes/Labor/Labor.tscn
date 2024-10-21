@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://ce4wdswhq308m"]
+[gd_scene load_steps=7 format=4 uid="uid://ce4wdswhq308m"]
 
 [ext_resource type="PackedScene" uid="uid://c744j3ron8kr2" path="res://Scenes/Inventory/Items/Torso/Torso.tscn" id="1_6llug"]
 [ext_resource type="PackedScene" uid="uid://byqsaebfr2wqt" path="res://Scenes/Tilemap/tile_map_layer_first_floor.tscn" id="1_hncrf"]
 [ext_resource type="Script" path="res://Scenes/Labor/labor.gd" id="1_ylf8r"]
 [ext_resource type="PackedScene" uid="uid://6qvylrim0xte" path="res://Scenes/Tilemap/tile_map_layer_ground_floor.tscn" id="2_m8x3q"]
 [ext_resource type="PackedScene" uid="uid://cxxkj16qcppcu" path="res://Scenes/Tilemap/tile_map_layer_second_floor.tscn" id="5_3vuge"]
+[ext_resource type="AudioStream" uid="uid://dgeq22gfwptg3" path="res://Music/frankeinstein_A_beat_labor_main_square.mp3" id="5_mj8lj"]
 
 [node name="Labor" type="Node2D"]
 y_sort_enabled = true
@@ -32,5 +33,11 @@ visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(-96, 154, -394, 12, 30, -194, 125, -150, 227, -197, 361, -130, 360, -130, 330, -49)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_mj8lj")
+autoplay = true
+max_distance = 1000.0
+parameters/looping = true
 
 [connection signal="item_collected" from="Torso" to="." method="_on_item_collected"]
