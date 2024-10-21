@@ -15,7 +15,7 @@ offset_left = 4.0
 offset_top = 4.0
 offset_right = 4.0
 offset_bottom = 4.0
-scale = Vector2(0.5, 0.5)
+scale = Vector2(2, 2)
 
 [node name="CurrentObjective" type="MarginContainer" parent="CanvasLayer"]
 offset_left = 1454.0

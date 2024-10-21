@@ -17,6 +17,7 @@ scale = Vector2(1, 1)
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(-6.77626e-21, -10)
+scale = Vector2(1, 1)
 texture = ExtResource("2_2l15x")
 region_enabled = true
 region_rect = Rect2(192, 256, 64, 64)
@@ -36,8 +37,8 @@ texture_scale = 1.05
 [node name="PointLight2D" type="PointLight2D" parent="Sprite2D" index="1"]
 self_modulate = Color(1, 1, 1, 0)
 y_sort_enabled = true
-position = Vector2(20, 0)
-scale = Vector2(1.918, 2)
+position = Vector2(-0.0320015, 10)
+scale = Vector2(1.50067, 2.20833)
 energy = 0.3
 shadow_enabled = true
 shadow_filter = 1
