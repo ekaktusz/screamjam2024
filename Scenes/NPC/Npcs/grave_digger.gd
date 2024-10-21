@@ -38,7 +38,9 @@ func _ready() -> void:
 
 func _on_interact():
 	grave_digger_dialogue_manager.start_dialogue()
-	if grave_digger_dialogue_manager.current_line_index == index_where_dog_should_woof:
+	Globals.player_movement_blocked = true
+	if grave_digger_dialogue_manager.current_line_index == index_where_dog_should_woof and not dog_dialogue_manager.is_dialogue_active:
+		print(grave_digger_dialogue_manager.current_line_index)
 		dog_bark_timer.start()
 
 func _on_dog_bark_timer_timeout():
@@ -46,6 +48,7 @@ func _on_dog_bark_timer_timeout():
 
 func _on_grave_digger_dialogue_ended():
 	print("grave digger dialogue ended")
+	Globals.player_movement_blocked = false
 	Globals.current_objective = "find the lantern in the graveyard"
 
 func _process(delta: float) -> void:

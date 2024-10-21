@@ -38,7 +38,6 @@ func start_dialogue() -> void:
 	if is_dialogue_active:
 		return
 	_show_next_dialogue_box()
-	_show_dialogue_choice()
 	is_dialogue_active = true
 	
 func _show_next_dialogue_box() -> void:
@@ -61,9 +60,11 @@ func _show_dialogue_choice() -> void:
 	
 func _on_paragon_choice_made() -> void:
 	print("paragon")
+	end_dialogue()
 	
 func _on_renegade_choice_made() -> void:
 	print("renegade")
+	end_dialogue()
 
 func _on_dialogue_finished_displaying() -> void:
 	current_line_finished = true
@@ -80,16 +81,28 @@ func _start_dialogue_end_wait_timer() -> void:
 func _on_dialogue_end_wait_timer_finished() -> void:
 	is_dialogue_end_wait_timer_finished = true
 	
-
+	if current_line_index == dialogue_lines.size() -1 and _has_choice():
+		_show_dialogue_choice()
+	
+	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and is_dialogue_active and current_line_finished and is_dialogue_end_wait_timer_finished:
+		if _has_choice() and current_line_index >= dialogue_lines.size() - 1:
+			return
+		
 		dialogue_box.queue_free()
 		current_line_index += 1
 		
 		if current_line_index >= dialogue_lines.size():
-			is_dialogue_active = false
-			current_line_index = 0
-			dialogue_ended.emit()
-			return
-			
-		_show_next_dialogue_box()	
+			end_dialogue()
+		else:
+			_show_next_dialogue_box()
+
+func end_dialogue():
+	is_dialogue_active = false
+	current_line_index = 0
+	dialogue_box.queue_free()
+	if _has_choice():
+		dialouge_choice_box.queue_free()
+	dialogue_ended.emit()
+	
