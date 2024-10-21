@@ -26,7 +26,7 @@ range_z_max = -1
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_ssn54")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(-674, -155)
+position = Vector2(195, -97)
 
 [node name="Priest1" parent="." instance=ExtResource("6_pc0e0")]
 position = Vector2(187, 260)

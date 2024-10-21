@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqjxavh6ofayf"]
+[gd_scene load_steps=7 format=3 uid="uid://bqjxavh6ofayf"]
 
 [ext_resource type="PackedScene" uid="uid://8g1veysh6lp3" path="res://Scenes/NPC/npc.tscn" id="1_hqcbm"]
 [ext_resource type="Texture2D" uid="uid://vi51v4nwwaqj" path="res://Scenes/NPC/siraso_sheet.png" id="2_wsn2m"]
+[ext_resource type="Script" path="res://Scenes/NPC/Npcs/grave_digger.gd" id="2_xagn3"]
 
 [sub_resource type="Animation" id="Animation_cfnj3"]
 resource_name = "Idle"
@@ -42,6 +43,7 @@ _data = {
 }
 
 [node name="GraveDigger" instance=ExtResource("1_hqcbm")]
+script = ExtResource("2_xagn3")
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_wsn2m")
@@ -52,3 +54,5 @@ libraries = {
 "": SubResource("AnimationLibrary_imxhp")
 }
 autoplay = "Idle"
+
+[node name="DogBarkTimer" type="Timer" parent="." index="4"]
