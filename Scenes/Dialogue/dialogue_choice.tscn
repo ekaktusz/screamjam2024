@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bhbcqahbl6hxm"]
+
+[node name="DialogueChoice" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Paragon" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "😇 ask for the head of the beautiful man 🥺"
+
+[node name="Renegade" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "💀 just finish the old fool 😈"

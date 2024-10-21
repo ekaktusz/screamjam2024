@@ -13,11 +13,10 @@ const grave_digger_starter_dialogue: Array[String] = [
 	"We can offer you something in return.",
 	"Maybe some flowers from this nice grave? Or what would you like to have?"
 ]
+
 const DOG_DIALOGUE_LINES: Array[String] = [
 	"Woof!"
 ]
-
-
 
 var grave_digger_dialogue_manager: DialogueManager
 var dog_dialogue_manager: DialogueManager
