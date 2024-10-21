@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://uf62v7rjeu3b"]
+[gd_scene load_steps=6 format=4 uid="uid://uf62v7rjeu3b"]
 
 [ext_resource type="PackedScene" uid="uid://byqsaebfr2wqt" path="res://Scenes/Tilemap/tile_map_layer_first_floor.tscn" id="1_nb32e"]
 [ext_resource type="PackedScene" uid="uid://6qvylrim0xte" path="res://Scenes/Tilemap/tile_map_layer_ground_floor.tscn" id="2_l3wsg"]
 [ext_resource type="PackedScene" uid="uid://bqjxavh6ofayf" path="res://Scenes/NPC/Npcs/GraveDigger.tscn" id="3_e1mnf"]
 [ext_resource type="PackedScene" uid="uid://48ocntxl43oe" path="res://Scenes/NPC/Npcs/Dog.tscn" id="4_xtb8y"]
+[ext_resource type="Script" path="res://Scenes/NPC/Npcs/grave_digger.gd" id="5_aii40"]
 
 [node name="Graveyard" type="Node2D"]
 
@@ -21,3 +22,4 @@ position = Vector2(295, -74)
 
 [node name="GraveDigger" parent="." instance=ExtResource("3_e1mnf")]
 position = Vector2(329, -72)
+script = ExtResource("5_aii40")
