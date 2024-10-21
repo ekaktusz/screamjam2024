@@ -17,6 +17,8 @@ const DOG_DIALOGUE_LINES: Array[String] = [
 	"Woof!"
 ]
 
+
+
 var grave_digger_dialogue_manager: DialogueManager
 var dog_dialogue_manager: DialogueManager
 var index_where_dog_should_woof: int = 3
@@ -44,6 +46,7 @@ func _on_dog_bark_timer_timeout():
 
 func _on_grave_digger_dialogue_ended():
 	print("grave digger dialogue ended")
+	Globals.current_objective = "find the lantern in the graveyard"
 
 func _process(delta: float) -> void:
 	pass

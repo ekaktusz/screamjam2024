@@ -1,7 +1,6 @@
-[gd_scene load_steps=72 format=3 uid="uid://yspo5jyeg5s0"]
+[gd_scene load_steps=71 format=3 uid="uid://yspo5jyeg5s0"]
 
 [ext_resource type="Script" path="res://Scenes/Character/character_body_2d.gd" id="1_mwy0c"]
-[ext_resource type="PackedScene" uid="uid://bemdgdebmeocr" path="res://Scenes/Inventory/Inventory.tscn" id="2_jtff0"]
 [ext_resource type="Texture2D" uid="uid://bwkbg2ulhrpbn" path="res://Scenes/Character/assets/main_character_sheet.png" id="4_alshn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_13myu"]
@@ -511,17 +510,6 @@ height = 16.0
 [node name="CharacterBody2D" type="CharacterBody2D"]
 light_mask = 2
 script = ExtResource("1_mwy0c")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Inventory" parent="CanvasLayer" instance=ExtResource("2_jtff0")]
-z_index = 99
-y_sort_enabled = true
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 4.0
-offset_bottom = 4.0
-scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 99

@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjt67ijaplgyf"]
+
+[ext_resource type="Script" path="res://Scenes/HUD/hud.gd" id="1_nri0i"]
+[ext_resource type="PackedScene" uid="uid://bemdgdebmeocr" path="res://Scenes/Inventory/Inventory.tscn" id="1_y07ys"]
+
+[node name="Hud" type="Node2D"]
+script = ExtResource("1_nri0i")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("1_y07ys")]
+z_index = 99
+y_sort_enabled = true
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 4.0
+offset_bottom = 4.0
+scale = Vector2(0.5, 0.5)
+
+[node name="CurrentObjective" type="MarginContainer" parent="CanvasLayer"]
+offset_left = 1454.0
+offset_top = 12.0
+offset_right = 1960.0
+offset_bottom = 144.0
+
+[node name="BackgroundPanel" type="Panel" parent="CanvasLayer/CurrentObjective"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="CanvasLayer/CurrentObjective"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 35
+text = "Current Objective "
+
+[node name="ObjectiveText" type="Label" parent="CanvasLayer/CurrentObjective"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "speak with your mom"
