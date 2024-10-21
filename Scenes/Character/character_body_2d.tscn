@@ -505,8 +505,8 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qs8uo"]
-radius = 5.0
-height = 14.0
+radius = 8.0
+height = 16.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 light_mask = 2

@@ -1,7 +1,7 @@
 extends MarginContainer
 
-@onready var text_label: Label = $TextMarginContainer/TextLabel
-@onready var letter_display_timer: Timer = $LetterDisplayTimer
+@onready var letter_display_timer: Timer = $CanvasLayer/LetterDisplayTimer
+@onready var text_label: Label = $CanvasLayer/TextMarginContainer/TextLabel
 
 @export var MAX_WIDTH = 256
 
