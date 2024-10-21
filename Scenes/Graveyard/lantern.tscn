@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://cot7o3xpiilyr"]
+
+[ext_resource type="PackedScene" uid="uid://bb2ai4g5a33a2" path="res://Scenes/Item/item.tscn" id="1_wf6n6"]
+[ext_resource type="Texture2D" uid="uid://b47cr6e5leg4y" path="res://Scenes/Tilemap/Tilesets/scream_tilemap_v003.png" id="2_2l15x"]
+
+[sub_resource type="Gradient" id="Gradient_8xybn"]
+offsets = PackedFloat32Array(0, 0.653465, 0.742574)
+colors = PackedColorArray(1, 1, 1, 1, 0.0735294, 0.0735294, 0.0735294, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kg7ns"]
+gradient = SubResource("Gradient_8xybn")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Lantern" instance=ExtResource("1_wf6n6")]
+scale = Vector2(1, 1)
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-4.99997, -119)
+texture = ExtResource("2_2l15x")
+region_enabled = true
+region_rect = Rect2(192, 256, 64, 64)
+
+[node name="PointLight2D2" type="PointLight2D" parent="Sprite2D" index="0"]
+self_modulate = Color(1, 1, 1, 0)
+y_sort_enabled = true
+position = Vector2(-9.53674e-07, 9.5)
+scale = Vector2(1.19048, 1.14583)
+color = Color(1, 0.984314, 0.309804, 1)
+energy = 0.3
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 7.0
+texture = SubResource("GradientTexture2D_kg7ns")
+texture_scale = 1.05
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D" index="1"]
+self_modulate = Color(1, 1, 1, 0)
+y_sort_enabled = true
+position = Vector2(0, 10)
+scale = Vector2(1.0625, 0.854167)
+color = Color(1, 1, 0.301961, 1)
+energy = 0.3
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 4.0
+texture = SubResource("GradientTexture2D_kg7ns")
+texture_scale = 1.5
+
+[node name="CollisionShape2D" parent="InteractionArea" index="0"]
+position = Vector2(-9.53674e-07, 0)
