@@ -15,6 +15,7 @@ var inventory: Array[Bodypart] = [
 ]
 
 func collect_item(item_name: String):
+	print(item_name)
 	for part in inventory:
 		if part.get_bodypart() == item_name:
 			part.is_collected = true

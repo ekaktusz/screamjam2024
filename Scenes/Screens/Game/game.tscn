@@ -17,7 +17,8 @@ position = Vector2(706, 450)
 script = ExtResource("1_ew7s7")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-color = Color(0.0791746, 0.0546794, 0.222656, 1)
+enabled = false
+color = Color(0.021418, 0.0121243, 0.15625, 1)
 energy = 0.75
 blend_mode = 2
 range_z_max = -1
@@ -41,9 +42,10 @@ position = Vector2(-706, -450)
 
 [node name="Labor" parent="." instance=ExtResource("9_18b27")]
 position = Vector2(-1280, -737)
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_ssn54")]
-position = Vector2(-1462, -669)
+position = Vector2(-1182, -676)
 
 [node name="TileMapLayerFirstFloor" parent="." instance=ExtResource("3_e2lyt")]
 tile_map_data = PackedByteArray(0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 4, 0, 0, 0)
@@ -51,4 +53,11 @@ tile_map_data = PackedByteArray(0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 4, 0, 0, 0)
 [node name="TileMapGroundFloor" parent="." instance=ExtResource("1_rv4jy")]
 tile_map_data = PackedByteArray()
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-1184, -643, -1184, -643, -1154, -657, -1154, -657)
+
+[connection signal="arm_collected_on_main_square" from="MainSquare" to="Player" method="_on_item_collected"]
 [connection signal="torso_collected_in_labor" from="Labor" to="Player" method="_on_item_collected"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

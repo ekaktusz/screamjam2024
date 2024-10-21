@@ -6,7 +6,6 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	InteractionManager.set_player(player)
-	dark_mode_switch()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -17,3 +16,9 @@ func dark_mode_switch():
 	directional_light_2d.enabled = !directional_light_2d.enabled
 	player.switch_player_light()
 	
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	print("body entered")
+	if body.is_in_group("player"):
+		dark_mode_switch()
