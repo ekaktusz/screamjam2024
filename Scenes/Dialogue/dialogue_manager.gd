@@ -7,6 +7,8 @@ var dialogue_box
 var dialogue_box_position: Vector2
 
 var dialogue_lines: Array[String] = []
+var paragon_choice: String = ""
+var renegade_choice: String = ""
 var current_line_index: int = 0
 
 var is_dialogue_active: bool = false
@@ -18,11 +20,16 @@ var is_dialogue_end_wait_timer_finished = false
 
 signal dialogue_ended()
 
-static func create(position: Vector2, lines: Array[String]) -> DialogueManager:
+static func create(position: Vector2, lines: Array[String], paragon: String = "", renegade: String = "") -> DialogueManager:
 	var instance = DialogueManager.new()
 	instance.dialogue_box_position = position
 	instance.dialogue_lines = lines
+	instance.paragon_choice = paragon
+	instance.renegade_choice = renegade
 	return instance
+	
+func _has_choice() -> bool:
+	return paragon_choice != "" and renegade_choice != ""
 
 func start_dialogue() -> void:
 	if is_dialogue_active:
