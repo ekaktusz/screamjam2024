@@ -93,9 +93,7 @@ func _on_grave_digger_dialogue_ended() -> void:
 	Globals.player_movement_blocked = false
 	
 	if grave_digger_dialogue_manager.dialogue_lines == grave_digger_ending_dialogue:
-		print(Globals.inventory)
 		Globals.inventory.erase("Lantern")
-		print(Globals.inventory)
 		Globals.inventory.append("Head")
 		queue_free()
 		return
@@ -113,7 +111,5 @@ func _on_grave_digger_dialogue_ended_with_paragon() -> void:
 func _on_grave_digger_dialogue_ended_with_renegade() -> void:
 	print("grave digger dialogue ended w renegade")
 	queue_free() # TODO: killlllll
+	Globals.inventory.append("Head")
 	Globals.player_movement_blocked = false
-
-func _process(delta: float) -> void:
-	pass
