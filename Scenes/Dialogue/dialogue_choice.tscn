@@ -20,11 +20,13 @@ grow_vertical = 2
 
 [node name="Paragon" type="Button" parent="HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 40
 text = "dsa"
 
 [node name="Renegade" type="Button" parent="HBoxContainer"]
 z_index = 200
 layout_mode = 2
+theme_override_font_sizes/font_size = 40
 text = "asd"
 
 [connection signal="pressed" from="HBoxContainer/Paragon" to="." method="_on_paragon_pressed"]
