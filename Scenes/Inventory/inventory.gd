@@ -8,16 +8,17 @@ extends Control
 @onready var lantern: TextureRect = $PanelContainer/GridContainer/Lantern
 
 func _process(delta) -> void:
-	for item_name in Globals.inventory:
-		if item_name == "Torso":
-			torso.self_modulate = Color.WHITE
-		elif item_name == "Head":
-			head.self_modulate = Color.WHITE
-		elif item_name == "RightArm":
-			right_arm.self_modulate = Color.WHITE
-		elif item_name == "LeftArm":
-			left_arm.self_modulate = Color.WHITE
-		elif item_name == "Leg":
-			leg.self_modulate = Color.WHITE
-		elif item_name == "Lantern":
-			lantern.self_modulate = Color.WHITE
+	var item_options = {
+		"Torso": torso,
+		"Head": head,
+		"RightArm": right_arm,
+		"LeftArm": left_arm,
+		"Leg": leg,
+		"Lantern": lantern
+	}
+	
+	for part_name in item_options:
+		if part_name in Globals.inventory:
+			item_options[part_name].self_modulate = Color.WHITE
+		else:
+			item_options[part_name].self_modulate = Color.BLACK

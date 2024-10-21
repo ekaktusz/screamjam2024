@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://6qvylrim0xte" path="res://Scenes/Tilemap/tile_map_layer_ground_floor.tscn" id="2_l3wsg"]
 [ext_resource type="PackedScene" uid="uid://bqjxavh6ofayf" path="res://Scenes/NPC/Npcs/GraveDigger.tscn" id="3_e1mnf"]
 [ext_resource type="PackedScene" uid="uid://48ocntxl43oe" path="res://Scenes/NPC/Npcs/Dog.tscn" id="4_xtb8y"]
-[ext_resource type="PackedScene" uid="uid://wjf28qkvai7q" path="res://Scenes/Graveyard/lantern.tscn" id="5_olwlb"]
+[ext_resource type="PackedScene" uid="uid://7tmbjh3esr6r" path="res://Scenes/Graveyard/lantern.tscn" id="5_olwlb"]
 
 [node name="Graveyard" type="Node2D"]
 script = ExtResource("1_asjil")
@@ -27,6 +27,6 @@ position = Vector2(329, -72)
 
 [node name="Lantern" parent="." instance=ExtResource("5_olwlb")]
 z_index = 100
-position = Vector2(1289, 9)
+position = Vector2(397, -54)
 
 [connection signal="item_collected" from="Lantern" to="." method="_on_lantern_item_collected"]

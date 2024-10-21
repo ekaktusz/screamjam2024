@@ -78,7 +78,6 @@ func _init_grave_digger_paragon_dialogue() -> void:
 func _on_interact() -> void:
 	if Globals.inventory.has("Lantern") and grave_digger_dialogue_manager.dialogue_lines != grave_digger_ending_dialogue:
 		grave_digger_dialogue_manager.reset_dialogue(grave_digger_ending_dialogue)
-		Globals.inventory.erase("Lantern")
 	
 	grave_digger_dialogue_manager.start_dialogue()
 	Globals.player_movement_blocked = true
@@ -94,7 +93,12 @@ func _on_grave_digger_dialogue_ended() -> void:
 	Globals.player_movement_blocked = false
 	
 	if grave_digger_dialogue_manager.dialogue_lines == grave_digger_ending_dialogue:
+		print(Globals.inventory)
+		Globals.inventory.erase("Lantern")
+		print(Globals.inventory)
 		Globals.inventory.append("Head")
+		queue_free()
+		return
 	
 	if grave_digger_dialogue_manager.dialogue_lines != grave_digger_starter_dialogue:
 		grave_digger_dialogue_manager.reset_dialogue(get_random_busy_dialogue())
