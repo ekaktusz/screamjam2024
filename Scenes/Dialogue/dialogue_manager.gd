@@ -54,7 +54,6 @@ func _start_dialogue_end_wait_timer() -> void:
 func _on_dialogue_end_wait_timer_finished() -> void:
 	is_dialogue_end_wait_timer_finished = true
 	
-
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and is_dialogue_active and current_line_finished and is_dialogue_end_wait_timer_finished:
 		dialogue_box.queue_free()
