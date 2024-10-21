@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bemdgdebmeocr"]
+[gd_scene load_steps=8 format=3 uid="uid://bemdgdebmeocr"]
 
 [ext_resource type="Script" path="res://Scenes/Inventory/inventory.gd" id="1_22qny"]
 [ext_resource type="Texture2D" uid="uid://bkyrdkhwwipm7" path="res://Scenes/Inventory/assets/head.png" id="2_kk6jv"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d2l0crmeu0w8e" path="res://Scenes/Inventory/assets/rightarm.png" id="3_uh1nw"]
 [ext_resource type="Texture2D" uid="uid://66fxig8jlv4i" path="res://Scenes/Inventory/assets/leftarm.png" id="5_3wq18"]
 [ext_resource type="Texture2D" uid="uid://dts1usnm51icl" path="res://Scenes/Inventory/assets/leg.png" id="6_7281f"]
+[ext_resource type="Texture2D" uid="uid://b5l7p6m7poqoc" path="res://Scenes/Inventory/assets/lantern.webp" id="7_gc0cx"]
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -64,3 +65,9 @@ stretch_mode = 1
 
 [node name="Empty3" type="TextureRect" parent="PanelContainer/GridContainer"]
 layout_mode = 2
+
+[node name="Lantern" type="TextureRect" parent="PanelContainer/GridContainer"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("7_gc0cx")
+expand_mode = 4

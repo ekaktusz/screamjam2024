@@ -11,6 +11,3 @@ func _process(delta: float) -> void:
 func _input(event):
 	if event.is_action_pressed("open_inventory"):
 		inventory.visible = !inventory.visible
-		
-func add_item_to_inventory(interacted_name) -> void:
-	inventory.collect_item(interacted_name)
