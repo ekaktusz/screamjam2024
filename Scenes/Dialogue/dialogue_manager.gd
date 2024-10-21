@@ -110,7 +110,7 @@ func _end_dialogue():
 	is_dialogue_active = false
 	current_line_index = 0
 	dialogue_box.queue_free()
-	if _has_choice():
+	if dialouge_choice_box:
 		dialouge_choice_box.queue_free()
 	dialogue_ended.emit()
 	

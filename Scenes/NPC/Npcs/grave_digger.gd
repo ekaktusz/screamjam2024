@@ -14,9 +14,32 @@ const grave_digger_starter_dialogue: Array[String] = [
 	"Maybe some flowers from this nice grave? Or what would you like to have?"
 ]
 
-const DOG_DIALOGUE_LINES: Array[String] = [
+const dog_dialogue: Array[String] = [
 	"Woof!"
 ]
+
+const grave_digger_pacifist_answer_dialogue: Array[String] = [
+	"What????",
+	"You want the head?!",
+	"What the…",
+	"Never mind. No wisdom like silence! I-I-I guess you can have the head…",
+	"He won't need it anymore, am I right, Woofie?",
+	"But first, bring us the lantern! It must be somewhere in there!"
+]
+
+var paragon_choice_text: String =  "😇 ask for the head of the beautiful man 🥺"
+var renegade_choice_text: String = "💀 just finish the old fool 😈"
+
+func get_random_busy_dialogue() -> Array[String]:
+	var choices = [
+		["We're quite busy burying… Right, Woofy?"],
+		["It's starting to get really dark… I'm not even sure I can finish this before dawn."],
+		["I'm a grave-digger. I'm digging graves. That's what I do."],
+		["It's so good to have you, Woofy. I don't know what I'd do without you."]
+	]
+	return choices[randi() % choices.size()]
+
+
 
 var grave_digger_dialogue_manager: DialogueManager
 var dog_dialogue_manager: DialogueManager
@@ -25,13 +48,19 @@ var index_where_dog_should_woof: int = 3
 # 
 func _ready() -> void:
 	interaction_area.interact = Callable(self, "_on_interact")
-	grave_digger_dialogue_manager = DialogueManager.create(global_position, grave_digger_starter_dialogue, "😇 ask for the head of the beautiful man 🥺", "💀 just finish the old fool 😈")
+	_init_grave_digger_starting_dialogue()
+	_init_dog_dialogue()
+	
+	
+func _init_grave_digger_starting_dialogue() -> void:
+	grave_digger_dialogue_manager = DialogueManager.create(global_position, grave_digger_starter_dialogue, paragon_choice_text, renegade_choice_text)
 	add_child(grave_digger_dialogue_manager)
 	grave_digger_dialogue_manager.dialogue_ended.connect(_on_grave_digger_dialogue_ended)
 	grave_digger_dialogue_manager.dialogue_ended_with_paragon.connect(_on_grave_digger_dialogue_ended_with_paragon)
 	grave_digger_dialogue_manager.dialogue_ended_with_renegade.connect(_on_grave_digger_dialogue_ended_with_renegade)
 
-	dog_dialogue_manager = DialogueManager.create(dog.global_position - Vector2(-20, -40), DOG_DIALOGUE_LINES)
+func _init_dog_dialogue() -> void:
+	dog_dialogue_manager = DialogueManager.create(dog.global_position - Vector2(-20, -40), dog_dialogue)
 	add_child(dog_dialogue_manager)
 	
 	# Set up the timer
@@ -39,30 +68,33 @@ func _ready() -> void:
 	dog_bark_timer.wait_time = 2.0
 	dog_bark_timer.timeout.connect(_on_dog_bark_timer_timeout)
 
-func _on_interact():
+func _init_grave_digger_paragon_dialogue() -> void:
+	grave_digger_dialogue_manager.reset_dialogue(grave_digger_pacifist_answer_dialogue)
+
+func _on_interact() -> void:
 	grave_digger_dialogue_manager.start_dialogue()
 	Globals.player_movement_blocked = true
 	if grave_digger_dialogue_manager.current_line_index == index_where_dog_should_woof and not dog_dialogue_manager.is_dialogue_active:
 		print(grave_digger_dialogue_manager.current_line_index)
 		dog_bark_timer.start()
 
-func _on_dog_bark_timer_timeout():
+func _on_dog_bark_timer_timeout() -> void:
 	dog_dialogue_manager.start_dialogue()
-	
 
-
-func _on_grave_digger_dialogue_ended():
+func _on_grave_digger_dialogue_ended() -> void:
 	print("grave digger dialogue ended")
 	Globals.player_movement_blocked = false
 	
-func _on_grave_digger_dialogue_ended_with_paragon():
+func _on_grave_digger_dialogue_ended_with_paragon() -> void:
 	print("grave digger dialogue ended w paragon")
 	Globals.current_objective = "find the lantern"
 	Globals.player_movement_blocked = false
+	_init_grave_digger_paragon_dialogue()
+	grave_digger_dialogue_manager.start_dialogue()
 
-func _on_grave_digger_dialogue_ended_with_renegade():
+func _on_grave_digger_dialogue_ended_with_renegade() -> void:
 	print("grave digger dialogue ended w renegade")
-	# TODO: killlllll
+	queue_free() # TODO: killlllll
 	Globals.player_movement_blocked = false
 
 func _process(delta: float) -> void:
