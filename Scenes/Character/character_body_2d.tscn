@@ -1,6 +1,7 @@
-[gd_scene load_steps=71 format=3 uid="uid://yspo5jyeg5s0"]
+[gd_scene load_steps=72 format=3 uid="uid://yspo5jyeg5s0"]
 
 [ext_resource type="Script" path="res://Scenes/Character/character_body_2d.gd" id="1_mwy0c"]
+[ext_resource type="PackedScene" uid="uid://bemdgdebmeocr" path="res://Scenes/Inventory/Inventory.tscn" id="2_jtff0"]
 [ext_resource type="Texture2D" uid="uid://bwkbg2ulhrpbn" path="res://Scenes/Character/assets/main_character_sheet.png" id="4_alshn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_13myu"]
@@ -494,12 +495,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_673ro"]
+[sub_resource type="Gradient" id="Gradient_8xybn"]
 offsets = PackedFloat32Array(0, 0.653465, 0.742574)
 colors = PackedColorArray(1, 1, 1, 1, 0.0735294, 0.0735294, 0.0735294, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_spata"]
-gradient = SubResource("Gradient_673ro")
+gradient = SubResource("Gradient_8xybn")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
@@ -509,10 +510,22 @@ height = 16.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 light_mask = 2
+z_index = 1
+y_sort_enabled = true
 script = ExtResource("1_mwy0c")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("2_jtff0")]
 z_index = 99
+y_sort_enabled = true
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 4.0
+offset_bottom = 4.0
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_flx6g")
 animation = &"down"
 
@@ -546,4 +559,4 @@ scale = Vector2(0.999999, 0.999999)
 shape = SubResource("CapsuleShape2D_qs8uo")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+zoom = Vector2(4, 4)

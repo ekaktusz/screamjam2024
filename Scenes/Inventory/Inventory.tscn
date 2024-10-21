@@ -1,12 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bemdgdebmeocr"]
+[gd_scene load_steps=4 format=3 uid="uid://bemdgdebmeocr"]
 
 [ext_resource type="Script" path="res://Scenes/Inventory/inventory.gd" id="1_22qny"]
-[ext_resource type="Texture2D" uid="uid://bkyrdkhwwipm7" path="res://Scenes/Inventory/assets/head.png" id="2_kk6jv"]
-[ext_resource type="Texture2D" uid="uid://dwp1mkvo3jgq7" path="res://Scenes/Inventory/assets/torso.png" id="3_3xx41"]
-[ext_resource type="Texture2D" uid="uid://d2l0crmeu0w8e" path="res://Scenes/Inventory/assets/rightarm.png" id="3_uh1nw"]
-[ext_resource type="Texture2D" uid="uid://66fxig8jlv4i" path="res://Scenes/Inventory/assets/leftarm.png" id="5_3wq18"]
-[ext_resource type="Texture2D" uid="uid://dts1usnm51icl" path="res://Scenes/Inventory/assets/leg.png" id="6_7281f"]
-[ext_resource type="Texture2D" uid="uid://b5l7p6m7poqoc" path="res://Scenes/Inventory/assets/lantern.webp" id="7_gc0cx"]
+[ext_resource type="Texture2D" uid="uid://cqvjt6u7qvr4j" path="res://Scenes/Inventory/assets/hand2.png" id="3_8wxru"]
+[ext_resource type="Texture2D" uid="uid://cbtyw0mnd27aa" path="res://Scenes/Inventory/assets/torso3.png" id="4_o12jf"]
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -14,9 +10,9 @@ anchors_preset = 0
 script = ExtResource("1_22qny")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-layout_mode = 0
-offset_right = 630.0
-offset_bottom = 1096.0
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 200.0
 scale = Vector2(0.9, 0.9)
 
 [node name="Panel" type="Panel" parent="PanelContainer"]
@@ -28,29 +24,37 @@ columns = 3
 
 [node name="Empty4" type="TextureRect" parent="PanelContainer/GridContainer"]
 layout_mode = 2
+expand_mode = 2
 
 [node name="Head" type="TextureRect" parent="PanelContainer/GridContainer"]
 self_modulate = Color(0, 0, 0, 0.631373)
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("2_kk6jv")
+texture = ExtResource("4_o12jf")
+expand_mode = 1
 
 [node name="Empty5" type="TextureRect" parent="PanelContainer/GridContainer"]
 layout_mode = 2
 
 [node name="RightArm" type="TextureRect" parent="PanelContainer/GridContainer"]
 self_modulate = Color(0, 0, 0, 0.631373)
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("3_uh1nw")
+texture = ExtResource("3_8wxru")
+expand_mode = 1
+flip_h = true
 
 [node name="Torso" type="TextureRect" parent="PanelContainer/GridContainer"]
 self_modulate = Color(0, 0, 0, 0.631373)
 layout_mode = 2
-texture = ExtResource("3_3xx41")
+texture = ExtResource("4_o12jf")
+stretch_mode = 3
 
 [node name="LeftArm" type="TextureRect" parent="PanelContainer/GridContainer"]
 self_modulate = Color(0, 0, 0, 0.631373)
 layout_mode = 2
-texture = ExtResource("5_3wq18")
+texture = ExtResource("3_8wxru")
+stretch_mode = 3
 
 [node name="Empty2" type="TextureRect" parent="PanelContainer/GridContainer"]
 layout_mode = 2
@@ -60,14 +64,8 @@ self_modulate = Color(0, 0, 0, 0.631373)
 light_mask = 2
 visibility_layer = 2
 layout_mode = 2
-texture = ExtResource("6_7281f")
+texture = ExtResource("4_o12jf")
 stretch_mode = 1
 
 [node name="Empty3" type="TextureRect" parent="PanelContainer/GridContainer"]
 layout_mode = 2
-
-[node name="Lantern" type="TextureRect" parent="PanelContainer/GridContainer"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 2
-texture = ExtResource("7_gc0cx")
-expand_mode = 4

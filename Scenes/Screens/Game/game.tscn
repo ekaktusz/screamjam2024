@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ct5a81kc8suuw"]
+[gd_scene load_steps=10 format=3 uid="uid://ct5a81kc8suuw"]
 
 [ext_resource type="Script" path="res://Scenes/Screens/Game/game.gd" id="1_ew7s7"]
 [ext_resource type="PackedScene" uid="uid://6qvylrim0xte" path="res://Scenes/Tilemap/tile_map_layer_ground_floor.tscn" id="1_rv4jy"]
@@ -6,11 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://byqsaebfr2wqt" path="res://Scenes/Tilemap/tile_map_layer_first_floor.tscn" id="3_e2lyt"]
 [ext_resource type="PackedScene" uid="uid://bpgf0ho8ohbeg" path="res://Scenes/NPC/Npcs/Priest1.tscn" id="6_pc0e0"]
 [ext_resource type="PackedScene" uid="uid://t24335gumm23" path="res://Scenes/NPC/Npcs/Priest2.tscn" id="7_qlpmb"]
-[ext_resource type="PackedScene" uid="uid://7sm8u7xuo3a1" path="res://Scenes/Inventory/Items/Head/Head.tscn" id="7_trbra"]
-[ext_resource type="PackedScene" uid="uid://bt68qqxxcldhu" path="res://Scenes/Inventory/Items/Leg/Leg.tscn" id="8_lsot4"]
 [ext_resource type="PackedScene" uid="uid://bibciqajbuv6o" path="res://Scenes/NPC/Npcs/MinisterBoy.tscn" id="8_lwj13"]
 [ext_resource type="PackedScene" uid="uid://ce4wdswhq308m" path="res://Scenes/Labor/Labor.tscn" id="9_18b27"]
-[ext_resource type="PackedScene" uid="uid://cjt67ijaplgyf" path="res://Scenes/HUD/hud.tscn" id="12_3qbvf"]
 [ext_resource type="PackedScene" uid="uid://uf62v7rjeu3b" path="res://Scenes/Graveyard/graveyard.tscn" id="12_hxdip"]
 
 [node name="Main" type="Node2D"]
@@ -24,11 +21,6 @@ energy = 0.75
 blend_mode = 2
 range_z_max = -1
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource("2_ssn54")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(215, -138)
-
 [node name="Priest1" parent="." instance=ExtResource("6_pc0e0")]
 position = Vector2(187, 260)
 
@@ -38,15 +30,6 @@ position = Vector2(166, 249)
 [node name="MinisterBoy" parent="." instance=ExtResource("8_lwj13")]
 position = Vector2(206, 273)
 
-[node name="Head" parent="." instance=ExtResource("7_trbra")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(397, 68)
-
-[node name="Leg" parent="." instance=ExtResource("8_lsot4")]
-z_index = 1
-position = Vector2(259, 223)
-
 [node name="Graveyard" parent="." instance=ExtResource("12_hxdip")]
 y_sort_enabled = true
 position = Vector2(-128, -111)
@@ -54,14 +37,13 @@ position = Vector2(-128, -111)
 [node name="Labor" parent="." instance=ExtResource("9_18b27")]
 position = Vector2(-490, -202)
 
+[node name="Player" parent="." groups=["player"] instance=ExtResource("2_ssn54")]
+position = Vector2(-674, -116)
+
 [node name="TileMapLayerFirstFloor" parent="." instance=ExtResource("3_e2lyt")]
 tile_map_data = PackedByteArray(0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 4, 0, 0, 0)
 
 [node name="TileMapGroundFloor" parent="." instance=ExtResource("1_rv4jy")]
 tile_map_data = PackedByteArray()
 
-[node name="Hud" parent="." instance=ExtResource("12_3qbvf")]
-
-[connection signal="item_collected" from="Head" to="." method="_on_item_collected"]
-[connection signal="item_collected" from="Leg" to="." method="_on_item_collected"]
-[connection signal="torso_collected_in_labor" from="Labor" to="." method="_on_item_collected"]
+[connection signal="torso_collected_in_labor" from="Labor" to="Player" method="_on_item_collected"]
