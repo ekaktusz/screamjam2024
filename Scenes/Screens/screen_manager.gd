@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-func _process(delta):
+func _process(_delta):
 	# Check animation playback position and adjust volume accordingly
 	if $AnimationPlayer.is_playing():
 		var animation_position = $AnimationPlayer.current_animation_position
