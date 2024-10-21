@@ -27,7 +27,7 @@ range_z_max = -1
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_ssn54")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(195, -97)
+position = Vector2(328, 61)
 
 [node name="Priest1" parent="." instance=ExtResource("6_pc0e0")]
 position = Vector2(187, 260)
@@ -41,7 +41,7 @@ position = Vector2(206, 273)
 [node name="Head" parent="." instance=ExtResource("7_trbra")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(390, 66)
+position = Vector2(397, 68)
 
 [node name="Leg" parent="." instance=ExtResource("8_lsot4")]
 z_index = 1
@@ -62,6 +62,6 @@ tile_map_data = PackedByteArray()
 
 [node name="Hud" parent="." instance=ExtResource("12_3qbvf")]
 
-[connection signal="item_collected" from="Head" to="Player" method="_on_item_collected"]
-[connection signal="item_collected" from="Leg" to="Player" method="_on_item_collected"]
-[connection signal="torso_collected_in_labor" from="Labor" to="Player" method="_on_item_collected"]
+[connection signal="item_collected" from="Head" to="." method="_on_item_collected"]
+[connection signal="item_collected" from="Leg" to="Hud" method="_on_item_collected"]
+[connection signal="torso_collected_in_labor" from="Labor" to="." method="_on_item_collected"]

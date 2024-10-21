@@ -3,6 +3,8 @@ extends Node2D
 @onready var player: CharacterBody2D = $Player
 @onready var directional_light_2d: DirectionalLight2D = $DirectionalLight2D
 
+@onready var hud: Node2D = $Hud
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	InteractionManager.set_player(player)
@@ -17,3 +19,7 @@ func dark_mode_switch():
 	directional_light_2d.enabled = !directional_light_2d.enabled
 	player.switch_player_light()
 	
+
+func _on_item_collected(item_name) -> void:
+	hud.add_item_to_inventory(item_name)
+	pass # Replace with function body.

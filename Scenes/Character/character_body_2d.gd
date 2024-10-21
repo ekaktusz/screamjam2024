@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
-@onready var inventory: Control = $CanvasLayer/Inventory
 @onready var point_light_2d_no_shadows: PointLight2D = $Sprite2D/PointLight2D2
 @onready var point_light_2d: PointLight2D = $Sprite2D/PointLight2D
 
@@ -16,7 +15,7 @@ var hasBodyPart = false
 
 func _physics_process(_delta):
 	
-	var	direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	if direction: 
 		self.velocity = direction * SPEED
 	else:
@@ -42,13 +41,6 @@ func set_anim_by_direction(direction: Vector2):
 		sprite_2d.play("down_right")
 	elif direction.angle() == DOWN_LEFT.angle():
 		sprite_2d.play("down_left")
-	
-func _input(event):
-	if event.is_action_pressed("open_inventory"):
-		inventory.visible = !inventory.visible
-
-func _on_item_collected(interacted_name) -> void:
-	inventory.collect_item(interacted_name)
 
 func switch_player_light():
 	point_light_2d.enabled = !point_light_2d.enabled
