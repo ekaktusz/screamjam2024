@@ -28,6 +28,9 @@ func _ready() -> void:
 	grave_digger_dialogue_manager = DialogueManager.create(global_position, grave_digger_starter_dialogue, "😇 ask for the head of the beautiful man 🥺", "💀 just finish the old fool 😈")
 	add_child(grave_digger_dialogue_manager)
 	grave_digger_dialogue_manager.dialogue_ended.connect(_on_grave_digger_dialogue_ended)
+	grave_digger_dialogue_manager.dialogue_ended_with_paragon.connect(_on_grave_digger_dialogue_ended_with_paragon)
+	grave_digger_dialogue_manager.dialogue_ended_with_renegade.connect(_on_grave_digger_dialogue_ended_with_renegade)
+
 	dog_dialogue_manager = DialogueManager.create(dog.global_position - Vector2(-20, -40), DOG_DIALOGUE_LINES)
 	add_child(dog_dialogue_manager)
 	
@@ -45,11 +48,22 @@ func _on_interact():
 
 func _on_dog_bark_timer_timeout():
 	dog_dialogue_manager.start_dialogue()
+	
+
 
 func _on_grave_digger_dialogue_ended():
 	print("grave digger dialogue ended")
 	Globals.player_movement_blocked = false
-	Globals.current_objective = "find the lantern in the graveyard"
+	
+func _on_grave_digger_dialogue_ended_with_paragon():
+	print("grave digger dialogue ended w paragon")
+	Globals.current_objective = "find the lantern"
+	Globals.player_movement_blocked = false
+
+func _on_grave_digger_dialogue_ended_with_renegade():
+	print("grave digger dialogue ended w renegade")
+	# TODO: killlllll
+	Globals.player_movement_blocked = false
 
 func _process(delta: float) -> void:
 	pass

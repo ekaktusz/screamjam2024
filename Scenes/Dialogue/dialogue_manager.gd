@@ -22,6 +22,8 @@ var current_line_finished: bool = false
 var is_dialogue_end_wait_timer_finished = false
 
 signal dialogue_ended()
+signal dialogue_ended_with_paragon()
+signal dialogue_ended_with_renegade()
 
 static func create(position: Vector2, lines: Array[String], paragon: String = "", renegade: String = "") -> DialogueManager:
 	var instance = DialogueManager.new()
@@ -60,11 +62,13 @@ func _show_dialogue_choice() -> void:
 	
 func _on_paragon_choice_made() -> void:
 	print("paragon")
-	end_dialogue()
+	dialogue_ended_with_paragon.emit()
+	_end_dialogue()
 	
 func _on_renegade_choice_made() -> void:
 	print("renegade")
-	end_dialogue()
+	dialogue_ended_with_renegade.emit()
+	_end_dialogue()
 
 func _on_dialogue_finished_displaying() -> void:
 	current_line_finished = true
@@ -94,11 +98,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		current_line_index += 1
 		
 		if current_line_index >= dialogue_lines.size():
-			end_dialogue()
+			_end_dialogue()
 		else:
 			_show_next_dialogue_box()
 
-func end_dialogue():
+func _end_dialogue():
 	is_dialogue_active = false
 	current_line_index = 0
 	dialogue_box.queue_free()
