@@ -5,6 +5,8 @@ extends Control
 @onready var right_arm: TextureRect = $PanelContainer/GridContainer/RightArm
 @onready var left_arm: TextureRect = $PanelContainer/GridContainer/LeftArm
 @onready var leg: TextureRect = $PanelContainer/GridContainer/Leg
+@onready var lantern: TextureRect = $PanelContainer/GridContainer/Lantern
+
 
 var inventory: Array[Bodypart] = [
 	Bodypart.new("Head", false),

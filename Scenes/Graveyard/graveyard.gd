@@ -12,3 +12,8 @@ func _on_lantern_collected():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func _on_lantern_item_collected(item_name) -> void:
+	Globals.inventory.append(item_name)
+	print(item_name)
+	Globals.current_objective = "bring the lantern to the grave digger"

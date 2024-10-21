@@ -28,3 +28,5 @@ position = Vector2(329, -72)
 [node name="Lantern" parent="." instance=ExtResource("5_olwlb")]
 z_index = 100
 position = Vector2(1289, 9)
+
+[connection signal="item_collected" from="Lantern" to="." method="_on_lantern_item_collected"]
