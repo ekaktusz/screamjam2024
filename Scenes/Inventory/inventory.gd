@@ -5,26 +5,20 @@ extends Control
 @onready var right_arm: TextureRect = $PanelContainer/GridContainer/RightArm
 @onready var left_arm: TextureRect = $PanelContainer/GridContainer/LeftArm
 @onready var leg: TextureRect = $PanelContainer/GridContainer/Leg
+@onready var lantern: TextureRect = $PanelContainer/GridContainer/Lantern
 
-var inventory: Array[Bodypart] = [
-	Bodypart.new("Head", false),
-	Bodypart.new("Torso", false),
-	Bodypart.new("RightArm", false),
-	Bodypart.new("LeftArm", false),
-	Bodypart.new("Leg", false),
-]
-
-func collect_item(item_name: String):
-	for part in inventory:
-		if part.get_bodypart() == item_name:
-			part.is_collected = true
-			if item_name == "Torso":
-				torso.self_modulate = Color.WHITE
-			elif item_name == "Head":
-				head.self_modulate = Color.WHITE
-			elif item_name == "RightArm":
-				right_arm.self_modulate = Color.WHITE
-			elif item_name == "LeftArm":
-				left_arm.self_modulate = Color.WHITE
-			elif item_name == "Leg":
-				leg.self_modulate = Color.WHITE
+func _process(delta) -> void:
+	var item_options = {
+		"Torso": torso,
+		"Head": head,
+		"RightArm": right_arm,
+		"LeftArm": left_arm,
+		"Leg": leg,
+		"Lantern": lantern
+	}
+	
+	for part_name in item_options:
+		if part_name in Globals.inventory:
+			item_options[part_name].self_modulate = Color.WHITE
+		else:
+			item_options[part_name].self_modulate = Color.BLACK
