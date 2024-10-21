@@ -70,12 +70,13 @@ func _show_dialogue_choice() -> void:
 	dialouge_choice_box.set_renegade_choice(renegade_choice)
 	
 func _on_paragon_choice_made() -> void:
-	dialogue_ended_with_paragon.emit()
 	_end_dialogue()
+	dialogue_ended_with_paragon.emit()
+	
 	
 func _on_renegade_choice_made() -> void:
-	dialogue_ended_with_renegade.emit()
 	_end_dialogue()
+	dialogue_ended_with_renegade.emit()
 
 func _on_dialogue_finished_displaying() -> void:
 	current_line_finished = true
@@ -110,7 +111,7 @@ func _end_dialogue():
 	is_dialogue_active = false
 	current_line_index = 0
 	dialogue_box.queue_free()
-	if dialouge_choice_box:
+	if _has_choice():
 		dialouge_choice_box.queue_free()
 	dialogue_ended.emit()
 	
