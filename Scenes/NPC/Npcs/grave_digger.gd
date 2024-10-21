@@ -27,6 +27,12 @@ const grave_digger_paragon_answer_dialogue: Array[String] = [
 	"But first, bring us the lantern! It must be somewhere in there!"
 ]
 
+const grave_digger_ending_dialogue: Array[String] = [
+	"Oh my goodness, you have found it! Please accept my eternal gratitude and…",
+	"GRAHHH <cuts head placeholder xd>",
+	" …this gorgeous head! Goodbye, sweet lady!"
+]
+
 var paragon_choice_text: String =  "😇 ask for the head of the beautiful man 🥺"
 var renegade_choice_text: String = "💀 just finish the old fool 😈"
 
@@ -70,6 +76,10 @@ func _init_grave_digger_paragon_dialogue() -> void:
 	grave_digger_dialogue_manager.reset_dialogue(grave_digger_paragon_answer_dialogue)
 
 func _on_interact() -> void:
+	if Globals.inventory.has("Lantern") and grave_digger_dialogue_manager.dialogue_lines != grave_digger_ending_dialogue:
+		grave_digger_dialogue_manager.reset_dialogue(grave_digger_ending_dialogue)
+		Globals.inventory.erase("Lantern")
+	
 	grave_digger_dialogue_manager.start_dialogue()
 	Globals.player_movement_blocked = true
 	if grave_digger_dialogue_manager.current_line_index == index_where_dog_should_woof and not dog_dialogue_manager.is_dialogue_active:
@@ -82,6 +92,10 @@ func _on_dog_bark_timer_timeout() -> void:
 func _on_grave_digger_dialogue_ended() -> void:
 	print("grave digger dialogue ended")
 	Globals.player_movement_blocked = false
+	
+	if grave_digger_dialogue_manager.dialogue_lines == grave_digger_ending_dialogue:
+		Globals.inventory.append("Head")
+	
 	if grave_digger_dialogue_manager.dialogue_lines != grave_digger_starter_dialogue:
 		grave_digger_dialogue_manager.reset_dialogue(get_random_busy_dialogue())
 	
