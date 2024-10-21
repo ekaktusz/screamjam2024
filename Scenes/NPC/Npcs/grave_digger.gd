@@ -18,7 +18,7 @@ const dog_dialogue: Array[String] = [
 	"Woof!"
 ]
 
-const grave_digger_pacifist_answer_dialogue: Array[String] = [
+const grave_digger_paragon_answer_dialogue: Array[String] = [
 	"What????",
 	"You want the head?!",
 	"What the…",
@@ -31,15 +31,13 @@ var paragon_choice_text: String =  "😇 ask for the head of the beautiful man �
 var renegade_choice_text: String = "💀 just finish the old fool 😈"
 
 func get_random_busy_dialogue() -> Array[String]:
-	var choices = [
-		["We're quite busy burying… Right, Woofy?"],
-		["It's starting to get really dark… I'm not even sure I can finish this before dawn."],
-		["I'm a grave-digger. I'm digging graves. That's what I do."],
-		["It's so good to have you, Woofy. I don't know what I'd do without you."]
+	var choices: Array[String] = [
+		"We're quite busy burying… Right, Woofy?",
+		"It's starting to get really dark… I'm not even sure I can finish this before dawn.",
+		"I'm a grave-digger. I'm digging graves. That's what I do.",
+		"It's so good to have you, Woofy. I don't know what I'd do without you."
 	]
-	return choices[randi() % choices.size()]
-
-
+	return [choices[randi() % choices.size()]]
 
 var grave_digger_dialogue_manager: DialogueManager
 var dog_dialogue_manager: DialogueManager
@@ -69,7 +67,7 @@ func _init_dog_dialogue() -> void:
 	dog_bark_timer.timeout.connect(_on_dog_bark_timer_timeout)
 
 func _init_grave_digger_paragon_dialogue() -> void:
-	grave_digger_dialogue_manager.reset_dialogue(grave_digger_pacifist_answer_dialogue)
+	grave_digger_dialogue_manager.reset_dialogue(grave_digger_paragon_answer_dialogue)
 
 func _on_interact() -> void:
 	grave_digger_dialogue_manager.start_dialogue()
@@ -84,6 +82,8 @@ func _on_dog_bark_timer_timeout() -> void:
 func _on_grave_digger_dialogue_ended() -> void:
 	print("grave digger dialogue ended")
 	Globals.player_movement_blocked = false
+	if grave_digger_dialogue_manager.dialogue_lines != grave_digger_starter_dialogue:
+		grave_digger_dialogue_manager.reset_dialogue(get_random_busy_dialogue())
 	
 func _on_grave_digger_dialogue_ended_with_paragon() -> void:
 	print("grave digger dialogue ended w paragon")
