@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://7tmbjh3esr6r"]
+[gd_scene load_steps=5 format=3 uid="uid://gic76s361cce"]
 
 [ext_resource type="PackedScene" uid="uid://bb2ai4g5a33a2" path="res://Scenes/Item/item.tscn" id="1_wf6n6"]
 [ext_resource type="Texture2D" uid="uid://b47cr6e5leg4y" path="res://Scenes/Tilemap/Tilesets/scream_tilemap_v003.png" id="2_2l15x"]
