@@ -99,4 +99,3 @@ sources/0 = SubResource("TileSetAtlasSource_l7blw")
 y_sort_enabled = true
 tile_set = SubResource("TileSet_csq0v")
 y_sort_origin = 1
-metadata/_edit_lock_ = true
