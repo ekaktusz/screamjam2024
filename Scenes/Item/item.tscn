@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bb2ai4g5a33a2"]
+[gd_scene load_steps=5 format=3 uid="uid://bb2ai4g5a33a2"]
 
 [ext_resource type="Script" path="res://Scenes/Item/item.gd" id="1_70ido"]
+[ext_resource type="Texture2D" uid="uid://cbtyw0mnd27aa" path="res://Scenes/Inventory/assets/torso3.png" id="2_4tnt2"]
 [ext_resource type="PackedScene" uid="uid://bg36jejsehft1" path="res://Scenes/Interaction/InteractionArea.tscn" id="3_1qkrf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c6utd"]
@@ -12,6 +13,8 @@ script = ExtResource("1_70ido")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-20, 0)
+scale = Vector2(10, 10)
+texture = ExtResource("2_4tnt2")
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_1qkrf")]
 action_name = "pick up"

@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bwxfu0diagfgk"]
+[gd_scene load_steps=8 format=3 uid="uid://cxxkj16qcppcu"]
 
-[ext_resource type="Texture2D" path="res://Scenes/Tilemap/scream_tilemap_v004.png" id="1_ue2dj"]
+[ext_resource type="Texture2D" uid="uid://c54eagkeejbpp" path="res://Scenes/Tilemap/scream_tilemap_v004.png" id="1_ue2dj"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bn3ur"]
 polygon = PackedVector2Array(-0.875, -41.375, -15.875, 5.375, -10.85, 10.575, -1.95, 15.025, 10.875, 14.125, 11.25, 10.375, 16.05, 7.975, 12.15, -9.925)
