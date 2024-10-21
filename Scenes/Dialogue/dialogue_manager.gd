@@ -28,10 +28,17 @@ signal dialogue_ended_with_renegade()
 static func create(position: Vector2, lines: Array[String], paragon: String = "", renegade: String = "") -> DialogueManager:
 	var instance = DialogueManager.new()
 	instance.dialogue_box_position = position
-	instance.dialogue_lines = lines
-	instance.paragon_choice = paragon
-	instance.renegade_choice = renegade
+	instance.reset_dialogue(lines, paragon, renegade)
 	return instance
+
+func reset_dialogue(lines: Array[String], paragon: String = "", renegade: String = "") -> void:
+	self.dialogue_lines = lines
+	self.paragon_choice = paragon
+	self.renegade_choice = renegade
+	self.current_line_index = 0
+	self.is_dialogue_active = false
+	self.current_line_finished = false
+	self.is_dialogue_end_wait_timer_finished = false
 	
 func _has_choice() -> bool:
 	return paragon_choice != "" and renegade_choice != ""
@@ -39,10 +46,12 @@ func _has_choice() -> bool:
 func start_dialogue() -> void:
 	if is_dialogue_active:
 		return
-	_show_next_dialogue_box()
 	is_dialogue_active = true
+	_show_next_dialogue_box()
 	
 func _show_next_dialogue_box() -> void:
+	if dialogue_box != null:
+		dialogue_box.queue_free()
 	dialogue_box = DialogueBoxScene.instantiate()
 	dialogue_box.finished_displaying.connect(_on_dialogue_finished_displaying)
 	dialogue_box.global_position = dialogue_box_position
@@ -61,12 +70,10 @@ func _show_dialogue_choice() -> void:
 	dialouge_choice_box.set_renegade_choice(renegade_choice)
 	
 func _on_paragon_choice_made() -> void:
-	print("paragon")
 	dialogue_ended_with_paragon.emit()
 	_end_dialogue()
 	
 func _on_renegade_choice_made() -> void:
-	print("renegade")
 	dialogue_ended_with_renegade.emit()
 	_end_dialogue()
 
@@ -84,17 +91,14 @@ func _start_dialogue_end_wait_timer() -> void:
 
 func _on_dialogue_end_wait_timer_finished() -> void:
 	is_dialogue_end_wait_timer_finished = true
-	
-	if current_line_index == dialogue_lines.size() -1 and _has_choice():
+	if current_line_index == dialogue_lines.size() - 1 and _has_choice():
 		_show_dialogue_choice()
-	
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and is_dialogue_active and current_line_finished and is_dialogue_end_wait_timer_finished:
 		if _has_choice() and current_line_index >= dialogue_lines.size() - 1:
 			return
 		
-		dialogue_box.queue_free()
 		current_line_index += 1
 		
 		if current_line_index >= dialogue_lines.size():
@@ -109,4 +113,6 @@ func _end_dialogue():
 	if _has_choice():
 		dialouge_choice_box.queue_free()
 	dialogue_ended.emit()
+	
+
 	
