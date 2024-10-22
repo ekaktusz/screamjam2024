@@ -5,4 +5,4 @@ extends Node2D
 func _on_lantern_item_collected(item_name) -> void:
 	Globals.inventory.append(item_name)
 	print(item_name)
-	Globals.current_objective = "bring the lantern to the grave digger"
+	Globals.current_objective = "Bring the lantern to the grave digger"

@@ -17,11 +17,11 @@ offset_right = 4.0
 offset_bottom = 4.0
 scale = Vector2(2, 2)
 
-[node name="CurrentObjective" type="MarginContainer" parent="CanvasLayer"]
-offset_left = 1454.0
-offset_top = 12.0
-offset_right = 1960.0
-offset_bottom = 144.0
+[node name="CurrentObjective" type="PanelContainer" parent="CanvasLayer"]
+offset_left = 1391.0
+offset_top = 3.0
+offset_right = 1897.0
+offset_bottom = 52.0
 
 [node name="BackgroundPanel" type="Panel" parent="CanvasLayer/CurrentObjective"]
 layout_mode = 2
@@ -31,8 +31,24 @@ layout_mode = 2
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 35
 text = "Current Objective "
+horizontal_alignment = 1
 
-[node name="ObjectiveText" type="Label" parent="CanvasLayer/CurrentObjective"]
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+offset_left = 1391.0
+offset_top = 51.0
+offset_right = 1897.0
+offset_bottom = 135.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/PanelContainer"]
 layout_mode = 2
+
+[node name="ObjectiveText" type="Label" parent="CanvasLayer/PanelContainer/Panel"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+offset_right = 506.0
+offset_bottom = 85.0
 theme_override_font_sizes/font_size = 28
-text = "speak with your mom"
+text = "speak with you mom"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

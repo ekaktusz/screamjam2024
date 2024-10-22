@@ -23,7 +23,33 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		dark_mode_switch()
 
-func _on_item_collected(item_name) -> void:
-	print("game item collected")
-	Globals.current_objective = "speak with the grave digger"
+#torso item collected
+func _on_torso_collected(item_name) -> void:
+	Globals.current_objective = "Look around for somebody who could miss a leg"
 	Globals.inventory.append(item_name)
+	#todo "open door" to main square
+	
+func _on_leg_bloody_collected(item_name) -> void:
+	#todo add objective logic
+	#kill pirate with anim
+	Globals.current_objective = "Pray for a hand - or two"
+	Globals.inventory.append(item_name)
+
+func _on_leg_collected_on_main_square(item_name) -> void:
+	#todo add objective logic
+	#let pirate sleep with anim
+	Globals.current_objective = "Pray for a hand - or two"
+	Globals.inventory.append(item_name)
+
+func _on_arm_collected(item_name) -> void:
+	#todo add objective logic 
+	#disable other hand collection FROM PRIEST and move to next quest
+	Globals.current_objective = "Speak with the grave digger"
+	Globals.inventory.append(item_name)
+	#todo "open door" to the graveyard
+
+func _on_arm_bloody_collected(item_name) -> void:
+	#todo add objective logic
+	Globals.current_objective = "Speak with the grave digger"
+	Globals.inventory.append(item_name)
+	#todo "open door" to the graveyard

@@ -48,6 +48,7 @@ func _on_grave_digger_dialogue_ended() -> void:
 	if grave_digger_dialogue_manager.dialogue_lines == DialogueDb.grave_digger_ending_dialogue:
 		Globals.inventory.erase("Lantern")
 		Globals.inventory.append("Head")
+		Globals.current_objective = "Return to the Labor to stitch together your new BF"
 		queue_free()
 		return
 	
@@ -56,11 +57,12 @@ func _on_grave_digger_dialogue_ended() -> void:
 	
 func _on_grave_digger_dialogue_ended_with_paragon() -> void:
 	print("grave digger dialogue ended w paragon")
-	Globals.current_objective = "find the lantern"
+	Globals.current_objective = "Find the lantern"
 	grave_digger_dialogue_manager.reset_dialogue(DialogueDb.grave_digger_paragon_answer_dialogue)
 	grave_digger_dialogue_manager.start_dialogue()
 
 func _on_grave_digger_dialogue_ended_with_renegade() -> void:
 	print("grave digger dialogue ended w renegade")
+	Globals.current_objective = "Return to the Labor to stitch together your new BF"
 	queue_free() # TODO: killlllll
-	Globals.inventory.append("Head")
+	Globals.inventory.append("HeadBloody")

@@ -23,13 +23,13 @@ blend_mode = 2
 range_z_max = -1
 
 [node name="Priest1" parent="." instance=ExtResource("6_pc0e0")]
-position = Vector2(187, 260)
+position = Vector2(-383, 94)
 
 [node name="Priest2" parent="." instance=ExtResource("7_qlpmb")]
-position = Vector2(166, 249)
+position = Vector2(-321, 49)
 
 [node name="MinisterBoy" parent="." instance=ExtResource("8_lwj13")]
-position = Vector2(206, 273)
+position = Vector2(-274, 8)
 
 [node name="Graveyard" parent="." instance=ExtResource("12_hxdip")]
 y_sort_enabled = true
@@ -54,6 +54,9 @@ polygon = PackedVector2Array(-1184, -643, -1184, -643, -1154, -657, -1154, -657)
 
 [node name="Hud" parent="." instance=ExtResource("12_3qbvf")]
 
-[connection signal="arm_collected_on_main_square" from="MainSquare" to="." method="_on_item_collected"]
-[connection signal="torso_collected_in_labor" from="Labor" to="." method="_on_item_collected"]
+[connection signal="arm_bloody_collected_on_main_square" from="MainSquare" to="." method="_on_arm_bloody_collected"]
+[connection signal="arm_collected_on_main_square" from="MainSquare" to="." method="_on_arm_collected"]
+[connection signal="leg_bloody_collected_on_main_square" from="MainSquare" to="." method="_on_leg_bloody_collected"]
+[connection signal="leg_collected_on_main_square" from="MainSquare" to="." method="_on_leg_collected_on_main_square"]
+[connection signal="torso_collected_in_labor" from="Labor" to="." method="_on_torso_collected"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

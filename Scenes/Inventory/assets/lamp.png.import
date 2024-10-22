@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://66fxig8jlv4i"
-path="res://.godot/imported/leftarm.png-756f3242059084e56392a454b0cb8629.ctex"
+uid="uid://ckjd5ailk7x38"
+path="res://.godot/imported/lamp.png-9437b5903d0ff0f726d4050a5f0391d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Inventory/assets/leftarm.png"
-dest_files=["res://.godot/imported/leftarm.png-756f3242059084e56392a454b0cb8629.ctex"]
+source_file="res://Scenes/Inventory/assets/lamp.png"
+dest_files=["res://.godot/imported/lamp.png-9437b5903d0ff0f726d4050a5f0391d2.ctex"]
 
 [params]
 

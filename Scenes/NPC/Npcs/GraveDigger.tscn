@@ -49,6 +49,9 @@ script = ExtResource("2_xagn3")
 texture = ExtResource("2_wsn2m")
 hframes = 24
 
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-2, 3)
+
 [node name="GraveDiggerAnimation" type="AnimationPlayer" parent="." index="3"]
 libraries = {
 "": SubResource("AnimationLibrary_imxhp")
@@ -56,3 +59,6 @@ libraries = {
 autoplay = "Idle"
 
 [node name="DogBarkTimer" type="Timer" parent="." index="4"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="5"]
+polygon = PackedVector2Array(-24, 4, 10, 23, 21, 13, 1, -8)

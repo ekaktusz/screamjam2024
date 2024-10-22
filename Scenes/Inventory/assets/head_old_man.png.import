@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbtyw0mnd27aa"
-path="res://.godot/imported/torso3.png-b81819855cef50a77794e799e5c14ce4.ctex"
+uid="uid://ct3s8784adss7"
+path="res://.godot/imported/head_old_man.png-b1fb7fbddde2006fa62628e7464a52c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Inventory/assets/torso3.png"
-dest_files=["res://.godot/imported/torso3.png-b81819855cef50a77794e799e5c14ce4.ctex"]
+source_file="res://Scenes/Inventory/assets/head_old_man.png"
+dest_files=["res://.godot/imported/head_old_man.png-b1fb7fbddde2006fa62628e7464a52c7.ctex"]
 
 [params]
 

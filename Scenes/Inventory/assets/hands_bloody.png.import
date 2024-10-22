@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2l0crmeu0w8e"
-path="res://.godot/imported/rightarm.png-6e0b6d7c06ed54b43a1d2ae49f658824.ctex"
+uid="uid://b5xdqhcg8fkca"
+path="res://.godot/imported/hands_bloody.png-4502db99861d216baf92cc37e8287395.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Inventory/assets/rightarm.png"
-dest_files=["res://.godot/imported/rightarm.png-6e0b6d7c06ed54b43a1d2ae49f658824.ctex"]
+source_file="res://Scenes/Inventory/assets/hands_bloody.png"
+dest_files=["res://.godot/imported/hands_bloody.png-4502db99861d216baf92cc37e8287395.ctex"]
 
 [params]
 

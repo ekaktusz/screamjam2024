@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://7sm8u7xuo3a1"]
 
 [ext_resource type="PackedScene" uid="uid://bb2ai4g5a33a2" path="res://Scenes/Item/item.tscn" id="1_cmlba"]
-[ext_resource type="Texture2D" uid="uid://bkyrdkhwwipm7" path="res://Scenes/Inventory/assets/head.png" id="2_b54ix"]
+[ext_resource type="Texture2D" uid="uid://ct3s8784adss7" path="res://Scenes/Inventory/assets/head_old_man.png" id="2_fo6ck"]
 
 [node name="Head" instance=ExtResource("1_cmlba")]
 
 [node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("2_b54ix")
+texture = ExtResource("2_fo6ck")
