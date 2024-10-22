@@ -518,12 +518,13 @@ sprite_frames = SubResource("SpriteFrames_flx6g")
 animation = &"down"
 
 [node name="PointLight2D2" type="PointLight2D" parent="Sprite2D"]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 y_sort_enabled = true
 position = Vector2(0.375999, 8)
 scale = Vector2(1.887, 2)
+enabled = false
 energy = 0.3
-shadow_enabled = true
 shadow_filter = 1
 shadow_filter_smooth = 7.0
 texture = SubResource("GradientTexture2D_spata")
@@ -532,10 +533,10 @@ texture_scale = 1.5
 [node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
 self_modulate = Color(1, 1, 1, 0)
 y_sort_enabled = true
-position = Vector2(0.375999, 8)
-scale = Vector2(1.918, 2)
-energy = 0.3
-shadow_enabled = true
+position = Vector2(1, 12)
+scale = Vector2(1.5905, 1.6585)
+enabled = false
+energy = 0.5
 shadow_filter = 1
 shadow_filter_smooth = 4.0
 texture = SubResource("GradientTexture2D_spata")

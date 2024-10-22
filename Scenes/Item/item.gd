@@ -10,5 +10,6 @@ func _ready() -> void:
 	interaction_area.interact = Callable(self,"_on_interact")
 
 func _on_interact():
+	print("collected ", item.name)
 	item_collected.emit(item.name)
 	queue_free()
