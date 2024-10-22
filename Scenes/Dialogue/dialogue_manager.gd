@@ -54,11 +54,12 @@ func _show_next_dialogue_box() -> void:
 		dialogue_box.queue_free()
 	dialogue_box = DialogueBoxScene.instantiate()
 	dialogue_box.finished_displaying.connect(_on_dialogue_finished_displaying)
-	dialogue_box.global_position = dialogue_box_position
+	dialogue_box.set_target_position(dialogue_box_position)  # Use set_target_position instead
 	get_tree().root.add_child(dialogue_box)
 	dialogue_box.display_text(dialogue_lines[current_line_index])
 	current_line_finished = false
 	is_dialogue_end_wait_timer_finished = false
+
 	
 func _show_dialogue_choice() -> void:
 	dialouge_choice_box = DialogueChoiceScene.instantiate()
