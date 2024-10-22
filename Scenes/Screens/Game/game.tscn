@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://ct5a81kc8suuw"]
+[gd_scene load_steps=10 format=3 uid="uid://ct5a81kc8suuw"]
 
 [ext_resource type="Script" path="res://Scenes/Screens/Game/game.gd" id="1_ew7s7"]
-[ext_resource type="PackedScene" uid="uid://6qvylrim0xte" path="res://Scenes/Tilemap/tile_map_layer_ground_floor.tscn" id="1_rv4jy"]
 [ext_resource type="PackedScene" uid="uid://yspo5jyeg5s0" path="res://Scenes/Character/character_body_2d.tscn" id="2_ssn54"]
-[ext_resource type="PackedScene" uid="uid://byqsaebfr2wqt" path="res://Scenes/Tilemap/tile_map_layer_first_floor.tscn" id="3_e2lyt"]
+[ext_resource type="PackedScene" uid="uid://30idt0c1iy2p" path="res://Scenes/MainSquare/MainSquare.tscn" id="6_audtp"]
 [ext_resource type="PackedScene" uid="uid://bpgf0ho8ohbeg" path="res://Scenes/NPC/Npcs/Priest1.tscn" id="6_pc0e0"]
 [ext_resource type="PackedScene" uid="uid://t24335gumm23" path="res://Scenes/NPC/Npcs/Priest2.tscn" id="7_qlpmb"]
 [ext_resource type="PackedScene" uid="uid://bibciqajbuv6o" path="res://Scenes/NPC/Npcs/MinisterBoy.tscn" id="8_lwj13"]
@@ -17,7 +16,8 @@ position = Vector2(706, 450)
 script = ExtResource("1_ew7s7")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-color = Color(0.0791746, 0.0546794, 0.222656, 1)
+enabled = false
+color = Color(0.021418, 0.0121243, 0.15625, 1)
 energy = 0.75
 blend_mode = 2
 range_z_max = -1
@@ -33,20 +33,27 @@ position = Vector2(206, 273)
 
 [node name="Graveyard" parent="." instance=ExtResource("12_hxdip")]
 y_sort_enabled = true
-position = Vector2(-128, -111)
+position = Vector2(-771, -675)
+
+[node name="MainSquare" parent="." instance=ExtResource("6_audtp")]
+y_sort_enabled = true
+position = Vector2(-706, -450)
 
 [node name="Labor" parent="." instance=ExtResource("9_18b27")]
-position = Vector2(-490, -202)
+position = Vector2(-1280, -737)
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_ssn54")]
-position = Vector2(-674, -116)
+position = Vector2(-1464, -665)
+metadata/_edit_lock_ = true
 
-[node name="TileMapLayerFirstFloor" parent="." instance=ExtResource("3_e2lyt")]
-tile_map_data = PackedByteArray(0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 4, 0, 0, 0)
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="TileMapGroundFloor" parent="." instance=ExtResource("1_rv4jy")]
-tile_map_data = PackedByteArray()
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-1184, -643, -1184, -643, -1154, -657, -1154, -657)
 
 [node name="Hud" parent="." instance=ExtResource("12_3qbvf")]
 
+[connection signal="arm_collected_on_main_square" from="MainSquare" to="." method="_on_item_collected"]
 [connection signal="torso_collected_in_labor" from="Labor" to="." method="_on_item_collected"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

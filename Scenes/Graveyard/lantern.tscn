@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://gic76s361cce"]
+[gd_scene load_steps=5 format=3 uid="uid://cot7o3xpiilyr"]
 
 [ext_resource type="PackedScene" uid="uid://bb2ai4g5a33a2" path="res://Scenes/Item/item.tscn" id="1_wf6n6"]
 [ext_resource type="Texture2D" uid="uid://b47cr6e5leg4y" path="res://Scenes/Tilemap/Tilesets/scream_tilemap_v003.png" id="2_2l15x"]
@@ -16,8 +16,7 @@ fill_from = Vector2(0.5, 0.5)
 scale = Vector2(1, 1)
 
 [node name="Sprite2D" parent="." index="0"]
-position = Vector2(-6.77626e-21, -10)
-scale = Vector2(1, 1)
+position = Vector2(-4.99997, -119)
 texture = ExtResource("2_2l15x")
 region_enabled = true
 region_rect = Rect2(192, 256, 64, 64)
@@ -27,6 +26,7 @@ self_modulate = Color(1, 1, 1, 0)
 y_sort_enabled = true
 position = Vector2(-9.53674e-07, 9.5)
 scale = Vector2(1.19048, 1.14583)
+color = Color(1, 0.984314, 0.309804, 1)
 energy = 0.3
 shadow_enabled = true
 shadow_filter = 1
@@ -39,6 +39,7 @@ self_modulate = Color(1, 1, 1, 0)
 y_sort_enabled = true
 position = Vector2(0, 10)
 scale = Vector2(1.0625, 0.854167)
+color = Color(1, 1, 0.301961, 1)
 energy = 0.3
 shadow_enabled = true
 shadow_filter = 1
