@@ -42,7 +42,6 @@ position = Vector2(-490, -202)
 position = Vector2(-674, -116)
 
 [node name="TileMapLayerFirstFloor" parent="." instance=ExtResource("3_e2lyt")]
-tile_map_data = PackedByteArray(0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 4, 0, 0, 0)
 
 [node name="TileMapGroundFloor" parent="." instance=ExtResource("1_rv4jy")]
 tile_map_data = PackedByteArray()
