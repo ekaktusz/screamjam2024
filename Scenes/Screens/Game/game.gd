@@ -8,7 +8,6 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	InteractionManager.set_player(player)
-	Globals.current_objective = "get the torso"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
