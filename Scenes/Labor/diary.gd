@@ -40,5 +40,6 @@ func _on_button_pressed() -> void:
 
 func _on_fade_out_finsihed():
 	Globals.player_movement_blocked = false
+	Globals.hud_visible = true
 	Globals.current_objective = "get the torso"
 	queue_free()
