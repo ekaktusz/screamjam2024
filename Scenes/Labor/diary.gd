@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var o_kbutton: Button = $OKbutton
 
 func _ready() -> void:
+	Globals.current_objective = ""
 	Globals.player_movement_blocked = true
 	
 	# Start with fully transparent elements and disabled button
@@ -39,4 +40,5 @@ func _on_button_pressed() -> void:
 
 func _on_fade_out_finsihed():
 	Globals.player_movement_blocked = false
+	Globals.current_objective = "get the torso"
 	queue_free()
