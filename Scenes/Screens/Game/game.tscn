@@ -18,7 +18,7 @@ script = ExtResource("1_ew7s7")
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 enabled = false
 color = Color(0.021418, 0.0121243, 0.15625, 1)
-energy = 0.75
+energy = 0.8
 blend_mode = 2
 range_z_max = -1
 
@@ -33,7 +33,7 @@ position = Vector2(206, 273)
 
 [node name="Graveyard" parent="." instance=ExtResource("12_hxdip")]
 y_sort_enabled = true
-position = Vector2(-771, -675)
+position = Vector2(-490, -823)
 
 [node name="MainSquare" parent="." instance=ExtResource("6_audtp")]
 y_sort_enabled = true
