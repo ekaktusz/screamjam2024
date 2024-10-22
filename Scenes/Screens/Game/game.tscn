@@ -33,7 +33,7 @@ position = Vector2(206, 273)
 
 [node name="Graveyard" parent="." instance=ExtResource("12_hxdip")]
 y_sort_enabled = true
-position = Vector2(-128, -111)
+position = Vector2(400, -170)
 
 [node name="Labor" parent="." instance=ExtResource("9_18b27")]
 position = Vector2(-490, -202)
