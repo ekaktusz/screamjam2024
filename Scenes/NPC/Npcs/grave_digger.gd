@@ -14,14 +14,14 @@ func _ready() -> void:
 	_init_dog_dialogue()
 	
 func _init_grave_digger_starting_dialogue() -> void:
-	grave_digger_dialogue_manager = DialogueManager.create(global_position, DialogueDb.grave_digger_starter_dialogue, DialogueDb.grave_digger_paragon_choice_text,  DialogueDb.grave_digger_renegade_choice_text)
+	grave_digger_dialogue_manager = DialogueManager.create(global_position - Vector2(0, 32), DialogueDb.grave_digger_starter_dialogue, DialogueDb.grave_digger_paragon_choice_text,  DialogueDb.grave_digger_renegade_choice_text)
 	add_child(grave_digger_dialogue_manager)
 	grave_digger_dialogue_manager.dialogue_ended.connect(_on_grave_digger_dialogue_ended)
 	grave_digger_dialogue_manager.dialogue_ended_with_paragon.connect(_on_grave_digger_dialogue_ended_with_paragon)
 	grave_digger_dialogue_manager.dialogue_ended_with_renegade.connect(_on_grave_digger_dialogue_ended_with_renegade)
 
 func _init_dog_dialogue() -> void:
-	dog_dialogue_manager = DialogueManager.create(dog.global_position - Vector2(-20, -40),  DialogueDb.grave_digger_dog_dialogue)
+	dog_dialogue_manager = DialogueManager.create(dog.global_position - Vector2(0, 10),  DialogueDb.grave_digger_dog_dialogue)
 	add_child(dog_dialogue_manager)
 	
 	dog_bark_timer.one_shot = true

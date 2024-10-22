@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv8i85ikqcfrx"]
+
+[ext_resource type="Script" path="res://Scenes/Labor/diary.gd" id="1_mra0v"]
+[ext_resource type="Texture2D" uid="uid://cdw6cfb6kdfmp" path="res://Scenes/Labor/grannys_diary.png" id="1_p0enn"]
+
+[node name="Diary" type="CanvasLayer"]
+script = ExtResource("1_mra0v")
+
+[node name="GrannysDiary" type="Sprite2D" parent="."]
+position = Vector2(1039, 497)
+scale = Vector2(1.81055, 1.82812)
+texture = ExtResource("1_p0enn")
+
+[node name="OKbutton" type="Button" parent="."]
+offset_left = 878.0
+offset_top = 989.0
+offset_right = 1211.0
+offset_bottom = 1049.0
+text = "Ok, lets get the a new bf"
