@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://ce4wdswhq308m"]
+[gd_scene load_steps=13 format=4 uid="uid://ce4wdswhq308m"]
 
 [ext_resource type="PackedScene" uid="uid://dng4dw2dw8yhn" path="res://Scenes/Inventory/Items/Torso.tscn" id="1_6llug"]
 [ext_resource type="PackedScene" uid="uid://byqsaebfr2wqt" path="res://Scenes/Tilemap/tile_map_layer_first_floor.tscn" id="1_hncrf"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://dgeq22gfwptg3" path="res://Music/frankeinstein_A_beat_labor_main_square.mp3" id="5_mj8lj"]
 [ext_resource type="PackedScene" uid="uid://cv8i85ikqcfrx" path="res://Scenes/Labor/diary.tscn" id="7_2q8m1"]
 [ext_resource type="PackedScene" uid="uid://bg36jejsehft1" path="res://Scenes/Interaction/InteractionArea.tscn" id="8_f52dm"]
+[ext_resource type="PackedScene" uid="uid://craj5foncbild" path="res://Scenes/CountdownBall/count_down_ball.tscn" id="9_gyanf"]
 [ext_resource type="AudioStream" uid="uid://beltpi8cflwf7" path="res://Music/SFX/inventory_closebag.mp3" id="9_ymci0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eet04"]
@@ -37,7 +38,7 @@ tile_map_data = PackedByteArray("AAAAAAIAAAAFAAIAAAAHAP7/AAAFAAIAAAAIAP7/AAAFAAI
 
 [node name="TileMapLayerSecondFloor" parent="." instance=ExtResource("5_3vuge")]
 z_index = 2
-tile_map_data = PackedByteArray("AADz//7/AAAFAAEAAAD1//3/AAAJAAIAAAD0//7/AAAJAAIAAAD4//z/AAAJAAIAAAD5//v/AAAJAAIAAAD8//r/AAAJAAIAAAD9//n/AAAJAAIAAAD+//n/AAAFAAEAAAD7//r/AAAFAAEAAAD6//v/AAAFAAEAAAD3//z/AAAFAAEAAAD2//3/AAAFAAEAAAAEAPj/AAAFAAEAAAAFAPf/AAAFAAEAAAAHAPf/AAAGAAEAAAAIAPj/AAAKAAIAAAAJAPj/AAAKAAIAAAAKAPn/AAAGAAEAAAACAPj/AAAGAAEAAAADAPj/AAAJAAEAAAABAPf/AAAHAAEAAAAGAPf/AAAHAAEAAAAIAPv/AAAGAAEAAAAJAPv/AAAKAAIAAAAKAPz/AAAGAAEAAAAHAPr/AAAFAAEAAAAJAPn/AAAFAAEAAAAIAPr/AAAFAAEAAAAAAPj/AAAFAAEAAAD///j/AAAFAAEAAAAAAPn/AAAHAAUAAAABAPj/AAAGAAUAAAD5//z/AAAKAAYAAAD6//z/AAAKAAYAAAD///n/AAAKAAYAAAAHAPv/AAAKAAYAAAAIAPz/AAAKAAYAAAA=")
+tile_map_data = PackedByteArray("AADz//7/AAAFAAEAAAD1//3/AAAJAAIAAAD0//7/AAAJAAIAAAD4//z/AAAJAAIAAAD5//v/AAAJAAIAAAD8//r/AAAJAAIAAAD9//n/AAAJAAIAAAD+//n/AAAFAAEAAAD7//r/AAAFAAEAAAD6//v/AAAFAAEAAAD3//z/AAAFAAEAAAD2//3/AAAFAAEAAAAEAPj/AAAFAAEAAAAFAPf/AAAFAAEAAAAHAPf/AAAGAAEAAAAIAPj/AAAKAAIAAAAJAPj/AAAKAAIAAAAKAPn/AAAGAAEAAAACAPj/AAAGAAEAAAADAPj/AAAJAAEAAAABAPf/AAAHAAEAAAAGAPf/AAAHAAEAAAAIAPv/AAAGAAEAAAAJAPv/AAAKAAIAAAAKAPz/AAAGAAEAAAAHAPr/AAAFAAEAAAAJAPn/AAAFAAEAAAAIAPr/AAAFAAEAAAAAAPj/AAAFAAEAAAD///j/AAAFAAEAAAABAPj/AAAGAAUAAAD5//z/AAAKAAYAAAD6//z/AAAKAAYAAAD///n/AAAKAAYAAAAHAPv/AAAKAAYAAAAIAPz/AAAKAAYAAAAAAPn/AAAHAAUAAAA=")
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
@@ -106,6 +107,13 @@ autowrap_mode = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_ymci0")
+
+[node name="CountDownBall" parent="." instance=ExtResource("9_gyanf")]
+visible = false
+z_index = 10
+y_sort_enabled = true
+position = Vector2(32, -193)
+scale = Vector2(0.714286, 0.714286)
 
 [connection signal="item_collected" from="Torso" to="." method="_on_item_collected"]
 [connection signal="body_entered" from="StaticBody2D/BlockQuestArea" to="." method="_on_block_quest_area_body_entered"]

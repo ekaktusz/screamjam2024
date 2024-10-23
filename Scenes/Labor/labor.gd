@@ -5,8 +5,11 @@ extends Node2D
 @onready var quest_hint_panel: Panel = $StaticBody2D/Panel
 @onready var quest_area_detect: CollisionPolygon2D = $StaticBody2D/BlockQuestArea/QuestAreaDetect
 @onready var quest_area_blocker: CollisionPolygon2D = $StaticBody2D/QuestAreaBlocker
+@onready var countDownBall: Sprite2D = $CountDownBall
 
 @export var sfx_item: AudioStreamPlayer
+
+const ending_photo = preload("res://Scenes/Labor/ending_photo.tscn")
 
 signal torso_collected_in_labor
 
@@ -22,7 +25,10 @@ func _process(delta: float) -> void:
 		collision_shape_2d.disabled = false
 		
 func _on_photo_interact():
-	ScreenManager.change_screen("res://Scenes/Labor/ending_photo.tscn")
+	var node = ending_photo.instantiate()
+	add_child(node)
+	countDownBall.visible = true
+
 
 func _on_item_collected(item) -> void:
 	torso_collected_in_labor.emit(item)
