@@ -8,6 +8,8 @@ extends CharacterBody2D
 
 @export var sfx_knife: AudioStreamPlayer
 @export var sfx_scream: AudioStreamPlayer
+@export var sfx_woof: AudioStreamPlayer
+
 
 signal show_head
 signal show_head_bloody
@@ -37,6 +39,7 @@ func _init_dog_dialogue() -> void:
 	dog_bark_timer.timeout.connect(_on_dog_bark_timer_timeout)
 
 func _on_dog_bark_timer_timeout() -> void:
+	sfx_woof.play()
 	dog_dialogue_manager.start_dialogue()
 	
 func _on_interact() -> void:
