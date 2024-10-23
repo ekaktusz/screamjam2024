@@ -19,9 +19,6 @@ signal leg_collected_on_main_square
 signal leg_bloody_collected_on_main_square
 
 func _ready():
-	# Set up labels with initial text and hide them
-	quest_hint_label.text = "Complete the quest first!"  # Set your desired text here
-	quest_hint_label_priest.text = "Talk to the priest first!"  # Set your desired text here
 	quest_hint_label.hide()
 	quest_hint_label_priest.hide()
 
