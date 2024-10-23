@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dc80gr4m4jjuw" path="res://Scenes/Labor/assets/camera.png" id="11_3gtee"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eet04"]
-radius = 38.0786
+radius = 46.1408
 height = 103.696
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hfr7k"]
@@ -62,7 +62,7 @@ position = Vector2(70, -146)
 action_name = "build boyfriend"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PhotoInteractionArea"]
-position = Vector2(0, -9)
+position = Vector2(-4, 21)
 rotation = 2.08915
 shape = SubResource("CapsuleShape2D_eet04")
 

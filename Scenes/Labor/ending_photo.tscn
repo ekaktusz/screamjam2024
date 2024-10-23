@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bo8clr6j3vlc8"]
+[gd_scene load_steps=11 format=3 uid="uid://bo8clr6j3vlc8"]
 
 [ext_resource type="Script" path="res://Scenes/Labor/ending_photo.gd" id="1_2iqep"]
 [ext_resource type="Texture2D" uid="uid://dv2whequqtsrw" path="res://Scenes/Labor/assets/1.png" id="2_cg5dl"]
@@ -9,11 +9,13 @@
 [ext_resource type="StyleBox" uid="uid://pr52pfscqc2n" path="res://ButtonStyles/button_pressed.tres" id="6_ja81g"]
 [ext_resource type="FontFile" uid="uid://c6sw6uc7o3n3u" path="res://Font/Kalam-Regular.ttf" id="7_34514"]
 [ext_resource type="StyleBox" uid="uid://d1l81vio2tqgs" path="res://ButtonStyles/button_normal.tres" id="7_u8jbo"]
+[ext_resource type="AudioStream" uid="uid://drbrr8lcrweqh" path="res://Music/SFX/priest_scream.mp3" id="10_tdfxi"]
 
-[node name="EndingPhoto" type="CanvasLayer" node_paths=PackedStringArray("sfx_camera", "sfx_lightning")]
+[node name="EndingPhoto" type="CanvasLayer" node_paths=PackedStringArray("sfx_camera", "sfx_lightning", "sfx_priest_scream")]
 script = ExtResource("1_2iqep")
 sfx_camera = NodePath("AudioStreamPlayer")
 sfx_lightning = NodePath("AudioStreamPlayerLightning")
+sfx_priest_scream = NodePath("AudioStreamPlayerMMYEAH")
 metadata/_edit_vertical_guides_ = [1980.0, 961.0]
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -86,5 +88,8 @@ stream = ExtResource("4_lxglj")
 
 [node name="AudioStreamPlayerLightning" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_12qgg")
+
+[node name="AudioStreamPlayerMMYEAH" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_tdfxi")
 
 [connection signal="pressed" from="OKButton" to="." method="_on_ok_button_pressed"]
