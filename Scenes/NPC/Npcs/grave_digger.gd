@@ -6,6 +6,9 @@ extends CharacterBody2D
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 @onready var collision_shape_2d_talk: CollisionShape2D = $InteractionArea/CollisionShape2D
 
+@export var sfx_knife: AudioStreamPlayer
+@export var sfx_scream: AudioStreamPlayer
+
 signal show_head
 signal show_head_bloody
 
@@ -73,6 +76,8 @@ func _on_grave_digger_dialogue_ended_with_renegade() -> void:
 	#Globals.inventory.append("HeadBloody")
 	
 func kill_grave_digger():
+	sfx_knife.play()
+	sfx_scream.play()
 	sprite_2d.play("dead")
 	collision_shape_2d_talk.disabled = true
 	

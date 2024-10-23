@@ -44,8 +44,9 @@ position = Vector2(204, 31)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(881, -1)
 stream = ExtResource("5_c80eh")
+volume_db = -3.0
 autoplay = true
-max_distance = 1000.0
+max_distance = 1100.0
 parameters/looping = true
 
 [node name="Lantern" parent="." instance=ExtResource("5_olwlb")]

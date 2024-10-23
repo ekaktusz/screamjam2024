@@ -9,8 +9,8 @@ signal head_collected_on_graveyard
 
 func _on_lantern_item_collected(item_name) -> void:
 	Globals.inventory.append(item_name)
-	print(item_name)
-	Globals.current_objective = "Bring the lantern to the grave digger"
+	if !Globals.inventory.has("Head") && !Globals.inventory.has("HeadBloody") :
+		Globals.current_objective = "Bring the lantern to the grave digger"
 
 func _on_show_head_bloody() -> void:
 	head_bloody.visible = true

@@ -22,9 +22,11 @@ blend_mode = 2
 range_z_max = -1
 
 [node name="Priest2" parent="." instance=ExtResource("7_qlpmb")]
+visible = false
 position = Vector2(-321, 49)
 
 [node name="MinisterBoy" parent="." instance=ExtResource("8_lwj13")]
+visible = false
 position = Vector2(-274, 8)
 
 [node name="Graveyard" parent="." instance=ExtResource("12_hxdip")]

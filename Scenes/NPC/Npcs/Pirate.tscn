@@ -1,8 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbt0lh5kn86cr"]
+[gd_scene load_steps=5 format=3 uid="uid://bbt0lh5kn86cr"]
 
 [ext_resource type="PackedScene" uid="uid://8g1veysh6lp3" path="res://Scenes/NPC/npc.tscn" id="1_dspj5"]
+[ext_resource type="AudioStream" uid="uid://dqppajigh4aql" path="res://Music/SFX/bloody-stab-1.mp3" id="2_ewbsl"]
+[ext_resource type="AudioStream" uid="uid://by0ip5jtap48k" path="res://Music/SFX/scream-02.mp3" id="3_u1nrp"]
+[ext_resource type="AudioStream" uid="uid://beltpi8cflwf7" path="res://Music/SFX/inventory_closebag.mp3" id="4_cfuty"]
 
-[node name="Pirate" instance=ExtResource("1_dspj5")]
+[node name="Pirate" node_paths=PackedStringArray("sfx_knife", "sfx_scream", "sfx_woodleg") instance=ExtResource("1_dspj5")]
+sfx_knife = NodePath("AudioStreamPlayerKnife")
+sfx_scream = NodePath("AudioStreamPlayerScream")
+sfx_woodleg = NodePath("AudioStreamPlayerWoodleg")
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(-13, -4)
+
+[node name="AudioStreamPlayerKnife" type="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("2_ewbsl")
+
+[node name="AudioStreamPlayerScream" type="AudioStreamPlayer" parent="." index="4"]
+stream = ExtResource("3_u1nrp")
+
+[node name="AudioStreamPlayerWoodleg" type="AudioStreamPlayer" parent="." index="5"]
+stream = ExtResource("4_cfuty")
