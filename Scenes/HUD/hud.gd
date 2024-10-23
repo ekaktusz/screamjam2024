@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
-@onready var objective_text: Label = $CanvasLayer/CurrentObjective/ObjectiveText
+@onready var objective_text: Label = $CanvasLayer/PanelContainer/Panel/ObjectiveText
 @onready var inventory: Control = $CanvasLayer/Inventory
 
 var previous_objective: String = ""

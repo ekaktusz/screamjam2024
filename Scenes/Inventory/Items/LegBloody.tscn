@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://irdaukj3m3h2"]
+
+[ext_resource type="PackedScene" uid="uid://bb2ai4g5a33a2" path="res://Scenes/Item/item.tscn" id="1_6rsn3"]
+[ext_resource type="Texture2D" uid="uid://c04kcmd46oodi" path="res://Scenes/Inventory/assets/leg.png" id="2_wuaij"]
+
+[node name="LegBloody" instance=ExtResource("1_6rsn3")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_wuaij")

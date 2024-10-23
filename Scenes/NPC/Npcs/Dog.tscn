@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://48ocntxl43oe"]
 
-[ext_resource type="PackedScene" path="res://Scenes/NPC/non_talking_npc.tscn" id="1_5yl7p"]
+[ext_resource type="PackedScene" uid="uid://bxiwono6ohhtn" path="res://Scenes/NPC/non_talking_npc.tscn" id="1_5yl7p"]
 
 [sub_resource type="Animation" id="Animation_agcvd"]
 resource_name = "Idle"
@@ -42,6 +42,9 @@ _data = {
 
 [node name="Dog" instance=ExtResource("1_5yl7p")]
 position = Vector2(0, 0)
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-1, 1)
 
 [node name="DogAnimation" type="AnimationPlayer" parent="." index="2"]
 libraries = {
