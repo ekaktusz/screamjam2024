@@ -20,14 +20,14 @@ var countdown_interval: float = 1.0  # Time between countdown numbers
 @export var sfx_lightning: AudioStreamPlayer
 
 var ending_textures = {
-	"ending1_texture": preload("res://Scenes/Labor/assets/ending1.png"),
-	"ending2_texture": preload("res://Scenes/Labor/assets/ending2.png"),
-	"ending3_texture": preload("res://Scenes/Labor/assets/ending3.png"),
-	"ending4_texture": preload("res://Scenes/Labor/assets/ending4.png"),
-	"ending5_texture": preload("res://Scenes/Labor/assets/ending5.png"),
-	"ending6_texture": preload("res://Scenes/Labor/assets/ending6.png"),
-	"ending7_texture": preload("res://Scenes/Labor/assets/ending7.png"),
-	"ending8_texture": preload("res://Scenes/Labor/assets/ending8.png")
+	"ending1_texture": preload("res://Scenes/Labor/assets/1.png"),
+	"ending2_texture": preload("res://Scenes/Labor/assets/2.png"),
+	"ending3_texture": preload("res://Scenes/Labor/assets/3.png"),
+	"ending4_texture": preload("res://Scenes/Labor/assets/4.png"),
+	"ending5_texture": preload("res://Scenes/Labor/assets/5.png"),
+	"ending6_texture": preload("res://Scenes/Labor/assets/6.png"),
+	"ending7_texture": preload("res://Scenes/Labor/assets/7.png"),
+	"ending8_texture": preload("res://Scenes/Labor/assets/8.png")
 }
 
 func get_ending_number() -> int:
