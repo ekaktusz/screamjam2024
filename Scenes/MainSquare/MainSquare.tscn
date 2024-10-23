@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://30idt0c1iy2p"]
+[gd_scene load_steps=15 format=4 uid="uid://30idt0c1iy2p"]
 
 [ext_resource type="PackedScene" uid="uid://g30fkukog0ms" path="res://Scenes/Inventory/Items/Hands.tscn" id="1_eufxy"]
 [ext_resource type="Script" path="res://Scenes/MainSquare/main_square.gd" id="1_rt2db"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bbt0lh5kn86cr" path="res://Scenes/NPC/Npcs/Pirate.tscn" id="6_30pv3"]
 [ext_resource type="AudioStream" uid="uid://dgeq22gfwptg3" path="res://Music/frankeinstein_A_beat_labor_main_square.mp3" id="6_octir"]
 [ext_resource type="PackedScene" uid="uid://bpgf0ho8ohbeg" path="res://Scenes/NPC/Npcs/Priest1.tscn" id="6_p6int"]
+[ext_resource type="AudioStream" uid="uid://beltpi8cflwf7" path="res://Music/SFX/inventory_closebag.mp3" id="12_t71co"]
 
 [sub_resource type="Gradient" id="Gradient_hs06c"]
 offsets = PackedFloat32Array(0.0567164, 0.647761)
@@ -21,8 +22,9 @@ gradient = SubResource("Gradient_hs06c")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[node name="MainSquare" type="Node2D"]
+[node name="MainSquare" type="Node2D" node_paths=PackedStringArray("sfx_item")]
 script = ExtResource("1_rt2db")
+sfx_item = NodePath("AudioStreamPlayer")
 metadata/_edit_lock_ = true
 
 [node name="HandsBloody" parent="." instance=ExtResource("2_wl8wf")]
@@ -255,6 +257,9 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 12
 text = "Hmm...          He may come in Handy later"
 autowrap_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_t71co")
 
 [connection signal="item_collected" from="HandsBloody" to="." method="_on_hands_bloody_item_collected"]
 [connection signal="item_collected" from="Hands" to="." method="_on_hands_item_collected"]

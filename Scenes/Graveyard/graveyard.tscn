@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://uf62v7rjeu3b"]
+[gd_scene load_steps=14 format=4 uid="uid://uf62v7rjeu3b"]
 
 [ext_resource type="Script" path="res://Scenes/Graveyard/graveyard.gd" id="1_lkm5g"]
 [ext_resource type="PackedScene" uid="uid://byqsaebfr2wqt" path="res://Scenes/Tilemap/tile_map_layer_first_floor.tscn" id="1_nb32e"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cot7o3xpiilyr" path="res://Scenes/Graveyard/lantern.tscn" id="5_olwlb"]
 [ext_resource type="PackedScene" uid="uid://7sm8u7xuo3a1" path="res://Scenes/Inventory/Items/Head.tscn" id="9_0htex"]
 [ext_resource type="PackedScene" uid="uid://bxj2klkdjs6dv" path="res://Scenes/Inventory/Items/HeadBloody.tscn" id="10_l3cty"]
+[ext_resource type="AudioStream" uid="uid://beltpi8cflwf7" path="res://Music/SFX/inventory_closebag.mp3" id="11_34qwc"]
 
 [sub_resource type="Gradient" id="Gradient_wkg0w"]
 offsets = PackedFloat32Array(0.0567164, 0.647761)
@@ -20,8 +21,9 @@ gradient = SubResource("Gradient_wkg0w")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[node name="Graveyard" type="Node2D"]
+[node name="Graveyard" type="Node2D" node_paths=PackedStringArray("sfx_item")]
 script = ExtResource("1_lkm5g")
+sfx_item = NodePath("AudioStreamPlayer")
 metadata/_edit_vertical_guides_ = [881.0]
 
 [node name="TileMapLayerGroundFloor" parent="." instance=ExtResource("2_l3wsg")]
@@ -73,6 +75,9 @@ visible = false
 z_index = 1
 y_sort_enabled = true
 position = Vector2(196, 66)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_34qwc")
 
 [connection signal="show_head" from="GraveDigger" to="." method="_on_show_head"]
 [connection signal="show_head_bloody" from="GraveDigger" to="." method="_on_show_head_bloody"]
