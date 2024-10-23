@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://ct5a81kc8suuw"]
+[gd_scene load_steps=9 format=3 uid="uid://ct5a81kc8suuw"]
 
 [ext_resource type="Script" path="res://Scenes/Screens/Game/game.gd" id="1_ew7s7"]
 [ext_resource type="PackedScene" uid="uid://yspo5jyeg5s0" path="res://Scenes/Character/character_body_2d.tscn" id="2_ssn54"]
 [ext_resource type="PackedScene" uid="uid://30idt0c1iy2p" path="res://Scenes/MainSquare/MainSquare.tscn" id="6_audtp"]
-[ext_resource type="PackedScene" uid="uid://bpgf0ho8ohbeg" path="res://Scenes/NPC/Npcs/Priest1.tscn" id="6_pc0e0"]
 [ext_resource type="PackedScene" uid="uid://t24335gumm23" path="res://Scenes/NPC/Npcs/Priest2.tscn" id="7_qlpmb"]
 [ext_resource type="PackedScene" uid="uid://bibciqajbuv6o" path="res://Scenes/NPC/Npcs/MinisterBoy.tscn" id="8_lwj13"]
 [ext_resource type="PackedScene" uid="uid://ce4wdswhq308m" path="res://Scenes/Labor/Labor.tscn" id="9_18b27"]
@@ -21,9 +20,6 @@ color = Color(0.021418, 0.0121243, 0.15625, 1)
 energy = 0.8
 blend_mode = 2
 range_z_max = -1
-
-[node name="Priest1" parent="." instance=ExtResource("6_pc0e0")]
-position = Vector2(-383, 94)
 
 [node name="Priest2" parent="." instance=ExtResource("7_qlpmb")]
 position = Vector2(-321, 49)
@@ -54,6 +50,7 @@ polygon = PackedVector2Array(-1184, -643, -1184, -643, -1154, -657, -1154, -657)
 
 [node name="Hud" parent="." instance=ExtResource("12_3qbvf")]
 
+[connection signal="head_collected_on_graveyard" from="Graveyard" to="." method="_on_head_collected"]
 [connection signal="arm_bloody_collected_on_main_square" from="MainSquare" to="." method="_on_arm_bloody_collected"]
 [connection signal="arm_collected_on_main_square" from="MainSquare" to="." method="_on_arm_collected"]
 [connection signal="leg_bloody_collected_on_main_square" from="MainSquare" to="." method="_on_leg_bloody_collected"]

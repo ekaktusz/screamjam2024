@@ -14,11 +14,9 @@ func _on_hands_bloody_item_collected(item) -> void:
 	hands.queue_free()
 	arm_bloody_collected_on_main_square.emit(item)
 
-
 func _on_hands_item_collected(item) -> void:
 	print("arm collected main square", item)
 	arm_collected_on_main_square.emit(item)
-
 
 func _on_leg_item_collected(item) -> void:
 	print("leg collected main square", item)
