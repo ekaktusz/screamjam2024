@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://b01g87uk3qaw7"]
+[gd_scene load_steps=8 format=3 uid="uid://bo8clr6j3vlc8"]
 
 [ext_resource type="Script" path="res://Scenes/Labor/ending_photo.gd" id="1_2iqep"]
 [ext_resource type="Texture2D" uid="uid://d5incepxftis" path="res://Scenes/Labor/assets/photo_background.jpg" id="1_r6evc"]
 [ext_resource type="Texture2D" uid="uid://bc7o6mi4ope0f" path="res://Scenes/Labor/assets/ending1.png" id="2_cay8w"]
+[ext_resource type="FontFile" uid="uid://qr77dqhcvr6k" path="res://Font/Micro5-Regular.ttf" id="4_ifg83"]
+[ext_resource type="StyleBox" uid="uid://phxg5jgmbkgy" path="res://ButtonStyles/button_hover.tres" id="5_5id3e"]
+[ext_resource type="StyleBox" uid="uid://pr52pfscqc2n" path="res://ButtonStyles/button_pressed.tres" id="6_ja81g"]
+[ext_resource type="StyleBox" uid="uid://d1l81vio2tqgs" path="res://ButtonStyles/button_normal.tres" id="7_u8jbo"]
 
 [node name="EndingPhoto" type="CanvasLayer"]
 script = ExtResource("1_2iqep")
@@ -23,7 +27,11 @@ offset_left = 761.0
 offset_top = 905.0
 offset_right = 1150.0
 offset_bottom = 996.0
+theme_override_fonts/font = ExtResource("4_ifg83")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = ExtResource("5_5id3e")
+theme_override_styles/pressed = ExtResource("6_ja81g")
+theme_override_styles/normal = ExtResource("7_u8jbo")
 text = "mmmm yeee"
 
 [node name="Label" type="Label" parent="."]
@@ -50,13 +58,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -106.0
+offset_left = -72.0
 offset_top = -494.0
-offset_right = 122.0
+offset_right = 156.0
 offset_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 400
+theme_override_fonts/font = ExtResource("4_ifg83")
+theme_override_font_sizes/font_size = 500
 text = "3"
 
 [connection signal="pressed" from="OKButton" to="." method="_on_ok_button_pressed"]
