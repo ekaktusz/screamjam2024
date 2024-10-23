@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://ce4wdswhq308m"]
+[gd_scene load_steps=12 format=4 uid="uid://ce4wdswhq308m"]
 
 [ext_resource type="PackedScene" uid="uid://dng4dw2dw8yhn" path="res://Scenes/Inventory/Items/Torso.tscn" id="1_6llug"]
 [ext_resource type="PackedScene" uid="uid://byqsaebfr2wqt" path="res://Scenes/Tilemap/tile_map_layer_first_floor.tscn" id="1_hncrf"]
@@ -6,13 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://6qvylrim0xte" path="res://Scenes/Tilemap/tile_map_layer_ground_floor.tscn" id="2_m8x3q"]
 [ext_resource type="PackedScene" uid="uid://cxxkj16qcppcu" path="res://Scenes/Tilemap/tile_map_layer_second_floor.tscn" id="5_3vuge"]
 [ext_resource type="AudioStream" uid="uid://dgeq22gfwptg3" path="res://Music/frankeinstein_A_beat_labor_main_square.mp3" id="5_mj8lj"]
-[ext_resource type="PackedScene" uid="uid://cydou64d7m8g6" path="res://Scenes/Labor/diary.tscn" id="7_2q8m1"]
+[ext_resource type="PackedScene" uid="uid://cv8i85ikqcfrx" path="res://Scenes/Labor/diary.tscn" id="7_2q8m1"]
 [ext_resource type="PackedScene" uid="uid://bg36jejsehft1" path="res://Scenes/Interaction/InteractionArea.tscn" id="8_f52dm"]
 [ext_resource type="AudioStream" uid="uid://beltpi8cflwf7" path="res://Music/SFX/inventory_closebag.mp3" id="9_ymci0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eet04"]
 radius = 38.0786
 height = 103.696
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eqed7"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Labor" type="Node2D" node_paths=PackedStringArray("sfx_item")]
 y_sort_enabled = true
@@ -75,11 +78,12 @@ polygon = PackedVector2Array(14, -5, -13, 10, -10, 14, 19, -3)
 
 [node name="Panel" type="Panel" parent="StaticBody2D"]
 visible = false
-offset_left = -17.0
+offset_left = 3.0
 offset_top = -78.0
 offset_right = 74.0
 offset_bottom = -38.0
 size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_eqed7")
 
 [node name="Label" type="Label" parent="StaticBody2D/Panel"]
 z_index = 1
@@ -90,10 +94,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -43.0
-offset_top = -18.5
-offset_right = 43.0
-offset_bottom = 18.5
+offset_left = -42.5
+offset_top = -18.0
+offset_right = 14.5
+offset_bottom = 19.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 12

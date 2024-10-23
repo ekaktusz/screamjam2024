@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://blvo8lmaee5ws"]
+[gd_scene load_steps=6 format=3 uid="uid://blvo8lmaee5ws"]
 
 [ext_resource type="Script" path="res://Scenes/Dialogue/dialogue_choice.gd" id="1_61ndw"]
+[ext_resource type="FontFile" uid="uid://qr77dqhcvr6k" path="res://Font/Micro5-Regular.ttf" id="2_2ywa4"]
+[ext_resource type="StyleBox" uid="uid://phxg5jgmbkgy" path="res://ButtonStyles/button_hover.tres" id="3_mdhxi"]
+[ext_resource type="StyleBox" uid="uid://pr52pfscqc2n" path="res://ButtonStyles/button_pressed.tres" id="4_ca35p"]
+[ext_resource type="StyleBox" uid="uid://d1l81vio2tqgs" path="res://ButtonStyles/button_normal.tres" id="5_7yy0k"]
 
 [node name="DialogueChoice" type="CanvasLayer"]
 script = ExtResource("1_61ndw")
@@ -20,13 +24,21 @@ grow_vertical = 2
 
 [node name="Paragon" type="Button" parent="HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("2_2ywa4")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = ExtResource("3_mdhxi")
+theme_override_styles/pressed = ExtResource("4_ca35p")
+theme_override_styles/normal = ExtResource("5_7yy0k")
 text = "dsa"
 
 [node name="Renegade" type="Button" parent="HBoxContainer"]
 z_index = 200
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("2_2ywa4")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = ExtResource("3_mdhxi")
+theme_override_styles/pressed = ExtResource("4_ca35p")
+theme_override_styles/normal = ExtResource("5_7yy0k")
 text = "asd"
 
 [connection signal="pressed" from="HBoxContainer/Paragon" to="." method="_on_paragon_pressed"]

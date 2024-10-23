@@ -1,24 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://cydou64d7m8g6"]
+[gd_scene load_steps=7 format=3 uid="uid://cv8i85ikqcfrx"]
 
 [ext_resource type="Script" path="res://Scenes/Labor/diary.gd" id="1_mra0v"]
 [ext_resource type="Texture2D" uid="uid://cdw6cfb6kdfmp" path="res://Scenes/Labor/grannys_diary.png" id="1_p0enn"]
+[ext_resource type="FontFile" uid="uid://qr77dqhcvr6k" path="res://Font/Micro5-Regular.ttf" id="3_h1j5s"]
+[ext_resource type="StyleBox" uid="uid://phxg5jgmbkgy" path="res://ButtonStyles/button_hover.tres" id="4_aktfo"]
+[ext_resource type="StyleBox" uid="uid://pr52pfscqc2n" path="res://ButtonStyles/button_pressed.tres" id="5_xcs75"]
+[ext_resource type="StyleBox" uid="uid://d1l81vio2tqgs" path="res://ButtonStyles/button_normal.tres" id="6_j3jbi"]
 [ext_resource type="AudioStream" uid="uid://i3io628jg5qj" path="res://Music/SFX/writing-pencil.mp3" id="3_7k8fp"]
-
 [node name="Diary" type="CanvasLayer" node_paths=PackedStringArray("sfx_pencil")]
 script = ExtResource("1_mra0v")
 sfx_pencil = NodePath("AudioStreamPlayer")
 
 [node name="GrannysDiary" type="Sprite2D" parent="."]
-position = Vector2(1039, 497)
+position = Vector2(963, 497)
 scale = Vector2(1.81055, 1.82812)
 texture = ExtResource("1_p0enn")
 
 [node name="OKbutton" type="Button" parent="."]
-offset_left = 878.0
-offset_top = 989.0
-offset_right = 1211.0
-offset_bottom = 1049.0
-text = "Ok, lets get the a new bf"
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -318.5
+offset_top = -106.0
+offset_right = 318.5
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_h1j5s")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/hover = ExtResource("4_aktfo")
+theme_override_styles/pressed = ExtResource("5_xcs75")
+theme_override_styles/normal = ExtResource("6_j3jbi")
+text = "Let's build my boyfriend"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_7k8fp")

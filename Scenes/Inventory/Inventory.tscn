@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bemdgdebmeocr"]
+[gd_scene load_steps=11 format=3 uid="uid://bemdgdebmeocr"]
 
 [ext_resource type="Script" path="res://Scenes/Inventory/inventory.gd" id="1_22qny"]
 [ext_resource type="Texture2D" uid="uid://ct3s8784adss7" path="res://Scenes/Inventory/assets/head_old_man.png" id="2_i2qcm"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://cxkjxmqs7tcsq" path="res://Scenes/Inventory/assets/leg_wooden.png" id="7_k3odp"]
 [ext_resource type="Texture2D" uid="uid://c04kcmd46oodi" path="res://Scenes/Inventory/assets/leg.png" id="8_6767h"]
 [ext_resource type="Texture2D" uid="uid://ckjd5ailk7x38" path="res://Scenes/Inventory/assets/lamp.png" id="9_m5add"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w0rku"]
+bg_color = Color(0.137255, 0.137255, 0.137255, 1)
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -23,6 +26,7 @@ scale = Vector2(0.9, 0.9)
 
 [node name="Panel" type="Panel" parent="PanelContainer"]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w0rku")
 
 [node name="GridContainer" type="GridContainer" parent="PanelContainer"]
 layout_mode = 2

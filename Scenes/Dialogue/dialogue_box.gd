@@ -3,8 +3,8 @@ extends CanvasLayer
 @onready var margin_container = $MarginContainer
 @onready var letter_display_timer: Timer = $MarginContainer/LetterDisplayTimer
 @onready var text_label: Label = $MarginContainer/TextMarginContainer/TextLabel
-@export var MAX_WIDTH = 256
-@export var PIXEL_SCALE = 2  # Integer scaling factor
+@export var MAX_WIDTH = 600
+@export var PIXEL_SCALE = 1  # Integer scaling factor
 
 var text_to_display: String = ""
 var current_letter_index = 0
@@ -27,10 +27,7 @@ func _setup_pixel_perfect() -> void:
 	# Scale the margin container
 	margin_container.scale = Vector2(PIXEL_SCALE, PIXEL_SCALE)
 	
-	# Set up text settings
-	if text_label.label_settings == null:
-		text_label.label_settings = LabelSettings.new()
-	text_label.label_settings.font_size = 14  # Base size before scaling
+	
 
 func _process(_delta: float) -> void:
 	if margin_container:
