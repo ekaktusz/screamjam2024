@@ -28,13 +28,13 @@ metadata/_edit_lock_ = true
 visible = false
 z_index = 1
 y_sort_enabled = true
-position = Vector2(224, -167)
+position = Vector2(220, 263)
 
 [node name="Hands" parent="." instance=ExtResource("1_eufxy")]
 visible = false
 z_index = 1
 y_sort_enabled = true
-position = Vector2(200, 269)
+position = Vector2(225, -161)
 
 [node name="Leg" parent="." instance=ExtResource("4_ndqom")]
 z_index = 1
