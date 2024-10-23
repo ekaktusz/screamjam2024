@@ -1,14 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://bo8clr6j3vlc8"]
+[gd_scene load_steps=10 format=3 uid="uid://bo8clr6j3vlc8"]
 
 [ext_resource type="Script" path="res://Scenes/Labor/ending_photo.gd" id="1_2iqep"]
-[ext_resource type="Texture2D" uid="uid://d5incepxftis" path="res://Scenes/Labor/assets/photo_background.jpg" id="1_r6evc"]
-[ext_resource type="Texture2D" uid="uid://bc7o6mi4ope0f" path="res://Scenes/Labor/assets/ending1.png" id="2_cay8w"]
+[ext_resource type="Texture2D" uid="uid://dv2whequqtsrw" path="res://Scenes/Labor/assets/1.png" id="2_cg5dl"]
 [ext_resource type="FontFile" uid="uid://qr77dqhcvr6k" path="res://Font/Micro5-Regular.ttf" id="4_ifg83"]
-[ext_resource type="StyleBox" uid="uid://phxg5jgmbkgy" path="res://ButtonStyles/button_hover.tres" id="5_5id3e"]
-[ext_resource type="StyleBox" uid="uid://pr52pfscqc2n" path="res://ButtonStyles/button_pressed.tres" id="6_ja81g"]
-[ext_resource type="StyleBox" uid="uid://d1l81vio2tqgs" path="res://ButtonStyles/button_normal.tres" id="7_u8jbo"]
 [ext_resource type="AudioStream" uid="uid://btlg8ax3rgxcu" path="res://Music/SFX/camera-click-with-flash.mp3" id="4_lxglj"]
+[ext_resource type="StyleBox" uid="uid://phxg5jgmbkgy" path="res://ButtonStyles/button_hover.tres" id="5_5id3e"]
 [ext_resource type="AudioStream" uid="uid://cx7ppdgie12vu" path="res://Music/SFX/electrical-shock-zap.mp3" id="5_12qgg"]
+[ext_resource type="StyleBox" uid="uid://pr52pfscqc2n" path="res://ButtonStyles/button_pressed.tres" id="6_ja81g"]
+[ext_resource type="FontFile" uid="uid://c6sw6uc7o3n3u" path="res://Font/Kalam-Regular.ttf" id="7_34514"]
+[ext_resource type="StyleBox" uid="uid://d1l81vio2tqgs" path="res://ButtonStyles/button_normal.tres" id="7_u8jbo"]
 
 [node name="EndingPhoto" type="CanvasLayer" node_paths=PackedStringArray("sfx_camera", "sfx_lightning")]
 script = ExtResource("1_2iqep")
@@ -16,21 +16,22 @@ sfx_camera = NodePath("AudioStreamPlayer")
 sfx_lightning = NodePath("AudioStreamPlayerLightning")
 metadata/_edit_vertical_guides_ = [1980.0, 961.0]
 
-[node name="PhotoBackground" type="Sprite2D" parent="."]
-position = Vector2(960.125, 412.75)
-scale = Vector2(0.830322, 0.724121)
-texture = ExtResource("1_r6evc")
+[node name="PhotoBackground" type="ColorRect" parent="."]
+offset_left = 509.0
+offset_top = 39.0
+offset_right = 1445.0
+offset_bottom = 894.0
 
 [node name="EndingPhoto" type="Sprite2D" parent="."]
-position = Vector2(978, 458)
+position = Vector2(978, 391)
 scale = Vector2(1.43102, 1.43102)
-texture = ExtResource("2_cay8w")
+texture = ExtResource("2_cg5dl")
 
 [node name="OKButton" type="Button" parent="."]
-offset_left = 761.0
-offset_top = 905.0
-offset_right = 1150.0
-offset_bottom = 996.0
+offset_left = 769.0
+offset_top = 937.0
+offset_right = 1158.0
+offset_bottom = 1028.0
 theme_override_fonts/font = ExtResource("4_ifg83")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/hover = ExtResource("5_5id3e")
@@ -42,13 +43,16 @@ text = "mmmm yeee"
 anchors_preset = -1
 anchor_right = 0.02
 anchor_bottom = 0.011
-offset_left = 536.0
-offset_top = 784.0
-offset_right = 1347.4
-offset_bottom = 855.12
+offset_left = 552.0
+offset_top = 726.0
+offset_right = 1363.4
+offset_bottom = 879.12
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_34514")
 theme_override_font_sizes/font_size = 50
-text = "Me and my love, Vecsés, 2034"
+text = "We were made for each other
+(at least one of us was)
+"
 horizontal_alignment = 1
 
 [node name="FlashOverlay" type="ColorRect" parent="."]

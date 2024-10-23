@@ -19,16 +19,33 @@ func _process(_delta: float) -> void:
 	pass
 
 #call this when entering dark area
-func dark_mode_switch():
-	directional_light_2d.enabled = !directional_light_2d.enabled
-	player.switch_player_light()
-	graveyard.visible = not graveyard.visible
-	main_square.visible = not main_square.visible
-	labor.visible = not labor.visible
+#func dark_mode_switch():
+	#directional_light_2d.enabled = !directional_light_2d.enabled
+	#player.switch_player_light()
 	
+func dark_mode_on():
+	directional_light_2d.enabled = true
+	player.switch_player_light(true)
+
+	main_square.visible = true
+	graveyard.visible = true
+	labor.visible = false
+
+func dark_mode_off():
+	directional_light_2d.enabled = false
+	player.switch_player_light(false)
+
+	main_square.visible = false
+	graveyard.visible = false
+	labor.visible = true
+	
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		dark_mode_off()
+
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		dark_mode_switch()
+		dark_mode_on()
 
 #torso item collected
 func _on_torso_collected(item_name) -> void:
@@ -49,12 +66,12 @@ func _on_leg_collected_on_main_square(item_name) -> void:
 
 func _on_arm_collected(item_name) -> void:
 	#disable other hand collection FROM PRIEST and move to next quest
-	Globals.current_objective = "Speak with the grave digger"
+	Globals.current_objective = "Speak with the gravedigger"
 	Globals.inventory.append(item_name)
 	#todo "open door" to the graveyard
 
 func _on_arm_bloody_collected(item_name) -> void:
-	Globals.current_objective = "Speak with the grave digger"
+	Globals.current_objective = "Speak with the gravedigger"
 	Globals.inventory.append(item_name)
 	#todo "open door" to the graveyard
 

@@ -1,10 +1,10 @@
 [gd_scene load_steps=22 format=4 uid="uid://30idt0c1iy2p"]
 
-[ext_resource type="PackedScene" uid="uid://g30fkukog0ms" path="res://Scenes/Inventory/Items/Hands.tscn" id="1_eufxy"]
+[ext_resource type="PackedScene" path="res://Scenes/Inventory/Items/Hands.tscn" id="1_eufxy"]
 [ext_resource type="Script" path="res://Scenes/MainSquare/main_square.gd" id="1_rt2db"]
 [ext_resource type="PackedScene" uid="uid://6qvylrim0xte" path="res://Scenes/Tilemap/tile_map_layer_ground_floor.tscn" id="1_tisw0"]
 [ext_resource type="PackedScene" uid="uid://byqsaebfr2wqt" path="res://Scenes/Tilemap/tile_map_layer_first_floor.tscn" id="2_joy3t"]
-[ext_resource type="PackedScene" uid="uid://sn1glowft2wf" path="res://Scenes/Inventory/Items/HandsBloody.tscn" id="2_wl8wf"]
+[ext_resource type="PackedScene" path="res://Scenes/Inventory/Items/HandsBloody.tscn" id="2_wl8wf"]
 [ext_resource type="PackedScene" uid="uid://bt68qqxxcldhu" path="res://Scenes/Inventory/Items/Leg.tscn" id="4_ndqom"]
 [ext_resource type="PackedScene" uid="uid://cxxkj16qcppcu" path="res://Scenes/Tilemap/tile_map_layer_second_floor.tscn" id="5_h0kw1"]
 [ext_resource type="PackedScene" uid="uid://irdaukj3m3h2" path="res://Scenes/Inventory/Items/LegBloody.tscn" id="5_ogo5u"]
@@ -26,12 +26,6 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 gradient = SubResource("Gradient_hs06c")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctxgm"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgjrh"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="MainSquare" type="Node2D" node_paths=PackedStringArray("sfx_item")]
 script = ExtResource("1_rt2db")
@@ -234,37 +228,6 @@ polygon = PackedVector2Array(12, -11, -18, 4, 75, 50, 99, 35)
 [node name="QuestAreaBlocker" type="CollisionPolygon2D" parent="GraveyardAreaBlocker"]
 polygon = PackedVector2Array(13, -11, 2, -6, 87, 42, 96, 35)
 
-[node name="Panel" type="Panel" parent="GraveyardAreaBlocker"]
-visible = false
-z_index = 1
-y_sort_enabled = true
-offset_left = 18.0
-offset_top = -46.0
-offset_right = 85.0
-offset_bottom = -6.0
-size_flags_horizontal = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_ctxgm")
-
-[node name="Label" type="Label" parent="GraveyardAreaBlocker/Panel"]
-z_index = 1
-y_sort_enabled = true
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -31.5
-offset_top = -19.0
-offset_right = 32.5
-offset_bottom = 19.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 12
-text = "I wouldn't go there just yet..."
-vertical_alignment = 1
-autowrap_mode = 2
-
 [node name="PriestAreaBlocker" type="StaticBody2D" parent="."]
 position = Vector2(348, 45)
 
@@ -276,39 +239,48 @@ polygon = PackedVector2Array(34, -36, -45, 12, 48, 72, 123, 13)
 [node name="QuestAreaBlocker" type="CollisionPolygon2D" parent="PriestAreaBlocker"]
 polygon = PackedVector2Array(36, -22, 23, -21, 12, -16, 6, -7, 4, 3, 4, 13, 11, 25, 20, 35, 35, 38, 46, 39, 57, 35, 70, 25, 72, 12, 70, -2, 62, -12, 51, -20)
 
-[node name="Panel" type="Panel" parent="PriestAreaBlocker"]
-visible = false
-z_index = 1
-y_sort_enabled = true
-offset_left = -7.0
-offset_top = -62.0
-offset_right = 74.0
-offset_bottom = -21.0
-size_flags_horizontal = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_cgjrh")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_t71co")
 
-[node name="Label" type="Label" parent="PriestAreaBlocker/Panel"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="QuestHintLabel" type="Label" parent="CanvasLayer"]
 z_index = 1
 y_sort_enabled = true
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -39.5
-offset_top = -18.5
-offset_right = 40.5
-offset_bottom = 19.5
+offset_left = -820.0
+offset_top = -891.0
+offset_right = -402.0
+offset_bottom = -766.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 12
-text = "Hmm... He may come in Handy later"
+theme_override_font_sizes/font_size = 60
+text = "I wouldn't go there just yet..."
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_t71co")
+[node name="QuestHintLabelPriest" type="Label" parent="CanvasLayer"]
+z_index = 1
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -618.0
+offset_top = -598.0
+offset_right = -159.0
+offset_bottom = -473.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "Hmm... He may come in Handy later"
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="MinisterBoy" parent="." instance=ExtResource("17_ebkpf")]
 position = Vector2(372, 36)

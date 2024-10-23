@@ -4,14 +4,14 @@ extends Node
 
 const grave_digger_starter_dialogue: Array[String] = [
 	"We lost our lantern somewhere in the cemetery!",
-	"Without that, we can't bury this beautiful creature…",
-	"Look at his face, as if it was sculpted by some old master... ",
+	"Without that, we can't keep on burying…",
+	"Here lies a gorgeous man. Women used to lose their heads over him...",
 	"Anyway: can you please help us find our lantern?",
 	"We can't go in, we're just too afraid, am I right, Woofy?",
 	"We can offer you something in return."
 ]
 
-const grave_digger_paragon_choice_text: String =  "ask for the head of the beautiful man"
+const grave_digger_paragon_choice_text: String =  "ask for the gorgeous head from the grave"
 const grave_digger_renegade_choice_text: String = "just finish the old fool"
 
 const grave_digger_paragon_answer_dialogue: Array[String] = [
@@ -27,21 +27,20 @@ func get_grave_digger_random_busy_dialogue() -> Array[String]:
 	const choices: Array[String] = [
 		"We're quite busy burying… Right, Woofy?",
 		"It's starting to get really dark… I'm not even sure I can finish this before dawn.",
-		"I'm a grave-digger. I'm digging graves. That's what I do.",
+		"I'm a gravedigger. I'm digging graves. That's what I do.",
 		"It's so good to have you, Woofy. I don't know what I'd do without you."
 	]
 	return [choices[randi() % choices.size()]]
 
 const grave_digger_ending_dialogue: Array[String] = [
 	"Oh my goodness, you have found it! Please accept my eternal gratitude and…",
-	"GRAHHH <gave digger cuts his head>",
+	"GRAHHH <gave digger cuts off the head>",
 	" …this gorgeous head! Goodbye, sweet lady!"
 ]
 
 const  grave_digger_dog_dialogue: Array[String] = [
 	"Woof!"
 ]
-
 ## PRIEST DIALOGUES 
 
 const priest_starter_dialogue: Array[String] = [

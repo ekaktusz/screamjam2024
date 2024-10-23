@@ -51,18 +51,20 @@ func _on_interact() -> void:
 
 func _on_grave_digger_dialogue_ended() -> void:
 	print("grave digger dialogue ended")
-	Globals.player_movement_blocked = false
+	
+	if grave_digger_dialogue_manager.dialogue_lines == DialogueDb.grave_digger_paragon_answer_dialogue:
+		Globals.player_movement_blocked = false
 	
 	if grave_digger_dialogue_manager.dialogue_lines == DialogueDb.grave_digger_ending_dialogue:
 		Globals.inventory.erase("Lantern")
 		sfx_knife.play()
 		show_head.emit()
-		queue_free()
+		collision_shape_2d_talk.disabled = true
 		return
 	
 	if grave_digger_dialogue_manager.dialogue_lines !=  DialogueDb.grave_digger_starter_dialogue:
 		grave_digger_dialogue_manager.reset_dialogue(DialogueDb.get_grave_digger_random_busy_dialogue())
-	
+		
 func _on_grave_digger_dialogue_ended_with_paragon() -> void:
 	print("grave digger dialogue ended w paragon")
 	Globals.current_objective = "Find the lantern"
@@ -72,6 +74,7 @@ func _on_grave_digger_dialogue_ended_with_paragon() -> void:
 func _on_grave_digger_dialogue_ended_with_renegade() -> void:
 	print("grave digger dialogue ended w renegade")
 	#Globals.current_objective = "Return to the Labor to stitch together your new BF"
+	Globals.player_movement_blocked = false
 	kill_grave_digger()
 	show_head_bloody.emit()
 	#Globals.inventory.append("HeadBloody")

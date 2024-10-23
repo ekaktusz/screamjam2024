@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var label: Label = $Label
+@onready var label: Label = $CanvasLayer/Label
 var player = null
 const base_text = "[E] to "
 var active_areas = []
@@ -21,9 +21,16 @@ func _process(_delta):
 	if active_areas.size() > 0 && can_interact:
 		active_areas.sort_custom(_sort_by_distance_to_player)
 		label.text = base_text + active_areas[0].action_name
-		label.global_position = active_areas[0].global_position
-		label.global_position.y -= 32
-		label.global_position.x -= 64
+		
+		# Get the canvas transform and convert world position to screen position
+		var canvas_transform = get_viewport().get_canvas_transform()
+		var screen_pos = canvas_transform * active_areas[0].global_position
+		
+		#Apply offset
+		screen_pos.y -= 32
+		screen_pos.x -= 100
+		
+		label.position = screen_pos
 		label.show()
 	else: 
 		label.hide()

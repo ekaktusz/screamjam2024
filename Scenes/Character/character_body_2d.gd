@@ -51,7 +51,7 @@ func set_anim_by_direction(direction: Vector2):
 	elif direction.angle() == DOWN_LEFT.angle():
 		sprite_2d.play("down_left")
 
-func switch_player_light():
-	point_light_2d.enabled = !point_light_2d.enabled
-	point_light_2d_no_shadows.enabled = !point_light_2d_no_shadows.enabled
+func switch_player_light(onOff:bool):
+	point_light_2d.enabled = onOff
+	point_light_2d_no_shadows.enabled =onOff
 	
