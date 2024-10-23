@@ -3,6 +3,8 @@ extends CharacterBody2D
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var dog: CharacterBody2D = $"../Dog"
 @onready var dog_bark_timer: Timer = $DogBarkTimer
+@onready var sprite_2d: AnimatedSprite2D = $Sprite2D
+@onready var collision_shape_2d_talk: CollisionShape2D = $InteractionArea/CollisionShape2D
 
 signal show_head
 signal show_head_bloody
@@ -68,6 +70,11 @@ func _on_grave_digger_dialogue_ended_with_paragon() -> void:
 func _on_grave_digger_dialogue_ended_with_renegade() -> void:
 	print("grave digger dialogue ended w renegade")
 	#Globals.current_objective = "Return to the Labor to stitch together your new BF"
-	queue_free() # TODO: killlllll
+	kill_grave_digger()
 	show_head_bloody.emit()
 	#Globals.inventory.append("HeadBloody")
+	
+func kill_grave_digger():
+	sprite_2d.play("dead")
+	collision_shape_2d_talk.disabled = true
+	

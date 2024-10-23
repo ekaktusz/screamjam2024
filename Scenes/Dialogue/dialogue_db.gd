@@ -43,19 +43,30 @@ const  grave_digger_dog_dialogue: Array[String] = [
 	"Woof!"
 ]
 
-##PRIES DIALOGUES 
+## PRIEST DIALOGUES 
 
 const priest_starter_dialogue: Array[String] = [
 	"How may I serve you my child?",
 	"What? A hand?",
-	"You mean the Holy Hand of Saint Hilarius?",
-	"O give me your hand, give me your hand. All I want is the love of God.",
-	"Give me your hand, give me your hand. You must be loving at God’s command."
+	"You mean the Holy Hand of Saint Hilarius?"
 ]
 
 const priest_paragon_dialogue:Array[String] = [
-	" I gotta hand it to you, this was a finger-licking good idea!"
+	"O give me your hand, give me your hand. All I want is the love of God.",
+	"Give me your hand, give me your hand. You must be loving at God’s command.",
+	" I gotta hand it to you, this was a finger-licking good idea!",
 ]
 
 const priest_paragon_choice_text: String =  "😇 pray with the priest 🥺"
 const priest_renegade_choice_text: String = "💀 you've hand enough 😈"
+
+
+## PIRATE DIALOGUES
+const pirate_starter_dialogue: Array[String] = [
+	"zZzZZzZzzzZzZ",
+	"zZzZZz",
+	"zZzZZzZzzzZzZzZzZZzZzzzZzZ"
+]
+
+const pirate_paragon_choice_text: String =  "😇 Take the wooden leg 🥺"
+const pirate_renegade_choice_text: String = "💀 Cut his leg, you need it more 😈"
