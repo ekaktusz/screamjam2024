@@ -55,6 +55,7 @@ func _on_grave_digger_dialogue_ended() -> void:
 	
 	if grave_digger_dialogue_manager.dialogue_lines == DialogueDb.grave_digger_ending_dialogue:
 		Globals.inventory.erase("Lantern")
+		sfx_knife.play()
 		show_head.emit()
 		queue_free()
 		return

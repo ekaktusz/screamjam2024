@@ -17,6 +17,7 @@ var countdown_interval: float = 1.0  # Time between countdown numbers
 @onready var countdown_label: Label = $CountDownLabel
 
 @export var sfx_camera: AudioStreamPlayer
+@export var sfx_lightning: AudioStreamPlayer
 
 var ending_textures = {
 	"ending1_texture": preload("res://Scenes/Labor/assets/ending1.png"),
@@ -80,6 +81,7 @@ func _ready() -> void:
 	start_countdown()
 
 func start_countdown() -> void:
+	sfx_lightning.play()
 	var tween = create_tween()
 	
 	# 3

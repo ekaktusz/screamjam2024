@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://uf62v7rjeu3b"]
+[gd_scene load_steps=17 format=4 uid="uid://uf62v7rjeu3b"]
 
 [ext_resource type="Script" path="res://Scenes/Graveyard/graveyard.gd" id="1_lkm5g"]
 [ext_resource type="PackedScene" uid="uid://byqsaebfr2wqt" path="res://Scenes/Tilemap/tile_map_layer_first_floor.tscn" id="1_nb32e"]
@@ -81,6 +81,7 @@ position = Vector2(196, 66)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_34qwc")
+
 [node name="Ravens" type="Node2D" parent="."]
 position = Vector2(1.52588e-05, 7.62939e-06)
 

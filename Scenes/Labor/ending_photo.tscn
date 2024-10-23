@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://b01g87uk3qaw7"]
+[gd_scene load_steps=6 format=3 uid="uid://b01g87uk3qaw7"]
 
 [ext_resource type="Script" path="res://Scenes/Labor/ending_photo.gd" id="1_2iqep"]
 [ext_resource type="Texture2D" uid="uid://d5incepxftis" path="res://Scenes/Labor/assets/photo_background.jpg" id="1_r6evc"]
 [ext_resource type="Texture2D" uid="uid://bc7o6mi4ope0f" path="res://Scenes/Labor/assets/ending1.png" id="2_cay8w"]
 [ext_resource type="AudioStream" uid="uid://btlg8ax3rgxcu" path="res://Music/SFX/camera-click-with-flash.mp3" id="4_lxglj"]
+[ext_resource type="AudioStream" uid="uid://cx7ppdgie12vu" path="res://Music/SFX/electrical-shock-zap.mp3" id="5_12qgg"]
 
-[node name="EndingPhoto" type="CanvasLayer" node_paths=PackedStringArray("sfx_camera")]
+[node name="EndingPhoto" type="CanvasLayer" node_paths=PackedStringArray("sfx_camera", "sfx_lightning")]
 script = ExtResource("1_2iqep")
 sfx_camera = NodePath("AudioStreamPlayer")
+sfx_lightning = NodePath("AudioStreamPlayerLightning")
 metadata/_edit_vertical_guides_ = [1980.0, 961.0]
 
 [node name="PhotoBackground" type="Sprite2D" parent="."]
@@ -63,5 +65,8 @@ text = "3"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_lxglj")
+
+[node name="AudioStreamPlayerLightning" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_12qgg")
 
 [connection signal="pressed" from="OKButton" to="." method="_on_ok_button_pressed"]
