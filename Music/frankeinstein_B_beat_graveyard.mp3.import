@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/frankeinstein_B_beat_graveyard.mp3-856a92b1c5
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4
