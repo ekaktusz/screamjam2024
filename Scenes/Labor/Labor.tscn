@@ -59,4 +59,44 @@ position = Vector2(0, -9)
 rotation = 2.08915
 shape = SubResource("CapsuleShape2D_eet04")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(107, 82)
+
+[node name="BlockQuestArea" type="Area2D" parent="StaticBody2D"]
+
+[node name="QuestAreaDetect" type="CollisionPolygon2D" parent="StaticBody2D/BlockQuestArea"]
+polygon = PackedVector2Array(12, -11, -18, 4, -8, 14, 21, -3)
+
+[node name="QuestAreaBlocker" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(14, -5, -13, 10, -10, 14, 19, -3)
+
+[node name="Panel" type="Panel" parent="StaticBody2D"]
+visible = false
+offset_left = -17.0
+offset_top = -78.0
+offset_right = 74.0
+offset_bottom = -38.0
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="StaticBody2D/Panel"]
+z_index = 1
+y_sort_enabled = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = -18.5
+offset_right = 43.0
+offset_bottom = 18.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "Get the Torso before leaving "
+autowrap_mode = 2
+
 [connection signal="item_collected" from="Torso" to="." method="_on_item_collected"]
+[connection signal="body_entered" from="StaticBody2D/BlockQuestArea" to="." method="_on_block_quest_area_body_entered"]
+[connection signal="body_exited" from="StaticBody2D/BlockQuestArea" to="." method="_on_block_quest_area_body_exited"]
