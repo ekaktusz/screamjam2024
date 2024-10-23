@@ -48,10 +48,10 @@ parameters/looping = true
 
 [node name="Diary" parent="." instance=ExtResource("7_2q8m1")]
 
-[node name="InteractionArea" parent="." instance=ExtResource("8_f52dm")]
+[node name="PhotoInteractionArea" parent="." instance=ExtResource("8_f52dm")]
 action_name = "take photo"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PhotoInteractionArea"]
 position = Vector2(53, -153)
 rotation = 2.08915
 shape = SubResource("CapsuleShape2D_eet04")
