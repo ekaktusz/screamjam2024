@@ -41,12 +41,12 @@ func _on_leg_collected_on_main_square(item_name) -> void:
 
 func _on_arm_collected(item_name) -> void:
 	#disable other hand collection FROM PRIEST and move to next quest
-	Globals.current_objective = "Speak with the grave digger"
+	Globals.current_objective = "Speak with the gravedigger"
 	Globals.inventory.append(item_name)
 	#todo "open door" to the graveyard
 
 func _on_arm_bloody_collected(item_name) -> void:
-	Globals.current_objective = "Speak with the grave digger"
+	Globals.current_objective = "Speak with the gravedigger"
 	Globals.inventory.append(item_name)
 	#todo "open door" to the graveyard
 
