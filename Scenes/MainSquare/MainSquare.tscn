@@ -96,7 +96,7 @@ energy = 0.3
 texture = SubResource("GradientTexture2D_x71dp")
 
 [node name="LightsHolder4" type="PointLight2D" parent="LightsHolder"]
-position = Vector2(-100.186, -306.76)
+position = Vector2(-167.186, -273.76)
 scale = Vector2(1.625, 1.625)
 color = Color(0.87451, 0.717647, 0.380392, 1)
 energy = 0.3

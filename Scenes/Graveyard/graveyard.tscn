@@ -107,7 +107,7 @@ flip_h = true
 position = Vector2(756, 256)
 
 [node name="Raven6" parent="Ravens" instance=ExtResource("13_atfib")]
-position = Vector2(908, 253)
+position = Vector2(942, 240)
 flip_h = true
 
 [node name="Raven7" parent="Ravens" instance=ExtResource("13_atfib")]

@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bd06irtwy001q"]
+[gd_scene load_steps=7 format=3 uid="uid://bd06irtwy001q"]
 
 [ext_resource type="Texture2D" uid="uid://c0kqvurq1pirc" path="res://Scenes/Raven/raven1_sprite_sheet.png" id="1_n4pq3"]
+[ext_resource type="Script" path="res://Scenes/Raven/raven.gd" id="2_bgjeh"]
+[ext_resource type="AudioStream" uid="uid://gd3yi17owqcd" path="res://Music/SFX/crows.mp3" id="3_3sgbn"]
 
 [sub_resource type="Animation" id="Animation_io6qs"]
 resource_name = "Idle"
@@ -40,14 +42,22 @@ _data = {
 "RESET": SubResource("Animation_0gnrx")
 }
 
-[node name="Raven" type="Sprite2D"]
+[node name="Raven" type="Sprite2D" node_paths=PackedStringArray("sfx_crow")]
 z_index = 1
 y_sort_enabled = true
 texture = ExtResource("1_n4pq3")
 hframes = 19
+script = ExtResource("2_bgjeh")
+sfx_crow = NodePath("AudioStreamPlayer2D")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_uf146")
 }
 autoplay = "Idle"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_3sgbn")
+autoplay = true
+max_distance = 128.0
+parameters/looping = true
