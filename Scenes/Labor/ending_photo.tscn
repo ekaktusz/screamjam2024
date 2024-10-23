@@ -15,7 +15,7 @@ sfx_camera = NodePath("AudioStreamPlayer")
 sfx_lightning = NodePath("AudioStreamPlayerLightning")
 metadata/_edit_vertical_guides_ = [1980.0, 961.0]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="PhotoBackground" type="ColorRect" parent="."]
 offset_left = 509.0
 offset_top = 106.0
 offset_right = 1445.0

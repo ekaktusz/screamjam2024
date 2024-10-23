@@ -11,7 +11,7 @@ var countdown_interval: float = 1.0  # Time between countdown numbers
 
 @onready var ending_photo: Sprite2D = $EndingPhoto
 @onready var ok_button: Button = $OKButton
-@onready var photo_background: Sprite2D = $PhotoBackground
+@onready var photo_background: ColorRect = $PhotoBackground
 @onready var label: Label = $Label
 @onready var flash_overlay: ColorRect = $FlashOverlay  # Add this node in the scene
 @onready var countdown_label: Label = $CountDownLabel
