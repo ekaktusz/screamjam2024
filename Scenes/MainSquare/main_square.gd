@@ -33,3 +33,13 @@ func _on_show_bloody_hand() -> void:
 func _on_show_hand() -> void:
 	hands.visible = true 
 	hands.enableCollisionArea()
+
+
+func _on_show_bloody_leg() -> void:
+	leg_bloody.visible = true
+	leg_bloody.enableCollisionArea()
+
+
+func _on_show_leg() -> void:
+	leg.visible = true
+	leg.enableCollisionArea()

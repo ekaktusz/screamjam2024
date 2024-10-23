@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbt0lh5kn86cr"]
+
+[ext_resource type="PackedScene" uid="uid://8g1veysh6lp3" path="res://Scenes/NPC/npc.tscn" id="1_dspj5"]
+
+[node name="Pirate" instance=ExtResource("1_dspj5")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-13, -4)

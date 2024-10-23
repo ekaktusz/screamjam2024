@@ -43,7 +43,7 @@ const  grave_digger_dog_dialogue: Array[String] = [
 	"Woof!"
 ]
 
-##PRIES DIALOGUES 
+## PRIEST DIALOGUES 
 
 const priest_starter_dialogue: Array[String] = [
 	"How may I serve you my child?",
@@ -59,3 +59,14 @@ const priest_paragon_dialogue:Array[String] = [
 
 const priest_paragon_choice_text: String =  "😇 pray with the priest 🥺"
 const priest_renegade_choice_text: String = "💀 you've hand enough 😈"
+
+
+## PIRATE DIALOGUES
+const pirate_starter_dialogue: Array[String] = [
+	"zZzZZzZzzzZzZ",
+	"zZzZZz",
+	"zZzZZzZzzzZzZzZzZZzZzzzZzZ"
+]
+
+const pirate_paragon_choice_text: String =  "😇 Take the wooden leg 🥺"
+const pirate_renegade_choice_text: String = "💀 Cut his leg, you need it more 😈"

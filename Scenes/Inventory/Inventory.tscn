@@ -62,7 +62,6 @@ layout_mode = 2
 texture = ExtResource("5_mt0fy")
 
 [node name="Leg" type="TextureRect" parent="PanelContainer/GridContainer"]
-visible = false
 self_modulate = Color(0, 0, 0, 0.631373)
 light_mask = 2
 visibility_layer = 2
