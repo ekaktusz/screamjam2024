@@ -57,12 +57,12 @@ func _on_grave_digger_dialogue_ended() -> void:
 		Globals.inventory.erase("Lantern")
 		sfx_knife.play()
 		show_head.emit()
-		queue_free()
+		collision_shape_2d_talk.disabled = true
 		return
 	
 	if grave_digger_dialogue_manager.dialogue_lines !=  DialogueDb.grave_digger_starter_dialogue:
 		grave_digger_dialogue_manager.reset_dialogue(DialogueDb.get_grave_digger_random_busy_dialogue())
-	
+		
 func _on_grave_digger_dialogue_ended_with_paragon() -> void:
 	print("grave digger dialogue ended w paragon")
 	Globals.current_objective = "Find the lantern"
