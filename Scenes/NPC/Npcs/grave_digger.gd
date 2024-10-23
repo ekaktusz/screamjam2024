@@ -53,8 +53,6 @@ func _on_grave_digger_dialogue_ended() -> void:
 	if grave_digger_dialogue_manager.dialogue_lines == DialogueDb.grave_digger_ending_dialogue:
 		Globals.inventory.erase("Lantern")
 		show_head.emit()
-		#Globals.inventory.append("Head")
-		#Globals.current_objective = "Return to the Labor to stitch together your new BF"
 		queue_free()
 		return
 	

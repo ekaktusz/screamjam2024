@@ -8,8 +8,7 @@ const grave_digger_starter_dialogue: Array[String] = [
 	"Look at his face, as if it was sculpted by some old master... ",
 	"Anyway: can you please help us find our lantern?",
 	"We can't go in, we're just too afraid, am I right, Woofy?",
-	"We can offer you something in return.",
-	"Maybe some flowers from this nice grave? Or what would you like to have?"
+	"We can offer you something in return."
 ]
 
 const grave_digger_paragon_choice_text: String =  "😇 ask for the head of the beautiful man 🥺"
