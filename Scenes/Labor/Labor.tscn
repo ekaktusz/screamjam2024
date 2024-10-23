@@ -49,7 +49,7 @@ parameters/looping = true
 [node name="Diary" parent="." instance=ExtResource("7_2q8m1")]
 
 [node name="PhotoInteractionArea" parent="." instance=ExtResource("8_f52dm")]
-action_name = "take photo"
+action_name = "build boyfriend"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PhotoInteractionArea"]
 position = Vector2(53, -153)

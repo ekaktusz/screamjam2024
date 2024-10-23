@@ -7,12 +7,14 @@ var flash_out_duration: float = 0.5
 var photo_fade_duration: float = 1.2
 var ui_fade_duration: float = 0.5
 var button_enable_delay: float = 3.0
+var countdown_interval: float = 1.0  # Time between countdown numbers
 
 @onready var ending_photo: Sprite2D = $EndingPhoto
 @onready var ok_button: Button = $OKButton
 @onready var photo_background: Sprite2D = $PhotoBackground
 @onready var label: Label = $Label
 @onready var flash_overlay: ColorRect = $FlashOverlay  # Add this node in the scene
+@onready var countdown_label: Label = $CountDownLabel
 
 var ending_textures = {
     "ending1_texture": preload("res://Scenes/Labor/assets/ending1.png"),
@@ -61,7 +63,45 @@ func set_appropriate_ending_texture() -> void:
     ending_photo.texture = ending_textures[texture_key]
     
 func _ready() -> void:
-    show_photo()
+    # Hide photo elements initially
+    ending_photo.hide()
+    ok_button.hide()
+    photo_background.hide()
+    label.hide()
+    flash_overlay.hide()
+    
+    # Setup countdown label
+    countdown_label.text = "3"
+    countdown_label.show()
+    
+    # Start countdown sequence
+    start_countdown()
+
+func start_countdown() -> void:
+    var tween = create_tween()
+    
+    # 3
+    tween.tween_property(countdown_label, "modulate", Color(1, 1, 1, 1), 0.1)
+    tween.tween_interval(countdown_interval)
+    
+    # 2
+    tween.tween_callback(func(): countdown_label.text = "2")
+    tween.tween_interval(countdown_interval)
+    
+    # 1
+    tween.tween_callback(func(): countdown_label.text = "1")
+    tween.tween_interval(countdown_interval)
+    
+    # "CHEESE!"
+    tween.tween_callback(func(): countdown_label.text = "CHEESE!")
+    tween.tween_interval(0.5)  # Shorter pause before the flash
+    
+    # Hide countdown and start photo sequence
+    tween.tween_callback(func():
+        countdown_label.hide()
+        show_photo()
+    )
+    
 func show_photo() -> void:
     # Make sure all nodes are visible
     ending_photo.show()

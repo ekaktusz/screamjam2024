@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 		collision_shape_2d.disabled = false
 		
 func _on_photo_interact():
-	print("photo")
+	ScreenManager.change_screen("res://Scenes/Labor/ending_photo.tscn")
 
 func _on_item_collected(item) -> void:
 	torso_collected_in_labor.emit(item)
