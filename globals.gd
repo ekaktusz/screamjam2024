@@ -1,7 +1,7 @@
 extends Node
 
 
-var inventory: Array[String] #= ["Leg", "Head", "Torso", "Hands"]
+var inventory: Array[String] = ["Leg", "Head", "Torso", "Hands"]
 
 var current_objective: String = ""
 var player_movement_blocked: bool = false
