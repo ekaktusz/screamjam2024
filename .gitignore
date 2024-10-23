@@ -3,3 +3,5 @@
 /android/
 .vscode/settings.json
 .vscode/tasks.json
+export_presets.cfg
+export/
