@@ -18,7 +18,7 @@ func _ready() -> void:
 	add_child(initial_timer)
 	initial_timer.one_shot = true
 	initial_timer.timeout.connect(_on_initial_timer_timeout)
-	initial_timer.start(2.0)  # 2 second initial delay
+	initial_timer.start(1.0)  # 1 second initial delay
 
 func _input(event: InputEvent) -> void:
 	# Stop the event from propagating to other nodes
