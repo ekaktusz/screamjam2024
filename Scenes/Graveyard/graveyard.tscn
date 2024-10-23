@@ -78,7 +78,6 @@ position = Vector2(196, 66)
 
 [node name="Ravens" type="Node2D" parent="."]
 position = Vector2(1.52588e-05, 7.62939e-06)
-scale = Vector2(1, 1)
 
 [node name="Raven" parent="Ravens" instance=ExtResource("11_iaep8")]
 position = Vector2(65, -3.00001)
