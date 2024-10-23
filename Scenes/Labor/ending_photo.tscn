@@ -2,13 +2,15 @@
 
 [ext_resource type="Script" path="res://Scenes/Labor/ending_photo.gd" id="1_2iqep"]
 [ext_resource type="Texture2D" uid="uid://d5incepxftis" path="res://Scenes/Labor/assets/photo_background.jpg" id="1_r6evc"]
-[ext_resource type="Texture2D" uid="uid://bc7o6mi4ope0f" path="res://Scenes/Labor/assets/ending1.png" id="2_cay8w"]
 [ext_resource type="FontFile" uid="uid://qr77dqhcvr6k" path="res://Font/Micro5-Regular.ttf" id="4_ifg83"]
 [ext_resource type="AudioStream" uid="uid://btlg8ax3rgxcu" path="res://Music/SFX/camera-click-with-flash.mp3" id="4_lxglj"]
 [ext_resource type="StyleBox" uid="uid://phxg5jgmbkgy" path="res://ButtonStyles/button_hover.tres" id="5_5id3e"]
 [ext_resource type="AudioStream" uid="uid://cx7ppdgie12vu" path="res://Music/SFX/electrical-shock-zap.mp3" id="5_12qgg"]
 [ext_resource type="StyleBox" uid="uid://pr52pfscqc2n" path="res://ButtonStyles/button_pressed.tres" id="6_ja81g"]
 [ext_resource type="StyleBox" uid="uid://d1l81vio2tqgs" path="res://ButtonStyles/button_normal.tres" id="7_u8jbo"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2eowc"]
+load_path = "res://.godot/imported/ending1.png-e9be77bb2c9bab137c422b1e992c42dd.ctex"
 
 [node name="EndingPhoto" type="CanvasLayer" node_paths=PackedStringArray("sfx_camera", "sfx_lightning")]
 script = ExtResource("1_2iqep")
@@ -24,7 +26,7 @@ texture = ExtResource("1_r6evc")
 [node name="EndingPhoto" type="Sprite2D" parent="."]
 position = Vector2(978, 458)
 scale = Vector2(1.43102, 1.43102)
-texture = ExtResource("2_cay8w")
+texture = SubResource("CompressedTexture2D_2eowc")
 
 [node name="OKButton" type="Button" parent="."]
 offset_left = 761.0
