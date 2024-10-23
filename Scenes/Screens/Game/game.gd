@@ -2,12 +2,17 @@ extends Node2D
 
 @onready var player: CharacterBody2D = $Player
 @onready var directional_light_2d: DirectionalLight2D = $DirectionalLight2D
+@onready var graveyard: Node2D = $Graveyard
+@onready var main_square: Node2D = $MainSquare
+@onready var labor: Node2D = $Labor
 
 @onready var hud: Node2D = $Hud
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	InteractionManager.set_player(player)
+	graveyard.visible = false
+	main_square.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -17,6 +22,9 @@ func _process(_delta: float) -> void:
 func dark_mode_switch():
 	directional_light_2d.enabled = !directional_light_2d.enabled
 	player.switch_player_light()
+	graveyard.visible = not graveyard.visible
+	main_square.visible = not main_square.visible
+	labor.visible = not labor.visible
 	
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
