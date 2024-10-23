@@ -11,8 +11,8 @@ const grave_digger_starter_dialogue: Array[String] = [
 	"We can offer you something in return."
 ]
 
-const grave_digger_paragon_choice_text: String =  "ask for the gorgeous head from the grave"
-const grave_digger_renegade_choice_text: String = "just finish the old fool"
+const grave_digger_paragon_choice_text: String =  "Ask for the gorgeous head from the grave"
+const grave_digger_renegade_choice_text: String = "Just finish the old fool"
 
 const grave_digger_paragon_answer_dialogue: Array[String] = [
 	"What????",
@@ -55,8 +55,8 @@ const priest_paragon_dialogue:Array[String] = [
 	" I gotta hand it to you, this was a finger-licking good idea!",
 ]
 
-const priest_paragon_choice_text: String =  "pray with the priest"
-const priest_renegade_choice_text: String = "you've hand enough"
+const priest_paragon_choice_text: String =  "Pray with the priest"
+const priest_renegade_choice_text: String = "You've hand enough"
 
 
 ## PIRATE DIALOGUES

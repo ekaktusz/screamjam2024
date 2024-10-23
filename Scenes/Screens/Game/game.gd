@@ -79,5 +79,5 @@ func _on_arm_bloody_collected(item_name) -> void:
 	#Globals.inventory.append(item_name)
 
 func _on_head_collected(item_name) -> void:
-	Globals.current_objective = "Return to the Labor to stitch together your new BF"
+	Globals.current_objective = "Return to the Labor to take a picture with your new BF"
 	Globals.inventory.append(item_name)

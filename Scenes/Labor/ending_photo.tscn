@@ -18,6 +18,11 @@ sfx_lightning = NodePath("AudioStreamPlayerLightning")
 sfx_priest_scream = NodePath("AudioStreamPlayerMMYEAH")
 metadata/_edit_vertical_guides_ = [1980.0, 961.0]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1922.0
+offset_bottom = 1076.0
+color = Color(0, 0, 0, 0.470588)
+
 [node name="PhotoBackground" type="ColorRect" parent="."]
 offset_left = 509.0
 offset_top = 39.0
