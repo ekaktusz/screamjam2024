@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://30idt0c1iy2p"]
+[gd_scene load_steps=22 format=4 uid="uid://30idt0c1iy2p"]
 
 [ext_resource type="PackedScene" uid="uid://g30fkukog0ms" path="res://Scenes/Inventory/Items/Hands.tscn" id="1_eufxy"]
 [ext_resource type="Script" path="res://Scenes/MainSquare/main_square.gd" id="1_rt2db"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://beltpi8cflwf7" path="res://Music/SFX/inventory_closebag.mp3" id="12_t71co"]
 [ext_resource type="PackedScene" uid="uid://b6k51hyj6klj3" path="res://Scenes/Raven/raven_3.tscn" id="14_gmxo5"]
 [ext_resource type="PackedScene" uid="uid://qxm2345x6f7r" path="res://Scenes/Tilemap/tilemap_layer_third_floor.tscn" id="16_u33g1"]
+[ext_resource type="PackedScene" uid="uid://bibciqajbuv6o" path="res://Scenes/NPC/Npcs/MinisterBoy.tscn" id="17_ebkpf"]
 
 [sub_resource type="Gradient" id="Gradient_hs06c"]
 offsets = PackedFloat32Array(0.0567164, 0.647761)
@@ -315,6 +316,12 @@ autowrap_mode = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_t71co")
+
+[node name="MinisterBoy" parent="." instance=ExtResource("17_ebkpf")]
+position = Vector2(372, 36)
+
+[node name="MinisterBoy2" parent="." instance=ExtResource("17_ebkpf")]
+position = Vector2(414, 58)
 
 [connection signal="item_collected" from="HandsBloody" to="." method="_on_hands_bloody_item_collected"]
 [connection signal="item_collected" from="Hands" to="." method="_on_hands_item_collected"]
