@@ -1,9 +1,11 @@
-[gd_scene load_steps=31 format=3 uid="uid://bqjxavh6ofayf"]
+[gd_scene load_steps=33 format=3 uid="uid://bqjxavh6ofayf"]
 
 [ext_resource type="PackedScene" uid="uid://8g1veysh6lp3" path="res://Scenes/NPC/npc.tscn" id="1_hqcbm"]
 [ext_resource type="Texture2D" uid="uid://vi51v4nwwaqj" path="res://Scenes/NPC/siraso_sheet.png" id="2_wsn2m"]
 [ext_resource type="Script" path="res://Scenes/NPC/Npcs/grave_digger.gd" id="2_xagn3"]
 [ext_resource type="Texture2D" uid="uid://dhgfhejwwk3ub" path="res://Scenes/NPC/Npcs/scream_characters_idle_v002.png" id="3_ise7v"]
+[ext_resource type="AudioStream" uid="uid://cpf4c2xs02inr" path="res://Music/SFX/screaming-2.mp3" id="5_32b5r"]
+[ext_resource type="AudioStream" uid="uid://dqppajigh4aql" path="res://Music/SFX/bloody-stab-1.mp3" id="6_4m7fl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_umms5"]
 atlas = ExtResource("3_ise7v")
@@ -193,8 +195,10 @@ animations = [{
 "speed": 1.0
 }]
 
-[node name="GraveDigger" instance=ExtResource("1_hqcbm")]
+[node name="GraveDigger" node_paths=PackedStringArray("sfx_knife", "sfx_scream") instance=ExtResource("1_hqcbm")]
 script = ExtResource("2_xagn3")
+sfx_knife = NodePath("AudioStreamPlayerKnife")
+sfx_scream = NodePath("AudioStreamPlayerScream")
 
 [node name="Sprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_v6v6l")
@@ -210,3 +214,9 @@ position = Vector2(-2, 3)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="4"]
 polygon = PackedVector2Array(-24, 4, 10, 23, 21, 13, 1, -8)
+
+[node name="AudioStreamPlayerScream" type="AudioStreamPlayer" parent="." index="5"]
+stream = ExtResource("5_32b5r")
+
+[node name="AudioStreamPlayerKnife" type="AudioStreamPlayer" parent="." index="6"]
+stream = ExtResource("6_4m7fl")

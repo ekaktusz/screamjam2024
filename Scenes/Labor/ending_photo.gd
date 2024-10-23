@@ -16,6 +16,9 @@ var countdown_interval: float = 1.0  # Time between countdown numbers
 @onready var flash_overlay: ColorRect = $FlashOverlay  # Add this node in the scene
 @onready var countdown_label: Label = $CountDownLabel
 
+@export var sfx_camera: AudioStreamPlayer
+@export var sfx_lightning: AudioStreamPlayer
+
 var ending_textures = {
 	"ending1_texture": preload("res://Scenes/Labor/assets/ending1.png"),
 	"ending2_texture": preload("res://Scenes/Labor/assets/ending2.png"),
@@ -78,6 +81,7 @@ func _ready() -> void:
 	start_countdown()
 
 func start_countdown() -> void:
+	sfx_lightning.play()
 	var tween = create_tween()
 	
 	# 3
@@ -95,7 +99,6 @@ func start_countdown() -> void:
 	# "CHEESE!"
 	tween.tween_callback(func(): countdown_label.text = "CHEESE!")
 	tween.tween_interval(0.5)  # Shorter pause before the flash
-	
 	# Hide countdown and start photo sequence
 	tween.tween_callback(func():
 		countdown_label.hide()
@@ -125,6 +128,7 @@ func show_photo() -> void:
 	flash_overlay.show()
 	
 	# Create flash effect tween
+	sfx_camera.play()
 	var flash_tween = create_tween()
 	flash_tween.tween_property(flash_overlay, "color", Color(1, 1, 1, 1), flash_in_duration)
 	flash_tween.tween_interval(flash_hold_duration)

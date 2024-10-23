@@ -4,6 +4,7 @@ extends Node2D
 @onready var objective_text: Label = $CanvasLayer/PanelContainer/Panel/ObjectiveText
 @onready var inventory: Control = $CanvasLayer/Inventory
 
+@export var sfx_player: AudioStreamPlayer
 var previous_objective: String = ""
 var effect_timer: float = 0.0
 var original_scale: Vector2
@@ -64,4 +65,6 @@ func _process(delta: float) -> void:
 
 func _input(event):
 	if event.is_action_pressed("open_inventory"):
-		inventory.visible = !inventory.visible
+		if Globals.inventory.size()> 0:
+			sfx_player.play()
+			inventory.visible = !inventory.visible

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://30idt0c1iy2p"]
+[gd_scene load_steps=18 format=4 uid="uid://30idt0c1iy2p"]
 
 [ext_resource type="PackedScene" uid="uid://g30fkukog0ms" path="res://Scenes/Inventory/Items/Hands.tscn" id="1_eufxy"]
 [ext_resource type="Script" path="res://Scenes/MainSquare/main_square.gd" id="1_rt2db"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bpgf0ho8ohbeg" path="res://Scenes/NPC/Npcs/Priest1.tscn" id="6_p6int"]
 [ext_resource type="PackedScene" uid="uid://bd06irtwy001q" path="res://Scenes/Raven/raven.tscn" id="11_k5o0i"]
 [ext_resource type="PackedScene" uid="uid://cd8wufhcut52t" path="res://Scenes/Raven/raven_2.tscn" id="12_5p5rv"]
+[ext_resource type="AudioStream" uid="uid://beltpi8cflwf7" path="res://Music/SFX/inventory_closebag.mp3" id="12_t71co"]
 [ext_resource type="PackedScene" uid="uid://b6k51hyj6klj3" path="res://Scenes/Raven/raven_3.tscn" id="14_gmxo5"]
 
 [sub_resource type="Gradient" id="Gradient_hs06c"]
@@ -24,15 +25,15 @@ gradient = SubResource("Gradient_hs06c")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[node name="MainSquare" type="Node2D"]
+[node name="MainSquare" type="Node2D" node_paths=PackedStringArray("sfx_item")]
 script = ExtResource("1_rt2db")
+sfx_item = NodePath("AudioStreamPlayer")
 metadata/_edit_lock_ = true
 
 [node name="HandsBloody" parent="." instance=ExtResource("2_wl8wf")]
-visible = false
 z_index = 1
 y_sort_enabled = true
-position = Vector2(322, 61)
+position = Vector2(317, 114)
 
 [node name="Hands" parent="." instance=ExtResource("1_eufxy")]
 visible = false
@@ -107,6 +108,13 @@ color = Color(0.87451, 0.717647, 0.380392, 1)
 energy = 0.3
 texture = SubResource("GradientTexture2D_x71dp")
 
+[node name="LightsHolder15" type="PointLight2D" parent="LightsHolder"]
+position = Vector2(7.8138, -442.76)
+scale = Vector2(1.625, 1.625)
+color = Color(0.87451, 0.717647, 0.380392, 1)
+energy = 0.3
+texture = SubResource("GradientTexture2D_x71dp")
+
 [node name="LightsHolder6" type="PointLight2D" parent="LightsHolder"]
 position = Vector2(99.8138, -83.76)
 scale = Vector2(1.625, 1.625)
@@ -164,7 +172,7 @@ energy = 0.3
 texture = SubResource("GradientTexture2D_x71dp")
 
 [node name="LightsHolder12" type="PointLight2D" parent="LightsHolder"]
-position = Vector2(190.814, -321.76)
+position = Vector2(190.814, -322.76)
 scale = Vector2(1.625, 1.625)
 color = Color(0.87451, 0.717647, 0.380392, 1)
 energy = 0.3
@@ -202,9 +210,12 @@ position = Vector2(196, 49)
 position = Vector2(-211, 40)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-1, 1)
 stream = ExtResource("6_octir")
+volume_db = -5.0
 autoplay = true
 max_distance = 1000.0
+attenuation = 1.51572
 parameters/looping = true
 
 [node name="GraveyardAreaBlocker" type="StaticBody2D" parent="."]
@@ -286,6 +297,9 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 12
 text = "Hmm...          He may come in Handy later"
 autowrap_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_t71co")
 
 [connection signal="item_collected" from="HandsBloody" to="." method="_on_hands_bloody_item_collected"]
 [connection signal="item_collected" from="Hands" to="." method="_on_hands_item_collected"]
