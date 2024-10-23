@@ -12,15 +12,18 @@ const DOWN_RIGHT:Vector2 = Vector2(0.707107, 0.707107)
 const DOWN_LEFT:Vector2 = Vector2(-0.707107, 0.707107)
 
 var hasBodyPart = false
-
 func _physics_process(_delta):
-	
 	if Globals.player_movement_blocked:
 		return
 	
-	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	if direction: 
-		self.velocity = direction * SPEED
+	# Using custom movement actions
+	var direction = Vector2.ZERO
+	direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+	direction.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
+	
+	if direction.length() > 0:
+		direction = direction.normalized()
+		velocity = direction * SPEED
 	else:
 		velocity = Vector2.ZERO
 	
