@@ -20,9 +20,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_iklnk")
 
 [node name="TextMarginContainer" type="MarginContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 5
+theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
+theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 5
 
 [node name="TextLabel" type="Label" parent="MarginContainer/TextMarginContainer"]
@@ -30,7 +30,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.913725, 0.854902, 0.631373, 1)
 theme_override_fonts/font = ExtResource("2_n56nd")
 theme_override_font_sizes/font_size = 55
-text = "test "
+text = "test"
 
 [node name="LetterDisplayTimer" type="Timer" parent="MarginContainer"]
 one_shot = true
