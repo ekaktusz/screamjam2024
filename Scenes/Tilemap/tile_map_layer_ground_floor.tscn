@@ -1,9 +1,9 @@
 [gd_scene load_steps=4 format=4 uid="uid://6qvylrim0xte"]
 
-[ext_resource type="Texture2D" uid="uid://c54eagkeejbpp" path="res://Scenes/Tilemap/scream_tilemap_v004.png" id="1_lv6pa"]
+[ext_resource type="Texture2D" uid="uid://cy1v8068nyyiq" path="res://Scenes/Tilemap/scream_tilemap_v005.png" id="1_44hn0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l7blw"]
-texture = ExtResource("1_lv6pa")
+texture = ExtResource("1_44hn0")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, -16)
@@ -41,7 +41,6 @@ texture_region_size = Vector2i(64, 64)
 1:10/0/texture_origin = Vector2i(0, -16)
 0:11/0 = 0
 0:11/0/texture_origin = Vector2i(0, -16)
-1:11/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_csq0v"]
 tile_shape = 1
