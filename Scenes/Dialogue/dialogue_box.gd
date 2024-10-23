@@ -27,10 +27,7 @@ func _setup_pixel_perfect() -> void:
 	# Scale the margin container
 	margin_container.scale = Vector2(PIXEL_SCALE, PIXEL_SCALE)
 	
-	# Set up text settings
-	if text_label.label_settings == null:
-		text_label.label_settings = LabelSettings.new()
-	text_label.label_settings.font_size = 55  # Base size before scaling
+	
 
 func _process(_delta: float) -> void:
 	if margin_container:
