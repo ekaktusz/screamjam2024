@@ -2,8 +2,10 @@ extends CanvasLayer
 
 @onready var grannys_diary: Sprite2D = $GrannysDiary
 @onready var o_kbutton: Button = $OKbutton
+@export var sfx_pencil: AudioStreamPlayer
 
 func _ready() -> void:
+	sfx_pencil.play()
 	Globals.current_objective = ""
 	Globals.player_movement_blocked = true
 	

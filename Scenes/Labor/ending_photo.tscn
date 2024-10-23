@@ -7,9 +7,13 @@
 [ext_resource type="StyleBox" uid="uid://phxg5jgmbkgy" path="res://ButtonStyles/button_hover.tres" id="5_5id3e"]
 [ext_resource type="StyleBox" uid="uid://pr52pfscqc2n" path="res://ButtonStyles/button_pressed.tres" id="6_ja81g"]
 [ext_resource type="StyleBox" uid="uid://d1l81vio2tqgs" path="res://ButtonStyles/button_normal.tres" id="7_u8jbo"]
+[ext_resource type="AudioStream" uid="uid://btlg8ax3rgxcu" path="res://Music/SFX/camera-click-with-flash.mp3" id="4_lxglj"]
+[ext_resource type="AudioStream" uid="uid://cx7ppdgie12vu" path="res://Music/SFX/electrical-shock-zap.mp3" id="5_12qgg"]
 
-[node name="EndingPhoto" type="CanvasLayer"]
+[node name="EndingPhoto" type="CanvasLayer" node_paths=PackedStringArray("sfx_camera", "sfx_lightning")]
 script = ExtResource("1_2iqep")
+sfx_camera = NodePath("AudioStreamPlayer")
+sfx_lightning = NodePath("AudioStreamPlayerLightning")
 metadata/_edit_vertical_guides_ = [1980.0, 961.0]
 
 [node name="PhotoBackground" type="Sprite2D" parent="."]
@@ -67,5 +71,11 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_ifg83")
 theme_override_font_sizes/font_size = 500
 text = "3"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_lxglj")
+
+[node name="AudioStreamPlayerLightning" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_12qgg")
 
 [connection signal="pressed" from="OKButton" to="." method="_on_ok_button_pressed"]

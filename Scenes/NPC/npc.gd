@@ -5,6 +5,11 @@ extends CharacterBody2D
 @onready var collision_shape_2d_talk: CollisionShape2D = $InteractionArea/CollisionShape2D
 @onready var npc: CharacterBody2D = $"."
 
+@export var sfx_knife: AudioStreamPlayer
+@export var sfx_scream: AudioStreamPlayer
+@export var sfx_woodleg: AudioStreamPlayer
+
+
 signal show_bloody_hand
 signal show_hand
 signal show_bloody_leg
@@ -43,15 +48,21 @@ func _on_priest_dialogue_ended_with_paragon():
 
 func _on_priest_dialogue_ended_with_renegade():
 	kill_priest()
+	sfx_knife.play()
+	sfx_scream.play()
+	
 	show_bloody_hand.emit()
 	
 func _on_pirate_dialogue_ended_with_paragon():
 	sprite_2d.play("pirate_sleeping")
+	sfx_woodleg.play()
 	collision_shape_2d_talk.disabled = true
 	show_leg.emit()
 
 func _on_pirate_dialogue_ended_with_renegade():
 	sprite_2d.play("pirate_dead")
+	sfx_knife.play()
+	sfx_scream.play()
 	collision_shape_2d_talk.disabled = true
 	show_bloody_leg.emit()
 

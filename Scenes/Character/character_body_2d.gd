@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 @onready var point_light_2d_no_shadows: PointLight2D = $Sprite2D/PointLight2D2
 @onready var point_light_2d: PointLight2D = $Sprite2D/PointLight2D
-
+@export var sfx_steps: AudioStreamPlayer
 const SPEED = 150
 
 const UP_RIGHT: Vector2 = Vector2(0.707107, -0.707107)
@@ -24,7 +24,10 @@ func _physics_process(_delta):
 	if direction.length() > 0:
 		direction = direction.normalized()
 		velocity = direction * SPEED
+		if sfx_steps.playing == false:
+			sfx_steps.play()
 	else:
+		sfx_steps.stop()
 		velocity = Vector2.ZERO
 	
 	set_anim_by_direction(direction)

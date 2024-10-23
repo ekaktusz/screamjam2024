@@ -5,6 +5,9 @@ extends Node2D
 @onready var quest_hint_panel: Panel = $StaticBody2D/Panel
 @onready var quest_area_detect: CollisionPolygon2D = $StaticBody2D/BlockQuestArea/QuestAreaDetect
 @onready var quest_area_blocker: CollisionPolygon2D = $StaticBody2D/QuestAreaBlocker
+
+@export var sfx_item: AudioStreamPlayer
+
 signal torso_collected_in_labor
 
 func _ready() -> void:
@@ -23,6 +26,7 @@ func _on_photo_interact():
 
 func _on_item_collected(item) -> void:
 	torso_collected_in_labor.emit(item)
+	sfx_item.play()
 	disable_quest_area_block()
 
 

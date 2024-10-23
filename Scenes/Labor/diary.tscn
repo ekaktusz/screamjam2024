@@ -6,9 +6,10 @@
 [ext_resource type="StyleBox" uid="uid://phxg5jgmbkgy" path="res://ButtonStyles/button_hover.tres" id="4_aktfo"]
 [ext_resource type="StyleBox" uid="uid://pr52pfscqc2n" path="res://ButtonStyles/button_pressed.tres" id="5_xcs75"]
 [ext_resource type="StyleBox" uid="uid://d1l81vio2tqgs" path="res://ButtonStyles/button_normal.tres" id="6_j3jbi"]
-
-[node name="Diary" type="CanvasLayer"]
+[ext_resource type="AudioStream" uid="uid://i3io628jg5qj" path="res://Music/SFX/writing-pencil.mp3" id="3_7k8fp"]
+[node name="Diary" type="CanvasLayer" node_paths=PackedStringArray("sfx_pencil")]
 script = ExtResource("1_mra0v")
+sfx_pencil = NodePath("AudioStreamPlayer")
 
 [node name="GrannysDiary" type="Sprite2D" parent="."]
 position = Vector2(963, 497)
@@ -33,3 +34,7 @@ theme_override_styles/hover = ExtResource("4_aktfo")
 theme_override_styles/pressed = ExtResource("5_xcs75")
 theme_override_styles/normal = ExtResource("6_j3jbi")
 text = "Let's build my boyfriend"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7k8fp")
+parameters/looping = true

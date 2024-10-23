@@ -3,15 +3,16 @@
 [ext_resource type="Script" path="res://Scenes/HUD/hud.gd" id="1_nri0i"]
 [ext_resource type="PackedScene" uid="uid://bemdgdebmeocr" path="res://Scenes/Inventory/Inventory.tscn" id="1_y07ys"]
 [ext_resource type="FontFile" uid="uid://qr77dqhcvr6k" path="res://Font/Micro5-Regular.ttf" id="3_cqrkc"]
+[ext_resource type="AudioStream" uid="uid://beltpi8cflwf7" path="res://Music/SFX/inventory_closebag.mp3" id="2_cc6tb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pubc"]
 bg_color = Color(0.137255, 0.137255, 0.137255, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6mpd"]
 bg_color = Color(0.137255, 0.137255, 0.137255, 1)
-
-[node name="Hud" type="Node2D"]
+[node name="Hud" type="Node2D" node_paths=PackedStringArray("sfx_player")]
 script = ExtResource("1_nri0i")
+sfx_player = NodePath("AudioStreamPlayer")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -64,3 +65,6 @@ text = "speak with you mom"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_cc6tb")

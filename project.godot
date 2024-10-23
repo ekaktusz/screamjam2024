@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ScreamJam2024"
-run/main_scene="res://Scenes/Screens/Game/game.tscn"
+run/main_scene="res://Scenes/Screens/Intro/intro.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -38,6 +38,10 @@ window/stretch/mode="viewport"
 [editor_plugins]
 
 enabled=PackedStringArray()
+
+[gui]
+
+theme/custom_font="res://Font/Micro5-Regular.ttf"
 
 [input]
 

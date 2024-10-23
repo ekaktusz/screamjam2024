@@ -1,5 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpgf0ho8ohbeg"]
+[gd_scene load_steps=4 format=3 uid="uid://bpgf0ho8ohbeg"]
 
 [ext_resource type="PackedScene" uid="uid://8g1veysh6lp3" path="res://Scenes/NPC/npc.tscn" id="1_0p637"]
+[ext_resource type="AudioStream" uid="uid://drbrr8lcrweqh" path="res://Music/SFX/priest_scream.mp3" id="2_gds02"]
+[ext_resource type="AudioStream" uid="uid://dqppajigh4aql" path="res://Music/SFX/bloody-stab-1.mp3" id="3_wl530"]
 
-[node name="Priest1" instance=ExtResource("1_0p637")]
+[node name="Priest1" node_paths=PackedStringArray("sfx_knife", "sfx_scream") instance=ExtResource("1_0p637")]
+sfx_knife = NodePath("AudioStreamPlayerKnife")
+sfx_scream = NodePath("AudioStreamPlayerScream")
+
+[node name="AudioStreamPlayerScream" type="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("2_gds02")
+
+[node name="AudioStreamPlayerKnife" type="AudioStreamPlayer" parent="." index="4"]
+stream = ExtResource("3_wl530")

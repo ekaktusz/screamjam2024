@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://cd8wufhcut52t"]
+
+[ext_resource type="Texture2D" uid="uid://c1fhwjy1d077m" path="res://Scenes/Raven/raven2_sprite_sheet.png" id="1_vm4fa"]
+
+[sub_resource type="Animation" id="Animation_5q8rq"]
+resource_name = "Idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 18]
+}
+
+[sub_resource type="Animation" id="Animation_6j8av"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w32by"]
+_data = {
+"Idle": SubResource("Animation_5q8rq"),
+"RESET": SubResource("Animation_6j8av")
+}
+
+[node name="Raven2" type="Sprite2D"]
+z_index = 1
+y_sort_enabled = true
+texture = ExtResource("1_vm4fa")
+hframes = 19
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_w32by")
+}
+autoplay = "Idle"
