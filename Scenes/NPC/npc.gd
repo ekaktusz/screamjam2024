@@ -10,6 +10,7 @@ signal show_hand
 signal show_bloody_leg
 signal show_leg
 
+
 var dialogue_manager: DialogueManager
 
 func _ready() -> void:
@@ -27,11 +28,8 @@ func _ready() -> void:
 			dialogue_manager = DialogueManager.create(global_position, DialogueDb.pirate_starter_dialogue, DialogueDb.pirate_paragon_choice_text, DialogueDb.pirate_renegade_choice_text )
 			dialogue_manager.dialogue_ended_with_paragon.connect(_on_pirate_dialogue_ended_with_paragon)
 			dialogue_manager.dialogue_ended_with_renegade.connect(_on_pirate_dialogue_ended_with_renegade)
-			dialogue_manager.dialogue_ended.connect(_on_pirate_dialogue_ended)
 			add_child(dialogue_manager)
-
-func _on_pirate_dialogue_ended() -> void:
-	collision_shape_2d_talk.disabled = true
+		
 
 func _on_interact():
 	dialogue_manager.start_dialogue()
