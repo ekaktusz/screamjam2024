@@ -47,6 +47,7 @@ func start_dialogue() -> void:
 	if is_dialogue_active:
 		return
 	is_dialogue_active = true
+	Globals.player_movement_blocked = true
 	_show_next_dialogue_box()
 	
 func _show_next_dialogue_box() -> void:
@@ -114,6 +115,7 @@ func _end_dialogue():
 	dialogue_box.queue_free()
 	if _has_choice():
 		dialouge_choice_box.queue_free()
+	Globals.player_movement_blocked = false
 	dialogue_ended.emit()
 	
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://de5he6bamukbh"]
+[gd_scene load_steps=3 format=3 uid="uid://de5he6bamukbh"]
 
 [ext_resource type="Script" path="res://Scenes/Dialogue/dialogue_box.gd" id="1_wna3y"]
+[ext_resource type="FontFile" uid="uid://qr77dqhcvr6k" path="res://Font/Micro5-Regular.ttf" id="2_n56nd"]
 
 [node name="DialogueBox" type="CanvasLayer"]
 script = ExtResource("1_wna3y")
@@ -22,6 +23,8 @@ theme_override_constants/margin_bottom = 5
 
 [node name="TextLabel" type="Label" parent="MarginContainer/TextMarginContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_n56nd")
+theme_override_font_sizes/font_size = 30
 text = "test "
 
 [node name="LetterDisplayTimer" type="Timer" parent="MarginContainer"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjt67ijaplgyf"]
+[gd_scene load_steps=4 format=3 uid="uid://cjt67ijaplgyf"]
 
 [ext_resource type="Script" path="res://Scenes/HUD/hud.gd" id="1_nri0i"]
 [ext_resource type="PackedScene" uid="uid://bemdgdebmeocr" path="res://Scenes/Inventory/Inventory.tscn" id="1_y07ys"]
+[ext_resource type="FontFile" uid="uid://qr77dqhcvr6k" path="res://Font/Micro5-Regular.ttf" id="3_cqrkc"]
 
 [node name="Hud" type="Node2D"]
 script = ExtResource("1_nri0i")
@@ -18,10 +19,10 @@ offset_bottom = 4.0
 scale = Vector2(2, 2)
 
 [node name="CurrentObjective" type="PanelContainer" parent="CanvasLayer"]
-offset_left = 1391.0
-offset_top = 3.0
-offset_right = 1897.0
-offset_bottom = 52.0
+offset_left = 716.0
+offset_top = 10.0
+offset_right = 1324.0
+offset_bottom = 71.0
 
 [node name="BackgroundPanel" type="Panel" parent="CanvasLayer/CurrentObjective"]
 layout_mode = 2
@@ -29,15 +30,16 @@ layout_mode = 2
 [node name="Title" type="Label" parent="CanvasLayer/CurrentObjective"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 35
+theme_override_fonts/font = ExtResource("3_cqrkc")
+theme_override_font_sizes/font_size = 60
 text = "Current Objective "
 horizontal_alignment = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
-offset_left = 1391.0
-offset_top = 51.0
-offset_right = 1897.0
-offset_bottom = 135.0
+offset_left = 716.0
+offset_top = 79.0
+offset_right = 1324.0
+offset_bottom = 180.0
 
 [node name="Panel" type="Panel" parent="CanvasLayer/PanelContainer"]
 layout_mode = 2
@@ -45,9 +47,10 @@ layout_mode = 2
 [node name="ObjectiveText" type="Label" parent="CanvasLayer/PanelContainer/Panel"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-offset_right = 506.0
-offset_bottom = 85.0
-theme_override_font_sizes/font_size = 28
+offset_right = 610.0
+offset_bottom = 98.0
+theme_override_fonts/font = ExtResource("3_cqrkc")
+theme_override_font_sizes/font_size = 50
 text = "speak with you mom"
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -12,8 +12,8 @@ const grave_digger_starter_dialogue: Array[String] = [
 	"Maybe some flowers from this nice grave? Or what would you like to have?"
 ]
 
-const grave_digger_paragon_choice_text: String =  "😇 ask for the head of the beautiful man 🥺"
-const grave_digger_renegade_choice_text: String = "💀 just finish the old fool 😈"
+const grave_digger_paragon_choice_text: String =  "ask for the head of the beautiful man"
+const grave_digger_renegade_choice_text: String = "just finish the old fool"
 
 const grave_digger_paragon_answer_dialogue: Array[String] = [
 	"What????",
@@ -35,7 +35,7 @@ func get_grave_digger_random_busy_dialogue() -> Array[String]:
 
 const grave_digger_ending_dialogue: Array[String] = [
 	"Oh my goodness, you have found it! Please accept my eternal gratitude and…",
-	"GRAHHH <cuts head placeholder xd>",
+	"GRAHHH <gave digger cuts his head>",
 	" …this gorgeous head! Goodbye, sweet lady!"
 ]
 
@@ -57,8 +57,8 @@ const priest_paragon_dialogue:Array[String] = [
 	" I gotta hand it to you, this was a finger-licking good idea!",
 ]
 
-const priest_paragon_choice_text: String =  "😇 pray with the priest 🥺"
-const priest_renegade_choice_text: String = "💀 you've hand enough 😈"
+const priest_paragon_choice_text: String =  "pray with the priest"
+const priest_renegade_choice_text: String = "you've hand enough"
 
 
 ## PIRATE DIALOGUES
@@ -68,5 +68,5 @@ const pirate_starter_dialogue: Array[String] = [
 	"zZzZZzZzzzZzZzZzZZzZzzzZzZ"
 ]
 
-const pirate_paragon_choice_text: String =  "😇 Take the wooden leg 🥺"
-const pirate_renegade_choice_text: String = "💀 Cut his leg, you need it more 😈"
+const pirate_paragon_choice_text: String =  "Take the wooden leg"
+const pirate_renegade_choice_text: String = "Cut his leg, you need it more"
