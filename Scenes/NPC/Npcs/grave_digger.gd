@@ -4,6 +4,9 @@ extends CharacterBody2D
 @onready var dog: CharacterBody2D = $"../Dog"
 @onready var dog_bark_timer: Timer = $DogBarkTimer
 
+signal show_head
+signal show_head_bloody
+
 var grave_digger_dialogue_manager: DialogueManager
 var dog_dialogue_manager: DialogueManager
 var index_where_dog_should_woof: int = 3
@@ -47,8 +50,9 @@ func _on_grave_digger_dialogue_ended() -> void:
 	
 	if grave_digger_dialogue_manager.dialogue_lines == DialogueDb.grave_digger_ending_dialogue:
 		Globals.inventory.erase("Lantern")
-		Globals.inventory.append("Head")
-		Globals.current_objective = "Return to the Labor to stitch together your new BF"
+		show_head.emit()
+		#Globals.inventory.append("Head")
+		#Globals.current_objective = "Return to the Labor to stitch together your new BF"
 		queue_free()
 		return
 	
@@ -63,6 +67,7 @@ func _on_grave_digger_dialogue_ended_with_paragon() -> void:
 
 func _on_grave_digger_dialogue_ended_with_renegade() -> void:
 	print("grave digger dialogue ended w renegade")
-	Globals.current_objective = "Return to the Labor to stitch together your new BF"
+	#Globals.current_objective = "Return to the Labor to stitch together your new BF"
 	queue_free() # TODO: killlllll
-	Globals.inventory.append("HeadBloody")
+	show_head_bloody.emit()
+	#Globals.inventory.append("HeadBloody")
