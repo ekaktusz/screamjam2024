@@ -30,7 +30,7 @@ func _setup_pixel_perfect() -> void:
 	# Set up text settings
 	if text_label.label_settings == null:
 		text_label.label_settings = LabelSettings.new()
-	text_label.label_settings.font_size = 60  # Base size before scaling
+	text_label.label_settings.font_size = 45  # Base size before scaling
 
 func _process(_delta: float) -> void:
 	if margin_container:
@@ -64,7 +64,7 @@ func display_text(text: String) -> void:
 	
 	display_next_letter()
 
-
+# ... rest of the code remains the same ...
 func display_next_letter() -> void:
 	text_label.visible_characters += 1
 	
