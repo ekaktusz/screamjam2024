@@ -24,9 +24,14 @@ func _ready() -> void:
 	# Connect the button press
 	o_kbutton.pressed.connect(_on_button_pressed)
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("interact") and not o_kbutton.disabled:
+		_on_button_pressed()
+
 func _on_timer_timeout() -> void:
-	# Just enable the button (it's already visible)
+	# Enable the button and give it focus
 	o_kbutton.disabled = false
+	o_kbutton.grab_focus()
 
 func _on_button_pressed() -> void:
 	# Disable the button to prevent multiple clicks during fade out

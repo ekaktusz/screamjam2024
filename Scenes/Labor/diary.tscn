@@ -32,4 +32,4 @@ theme_override_font_sizes/font_size = 70
 theme_override_styles/hover = ExtResource("4_aktfo")
 theme_override_styles/pressed = ExtResource("5_xcs75")
 theme_override_styles/normal = ExtResource("6_j3jbi")
-text = "Ok, lets get the a new bf"
+text = "Let's build my boyfriend"
