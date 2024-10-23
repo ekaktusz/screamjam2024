@@ -52,6 +52,7 @@ func set_target_position(pos: Vector2) -> void:
 func display_text(text: String) -> void:
 	self.text_to_display = text
 	text_label.text = self.text_to_display
+	text_label.visible_characters = 0
 	
 	await margin_container.resized
 	margin_container.custom_minimum_size.x = min(margin_container.size.x, MAX_WIDTH)
