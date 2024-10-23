@@ -37,6 +37,7 @@ func _on_interact():
 func _on_priest_dialogue_ended_with_paragon():
 	dialogue_manager.reset_dialogue(DialogueDb.priest_paragon_dialogue)
 	dialogue_manager.start_dialogue()
+	collision_shape_2d_talk.disabled = true
 	show_hand.emit()
 	Globals.current_objective = "Look around! God may hand it to you"
 
