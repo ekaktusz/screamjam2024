@@ -207,6 +207,86 @@ autoplay = true
 max_distance = 1000.0
 parameters/looping = true
 
+[node name="GraveyardAreaBlocker" type="StaticBody2D" parent="."]
+position = Vector2(120, -263)
+
+[node name="BlockQuestArea" type="Area2D" parent="GraveyardAreaBlocker"]
+
+[node name="QuestAreaDetect" type="CollisionPolygon2D" parent="GraveyardAreaBlocker/BlockQuestArea"]
+polygon = PackedVector2Array(12, -11, -18, 4, 75, 50, 99, 35)
+
+[node name="QuestAreaBlocker" type="CollisionPolygon2D" parent="GraveyardAreaBlocker"]
+polygon = PackedVector2Array(13, -11, 2, -6, 87, 42, 96, 35)
+
+[node name="Panel" type="Panel" parent="GraveyardAreaBlocker"]
+visible = false
+z_index = 1
+y_sort_enabled = true
+offset_left = 18.0
+offset_top = -46.0
+offset_right = 111.0
+offset_bottom = -6.0
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="GraveyardAreaBlocker/Panel"]
+z_index = 1
+y_sort_enabled = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.5
+offset_top = -19.0
+offset_right = 45.5
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "I wouldn't go there just yet..."
+autowrap_mode = 2
+
+[node name="PriestAreaBlocker" type="StaticBody2D" parent="."]
+position = Vector2(348, 45)
+
+[node name="BlockQuestArea" type="Area2D" parent="PriestAreaBlocker"]
+
+[node name="QuestAreaDetect" type="CollisionPolygon2D" parent="PriestAreaBlocker/BlockQuestArea"]
+polygon = PackedVector2Array(34, -36, -45, 12, 48, 72, 123, 13)
+
+[node name="QuestAreaBlocker" type="CollisionPolygon2D" parent="PriestAreaBlocker"]
+polygon = PackedVector2Array(36, -22, 23, -21, 12, -16, 6, -7, 4, 3, 4, 13, 11, 25, 20, 35, 35, 38, 46, 39, 57, 35, 70, 25, 72, 12, 70, -2, 62, -12, 51, -20)
+
+[node name="Panel" type="Panel" parent="PriestAreaBlocker"]
+visible = false
+z_index = 1
+y_sort_enabled = true
+offset_left = -7.0
+offset_top = -80.0
+offset_right = 91.0
+offset_bottom = -21.0
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="PriestAreaBlocker/Panel"]
+z_index = 1
+y_sort_enabled = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.5
+offset_top = -19.0
+offset_right = 45.5
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "Hmm...          He may come in Handy later"
+autowrap_mode = 2
+
 [connection signal="item_collected" from="HandsBloody" to="." method="_on_hands_bloody_item_collected"]
 [connection signal="item_collected" from="Hands" to="." method="_on_hands_item_collected"]
 [connection signal="item_collected" from="Leg" to="." method="_on_leg_item_collected"]
@@ -215,3 +295,7 @@ parameters/looping = true
 [connection signal="show_leg" from="Pirate" to="." method="_on_show_leg"]
 [connection signal="show_bloody_hand" from="Priest1" to="." method="_on_show_bloody_hand"]
 [connection signal="show_hand" from="Priest1" to="." method="_on_show_hand"]
+[connection signal="body_entered" from="GraveyardAreaBlocker/BlockQuestArea" to="." method="_on_block_quest_area_body_entered"]
+[connection signal="body_exited" from="GraveyardAreaBlocker/BlockQuestArea" to="." method="_on_block_quest_area_body_exited"]
+[connection signal="body_entered" from="PriestAreaBlocker/BlockQuestArea" to="." method="_on_priest_quest_area_body_entered"]
+[connection signal="body_exited" from="PriestAreaBlocker/BlockQuestArea" to="." method="_on_priest_quest_area_body_exited"]

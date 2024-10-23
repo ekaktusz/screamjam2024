@@ -18,8 +18,7 @@ func dark_mode_switch():
 	directional_light_2d.enabled = !directional_light_2d.enabled
 	player.switch_player_light()
 	
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("body entered")
+func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		dark_mode_switch()
 
