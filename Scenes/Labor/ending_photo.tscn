@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwly5w5w3bv1o"]
+
+[ext_resource type="Script" path="res://Scenes/Labor/ending_photo.gd" id="1_2iqep"]
+[ext_resource type="Texture2D" uid="uid://d5incepxftis" path="res://Scenes/Labor/assets/photo_background.jpg" id="1_r6evc"]
+[ext_resource type="Texture2D" uid="uid://bc7o6mi4ope0f" path="res://Scenes/Labor/assets/ending1.png" id="2_cay8w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_po485"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="EndingPhoto" type="CanvasLayer"]
+script = ExtResource("1_2iqep")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 600.0
+offset_top = 14.0
+offset_right = 1563.0
+offset_bottom = 958.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_po485")
+
+[node name="PhotoBackground" type="Sprite2D" parent="."]
+position = Vector2(1075, 409)
+scale = Vector2(0.830322, 0.724121)
+texture = ExtResource("1_r6evc")
+
+[node name="EndingPhoto" type="Sprite2D" parent="."]
+position = Vector2(1100, 447)
+scale = Vector2(1.43102, 1.43102)
+texture = ExtResource("2_cay8w")
+
+[node name="OKButton" type="Button" parent="."]
+offset_left = 869.0
+offset_top = 974.0
+offset_right = 1258.0
+offset_bottom = 1065.0
+theme_override_font_sizes/font_size = 60
+text = "mmmm yeee"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_right = 0.02
+anchor_bottom = 0.011
+offset_left = 699.0
+offset_top = 800.0
+offset_right = 1510.4
+offset_bottom = 871.12
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Me and my love, Vecsés, 2034"
+
+[node name="FlashOverlay" type="ColorRect" parent="."]
+visible = false
+offset_right = 1981.0
+offset_bottom = 1081.0
+
+[connection signal="pressed" from="OKButton" to="." method="_on_ok_button_pressed"]
