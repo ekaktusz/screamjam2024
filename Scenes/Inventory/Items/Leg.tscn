@@ -9,3 +9,6 @@
 position = Vector2(-20, -70)
 scale = Vector2(20, 20)
 texture = ExtResource("2_p5j14")
+
+[node name="CollisionShape2D" parent="InteractionArea" index="0"]
+disabled = true
