@@ -21,9 +21,6 @@ var current_line_finished: bool = false
 @export var dialogue_end_wait_time_seconds: float = 0.5
 var is_dialogue_end_wait_timer_finished = false
 
-var one_shot: bool = false
-var disabled: bool = false
-
 signal dialogue_ended()
 signal dialogue_ended_with_paragon()
 signal dialogue_ended_with_renegade()
@@ -47,7 +44,7 @@ func _has_choice() -> bool:
 	return paragon_choice != "" and renegade_choice != ""
 
 func start_dialogue() -> void:
-	if is_dialogue_active or disabled:
+	if is_dialogue_active:
 		return
 	is_dialogue_active = true
 	Globals.player_movement_blocked = true
@@ -120,9 +117,6 @@ func _end_dialogue():
 		dialouge_choice_box.queue_free()
 	Globals.player_movement_blocked = false
 	dialogue_ended.emit()
-	if one_shot:
-		disabled = true
-		
 	
 
 	

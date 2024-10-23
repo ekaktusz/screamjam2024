@@ -1,4 +1,3 @@
-
 extends CanvasLayer
 
 @onready var paragon: Button = $HBoxContainer/Paragon
