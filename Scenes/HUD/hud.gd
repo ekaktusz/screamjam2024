@@ -3,7 +3,6 @@ extends Node2D
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
 @onready var objective_text: Label = $CanvasLayer/PanelContainer/Panel/ObjectiveText
 @onready var inventory: Control = $CanvasLayer/Inventory
-
 var previous_objective: String = ""
 var effect_timer: float = 0.0
 var original_scale: Vector2
@@ -17,6 +16,9 @@ func _ready() -> void:
 		previous_objective = Globals.current_objective
 	original_scale = objective_text.scale
 	
+	# Set the pivot point to the center of the text
+	objective_text.pivot_offset = objective_text.size / 2
+	
 	# Add a modulate effect shader to the text
 	objective_text.modulate = Color(1, 1, 1, 1)
 
@@ -29,11 +31,13 @@ func _process(delta: float) -> void:
 	if not canvas_layer.visible:
 		return
 	
-	
 	if previous_objective != Globals.current_objective:
 		# Objective changed, start the effect
 		effect_timer = EFFECT_DURATION
 		previous_objective = Globals.current_objective
+		
+		# Update pivot offset for the new text size
+		objective_text.pivot_offset = objective_text.size / 2
 		
 		# Create scale animation
 		var tween = create_tween()
