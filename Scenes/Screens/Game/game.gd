@@ -36,20 +36,24 @@ func _on_leg_bloody_collected(item_name) -> void:
 	Globals.inventory.append(item_name)
 
 func _on_leg_collected_on_main_square(item_name) -> void:
-	#todo add objective logic
 	#let pirate sleep with anim
 	Globals.current_objective = "Pray for a hand - or two"
 	Globals.inventory.append(item_name)
 
 func _on_arm_collected(item_name) -> void:
-	#todo add objective logic 
 	#disable other hand collection FROM PRIEST and move to next quest
 	Globals.current_objective = "Speak with the grave digger"
 	Globals.inventory.append(item_name)
 	#todo "open door" to the graveyard
 
 func _on_arm_bloody_collected(item_name) -> void:
-	#todo add objective logic
 	Globals.current_objective = "Speak with the grave digger"
 	Globals.inventory.append(item_name)
 	#todo "open door" to the graveyard
+
+#func _on_head_bloody_collected(item_name) -> void:
+	#Globals.inventory.append(item_name)
+
+func _on_head_collected(item_name) -> void:
+	Globals.current_objective = "Return to the Labor to stitch together your new BF"
+	Globals.inventory.append(item_name)

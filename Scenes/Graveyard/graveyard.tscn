@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://uf62v7rjeu3b"]
+[gd_scene load_steps=13 format=4 uid="uid://uf62v7rjeu3b"]
 
 [ext_resource type="Script" path="res://Scenes/Graveyard/graveyard.gd" id="1_lkm5g"]
 [ext_resource type="PackedScene" uid="uid://byqsaebfr2wqt" path="res://Scenes/Tilemap/tile_map_layer_first_floor.tscn" id="1_nb32e"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://48ocntxl43oe" path="res://Scenes/NPC/Npcs/Dog.tscn" id="4_xtb8y"]
 [ext_resource type="AudioStream" uid="uid://dtgxcx6gr8mta" path="res://Music/frankeinstein_B_beat_graveyard.mp3" id="5_c80eh"]
 [ext_resource type="PackedScene" uid="uid://cot7o3xpiilyr" path="res://Scenes/Graveyard/lantern.tscn" id="5_olwlb"]
+[ext_resource type="PackedScene" uid="uid://7sm8u7xuo3a1" path="res://Scenes/Inventory/Items/Head.tscn" id="9_0htex"]
+[ext_resource type="PackedScene" uid="uid://bxj2klkdjs6dv" path="res://Scenes/Inventory/Items/HeadBloody.tscn" id="10_l3cty"]
 
 [sub_resource type="Gradient" id="Gradient_wkg0w"]
 offsets = PackedFloat32Array(0.0567164, 0.647761)
@@ -59,4 +61,20 @@ color = Color(0.87451, 0.717647, 0.380392, 1)
 energy = 0.3
 texture = SubResource("GradientTexture2D_tf2fo")
 
+[node name="Head" parent="." instance=ExtResource("9_0htex")]
+visible = false
+z_index = 1
+y_sort_enabled = true
+position = Vector2(196, 66)
+
+[node name="HeadBloody" parent="." instance=ExtResource("10_l3cty")]
+visible = false
+z_index = 1
+y_sort_enabled = true
+position = Vector2(196, 66)
+
+[connection signal="show_head" from="GraveDigger" to="." method="_on_show_head"]
+[connection signal="show_head_bloody" from="GraveDigger" to="." method="_on_show_head_bloody"]
 [connection signal="item_collected" from="Lantern" to="." method="_on_lantern_item_collected"]
+[connection signal="item_collected" from="Head" to="." method="_on_head_item_collected"]
+[connection signal="item_collected" from="HeadBloody" to="." method="_on_head_item_collected"]

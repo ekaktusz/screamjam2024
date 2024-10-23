@@ -26,3 +26,5 @@ func _process(_delta) -> void:
 		if part_name in Globals.inventory:
 			item_options[part_name].visible = true
 			item_options[part_name].self_modulate = Color.WHITE
+		else:
+			item_options[part_name].visible = false
