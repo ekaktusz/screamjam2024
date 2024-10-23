@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blexc1j0s0cl1"
-path="res://.godot/imported/ball_sheet.png-fd02ebe5cb9504e05b43e2058c1a8940.ctex"
+uid="uid://cavpgrm7hiejg"
+path="res://.godot/imported/new_ball_sheet.png-d05780de6dca2be7fc60e67d788a298d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/CountdownBall/ball_sheet.png"
-dest_files=["res://.godot/imported/ball_sheet.png-fd02ebe5cb9504e05b43e2058c1a8940.ctex"]
+source_file="res://Scenes/CountdownBall/new_ball_sheet.png"
+dest_files=["res://.godot/imported/new_ball_sheet.png-d05780de6dca2be7fc60e67d788a298d.ctex"]
 
 [params]
 

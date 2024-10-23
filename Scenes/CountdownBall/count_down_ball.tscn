@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://craj5foncbild"]
 
-[ext_resource type="Texture2D" uid="uid://blexc1j0s0cl1" path="res://Scenes/CountdownBall/ball_sheet.png" id="1_x4am5"]
+[ext_resource type="Texture2D" uid="uid://cavpgrm7hiejg" path="res://Scenes/CountdownBall/new_ball_sheet.png" id="1_ttvve"]
 
 [sub_resource type="Animation" id="Animation_cclwh"]
 resource_name = "Idle"
@@ -41,7 +41,7 @@ _data = {
 }
 
 [node name="CountDownBall" type="Sprite2D"]
-texture = ExtResource("1_x4am5")
+texture = ExtResource("1_ttvve")
 hframes = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
