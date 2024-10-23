@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://beltpi8cflwf7" path="res://Music/SFX/inventory_closebag.mp3" id="9_ymci0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eet04"]
-radius = 38.0786
+radius = 46.1408
 height = 103.696
 
 [node name="Labor" type="Node2D" node_paths=PackedStringArray("sfx_item")]
@@ -59,7 +59,7 @@ position = Vector2(70, -146)
 action_name = "build boyfriend"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PhotoInteractionArea"]
-position = Vector2(0, -9)
+position = Vector2(-4, 21)
 rotation = 2.08915
 shape = SubResource("CapsuleShape2D_eet04")
 

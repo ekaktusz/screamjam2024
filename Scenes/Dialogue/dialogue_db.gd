@@ -61,9 +61,9 @@ const priest_renegade_choice_text: String = "you've hand enough"
 
 ## PIRATE DIALOGUES
 const pirate_starter_dialogue: Array[String] = [
-	"zZzZZzZzzzZzZ",
-	"zZzZZz",
-	"zZzZZzZzzzZzZzZzZZzZzzzZzZ"
+	"Z..ZZZ..ZZ",
+	"Z..ZZ",
+	"ZZZ..Z..ZZ..ZZ.Z...ZZ"
 ]
 
 const pirate_paragon_choice_text: String =  "Take the wooden leg"

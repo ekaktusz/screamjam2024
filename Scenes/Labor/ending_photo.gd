@@ -18,6 +18,7 @@ var countdown_interval: float = 1.0  # Time between countdown numbers
 
 @export var sfx_camera: AudioStreamPlayer
 @export var sfx_lightning: AudioStreamPlayer
+@export var sfx_priest_scream: AudioStreamPlayer
 
 var ending_textures = {
 	"ending1_texture": preload("res://Scenes/Labor/assets/1.png"),
@@ -151,6 +152,8 @@ func _on_timer_timeout() -> void:
 	flash_overlay.visible = false
 	
 func _on_ok_button_pressed() -> void:
-	print("END GAME HERE YEE")
+	sfx_priest_scream.play()
+	ok_button.disabled = true
+	await get_tree().create_timer(2.0).timeout
 	Globals.reset_globals()
 	ScreenManager.change_screen("res://Scenes/Screens/Menu/menu.tscn")
