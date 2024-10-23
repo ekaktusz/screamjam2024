@@ -1,12 +1,17 @@
-[gd_scene load_steps=8 format=4 uid="uid://ce4wdswhq308m"]
+[gd_scene load_steps=10 format=4 uid="uid://ce4wdswhq308m"]
 
-[ext_resource type="PackedScene" uid="uid://c744j3ron8kr2" path="res://Scenes/Inventory/Items/Torso.tscn" id="1_6llug"]
+[ext_resource type="PackedScene" path="res://Scenes/Inventory/Items/Torso.tscn" id="1_6llug"]
 [ext_resource type="PackedScene" uid="uid://byqsaebfr2wqt" path="res://Scenes/Tilemap/tile_map_layer_first_floor.tscn" id="1_hncrf"]
 [ext_resource type="Script" path="res://Scenes/Labor/labor.gd" id="1_ylf8r"]
 [ext_resource type="PackedScene" uid="uid://6qvylrim0xte" path="res://Scenes/Tilemap/tile_map_layer_ground_floor.tscn" id="2_m8x3q"]
 [ext_resource type="PackedScene" uid="uid://cxxkj16qcppcu" path="res://Scenes/Tilemap/tile_map_layer_second_floor.tscn" id="5_3vuge"]
 [ext_resource type="AudioStream" uid="uid://dgeq22gfwptg3" path="res://Music/frankeinstein_A_beat_labor_main_square.mp3" id="5_mj8lj"]
-[ext_resource type="PackedScene" path="res://Scenes/Labor/diary.tscn" id="7_2q8m1"]
+[ext_resource type="PackedScene" uid="uid://cv8i85ikqcfrx" path="res://Scenes/Labor/diary.tscn" id="7_2q8m1"]
+[ext_resource type="PackedScene" uid="uid://bg36jejsehft1" path="res://Scenes/Interaction/InteractionArea.tscn" id="8_f52dm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eet04"]
+radius = 38.0786
+height = 103.696
 
 [node name="Labor" type="Node2D"]
 y_sort_enabled = true
@@ -42,5 +47,13 @@ max_distance = 1000.0
 parameters/looping = true
 
 [node name="Diary" parent="." instance=ExtResource("7_2q8m1")]
+
+[node name="InteractionArea" parent="." instance=ExtResource("8_f52dm")]
+action_name = "take photo"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(53, -153)
+rotation = 2.08915
+shape = SubResource("CapsuleShape2D_eet04")
 
 [connection signal="item_collected" from="Torso" to="." method="_on_item_collected"]
