@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwly5w5w3bv1o"]
+[gd_scene load_steps=4 format=3 uid="uid://b1halcef2ghxx"]
 
 [ext_resource type="Script" path="res://Scenes/Labor/ending_photo.gd" id="1_2iqep"]
 [ext_resource type="Texture2D" uid="uid://d5incepxftis" path="res://Scenes/Labor/assets/photo_background.jpg" id="1_r6evc"]
@@ -6,22 +6,23 @@
 
 [node name="EndingPhoto" type="CanvasLayer"]
 script = ExtResource("1_2iqep")
+metadata/_edit_vertical_guides_ = [1980.0, 961.0]
 
 [node name="PhotoBackground" type="Sprite2D" parent="."]
-position = Vector2(1075, 409)
+position = Vector2(960.125, 412.75)
 scale = Vector2(0.830322, 0.724121)
 texture = ExtResource("1_r6evc")
 
 [node name="EndingPhoto" type="Sprite2D" parent="."]
-position = Vector2(1100, 447)
+position = Vector2(978, 458)
 scale = Vector2(1.43102, 1.43102)
 texture = ExtResource("2_cay8w")
 
 [node name="OKButton" type="Button" parent="."]
-offset_left = 869.0
-offset_top = 974.0
-offset_right = 1258.0
-offset_bottom = 1065.0
+offset_left = 754.125
+offset_top = 977.75
+offset_right = 1143.12
+offset_bottom = 1068.75
 theme_override_font_sizes/font_size = 60
 text = "mmmm yeee"
 
@@ -29,13 +30,14 @@ text = "mmmm yeee"
 anchors_preset = -1
 anchor_right = 0.02
 anchor_bottom = 0.011
-offset_left = 699.0
-offset_top = 800.0
-offset_right = 1510.4
-offset_bottom = 871.12
+offset_left = 536.0
+offset_top = 784.0
+offset_right = 1347.4
+offset_bottom = 855.12
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "Me and my love, Vecsés, 2034"
+horizontal_alignment = 1
 
 [node name="FlashOverlay" type="ColorRect" parent="."]
 visible = false
@@ -48,10 +50,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -114.0
-offset_top = -273.0
-offset_right = 114.0
-offset_bottom = 273.0
+offset_left = -106.0
+offset_top = -494.0
+offset_right = 122.0
+offset_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 400
